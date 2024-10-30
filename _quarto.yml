@@ -1,5 +1,6 @@
 project:
   type: book
+  output-dir: docs      # Important pour GitHub Pages
 
 book:
   title: "MAT-2904"
