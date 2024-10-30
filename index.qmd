@@ -1,13 +1,50 @@
----
-jupyter: python3
----
+# Présentation {.unnumbered}
 
-# Preface {.unnumbered}
+Bienvenue sur un site web complémentaire au site monPortail du cours **MAT-2904 : Complément d'analyse**, à l'Université Laval.
 
-This is a Quarto book.
+Ce site contient principalement des séries d'exercices conçues pour accompagner les étudiants et étudiantes dans le cours. Chaque série d'exercices est soigneusement élaborée pour approfondir votre compréhension des concepts clés et vous préparer aux évaluations.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+## Les fonctions exponentielles et logarithmiques
 
-```{python}
-1 + 1
-```
+Ce document vous invite à explorer en profondeur les fonctions exponentielles et logarithmiques, des outils mathématiques essentiels tant en théorie qu'en applications pratiques. À travers onze exercices soigneusement structurés, vous allez découvrir les multiples facettes de ces fonctions.
+
+Nous commençons par des exercices techniques de résolution d'équations exponentielles, avant d'aborder des problèmes plus théoriques qui vous feront découvrir les propriétés fondamentales de la fonction exponentielle, notamment son unicité comme solution de l'équation différentielle f'=f.
+
+Le document intègre également des applications concrètes avec des problèmes d'intérêts composés et de croissance de populations bactériennes, illustrant ainsi l'utilité pratique de ces fonctions.
+
+Nous terminons par une exploration rigoureuse de la définition du nombre e, démontrant comment ce nombre fondamental émerge naturellement des limites de suites. Les solutions détaillées vous guideront à travers les raisonnements mathématiques nécessaires pour maîtriser ces concepts clés de l'analyse mathématique.
+
+## Les fonctions puissances
+
+Ce document vous propose une exploration approfondie des fonctions puissances, un concept fondamental en analyse mathématique. À travers onze exercices progressifs, vous allez consolider votre compréhension des propriétés algébriques et analytiques de ces fonctions.
+
+Nous commençons par établir les propriétés fondamentales des puissances en utilisant la définition $x^{\alpha} = e^{\alpha \log x}$, puis nous abordons des questions plus subtiles comme la rationalité des puissances de nombres irrationnels. 
+
+Le document vous guide ensuite vers l'étude des dérivées des fonctions puissances, avec une attention particulière portée à l'analyse complète de la fonction racine cubique. 
+
+Les exercices culminent avec des applications pratiques : 
+
+- Calcul de limites
+- Résolution d'équations et d'inéquations
+- Calcul d'intégrales faisant intervenir des puissances réelles
+
+Chaque exercice est accompagné d'une solution détaillée et, lorsque pertinent, de représentations graphiques pour faciliter votre compréhension.
+
+## L'intégrale de Riemann
+
+Ce document vous propose une série d'exercices approfondis sur l'intégrale de Riemann, un concept fondamental en analyse mathématique. Vous y trouverez six questions (incluant plusieurs sous-questions) qui vous permettront de maîtriser différentes techniques d'intégration et de comprendre leurs applications.
+
+La première partie vous invite à pratiquer l'intégration indéfinie à travers douze cas différents, chacun nécessitant des techniques spécifiques comme :
+
+- Les changements de variables
+- L'intégration par parties
+- La décomposition en fractions partielles
+
+Les exercices suivants vous amènent vers des concepts plus avancés :
+
+- Le calcul d'intégrales définies, y compris avec des bornes infinies
+- Le calcul d'aire entre des courbes
+- Une démonstration rigoureuse par la méthode de Riemann
+- Des questions plus théoriques sur les propriétés des fonctions impaires dans l'intégration
+
+Chaque exercice est accompagné d'une solution détaillée qui vous permet de comprendre pas à pas la méthode de résolution.

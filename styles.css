@@ -1,0 +1,16 @@
+/* Import STIX Two Text from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:wght@400;700&display=swap');
+
+/* Apply STIX Two Text to the body */
+body {
+    font-family: 'STIX Two Text', serif;
+}
+
+/* Ensure math equations use the correct font */
+.math {
+    font-family: 'STIX Two Text', serif;
+}
+
+.MathJax {
+    font-size: 100% !important;
+}

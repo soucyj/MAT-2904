@@ -1,22 +1,144 @@
 project:
   type: book
   output-dir: docs      # Important pour GitHub Pages
-
+lang: fr
+language:
+  title-block-published: "Dernière mise à jour"
+  title-block-author-single: "Auteur"
+  title-block-author-plural: "Auteurs"
+  title-block-affiliation-single: "Affiliation"
+  title-block-affiliation-plural: "Affiliations"
+  title-block-modified: "Modifié"
+  abstract: "Résumé"
+  abstract-title: "Résumé"
+  listing-title-separator: " — "
+  listing-page-of-total: "Page {page_number} sur {total_pages}"
+  citation: "Citation"
+  cite-this: "Citer ce document"
+  toc-title: "Table des matières"
+  
 book:
-  title: "MAT-2904"
-  author: "Norah Jones"
-  date: "10/29/2024"
+  title: "MAT-2904 : Complément d'analyse"
+  author: "Jérôme Soucy"
   chapters:
     - index.qmd
-    - intro.qmd
-    - summary.qmd
-    - references.qmd
+    - exercices/ExpoLog/ExpoLog.qmd
+    - exercices/Puissances/Puissances.qmd
+    - exercices/IntegraleRiemann/IntegraleRiemann.qmd
+    - exercices/FonctionsHyp/FonctionsHyp.qmd
+    - exercices/ED/ED.qmd
 
 bibliography: references.bib
 
 format:
   html:
-    theme: cosmo
+    theme:
+      dark: darkly
+      light: flatly
+    css:
+      - styles.css # Assurez-vous que le chemin est correct
+    include-in-header:
+      - text: |
+          <style>
+          ol {
+            list-style-type: none;
+            counter-reset: item;
+            padding-left: 0;
+          }
+          ol > li {
+            counter-increment: item;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 2em;
+          }
+          ol > li::before {
+            content: "(" counter(item, lower-alpha) ")";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+          }
+          </style>
+      - text: |
+          <style>
+          .solution-toggle {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: #E6F3FF;
+            color: #333;
+            border: 1px solid #BED9F3;
+            border-radius: 4px;
+            padding: 0.6rem 1rem;
+            margin: 1rem 0;
+            cursor: pointer;
+            transition: all 0.2s ease;
+          }
+          
+          .solution-toggle:hover {
+            background-color: #D1E8FF;
+            transform: translateY(-1px);
+          }
+          
+          .solution {
+            border-left: 4px solid #4A90E2;
+            padding: 1rem 1rem 1rem 1.5rem;
+            margin: 1rem 0;
+            background-color: rgba(74, 144, 226, 0.1);
+            border-radius: 0 4px 4px 0;
+          }
+          
+          /* Mode sombre */
+          @media (prefers-color-scheme: dark) {
+            .solution-toggle {
+              background-color: #1A3B5C;
+              color: #E6F3FF;
+              border-color: #4A90E2;
+            }
+            
+            .solution-toggle:hover {
+              background-color: #2C5282;
+            }
+            
+            .solution {
+              border-left-color: #4A90E2;
+              background-color: rgba(74, 144, 226, 0.05);
+            }
+          }
+          </style>
+          
+          <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.solution').forEach(solution => {
+              const button = document.createElement('button');
+              button.textContent = 'Afficher la solution';
+              button.className = 'solution-toggle';
+              
+              button.addEventListener('click', () => {
+                const isHidden = solution.style.display === 'none';
+                solution.style.display = isHidden ? 'block' : 'none';
+                button.textContent = isHidden ? 'Cacher la solution' : 'Afficher la solution';
+              });
+              
+              solution.parentNode.insertBefore(button, solution);
+              solution.style.display = 'none';
+            });
+          });
+          </script>
+    toc: true
+    toc-depth: 2
+    toc-title: "Table des matières"
+    code-fold-title: "Afficher le code"
+    code-summary: "Code"
+    code-fold: true
+    code-tools:
+      source: true
+      toggle: false
+    date-format: "DD MMMM YYYY à HH:mm"
+    date: last-modified
+    html-math-method:
+      method: mathjax
+      url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+
+execute:
+  freeze: auto
   pdf:
     documentclass: scrreprt
 

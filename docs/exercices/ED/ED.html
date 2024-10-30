@@ -8,7 +8,7 @@
 
 <meta name="author" content="Jérôme Soucy">
 
-<title>MAT-2904 : Complément d’analyse</title>
+<title>MAT-2904 : Complément d’analyse - Les équations différentielles</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -58,25 +58,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./exercices/ExpoLog/ExpoLog.html" rel="next">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../exercices/FonctionsHyp/FonctionsHyp.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -180,9 +180,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
 
+<link rel="stylesheet" href="../../styles.css">
 <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -195,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Présentation</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../exercices/ED/ED.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Les équations différentielles</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -210,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">MAT-2904 : Complément d’analyse</a> 
+      <a href="../../">MAT-2904 : Complément d’analyse</a> 
         <div class="sidebar-tools-main">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Basculer le mode sombre"><i class="bi"></i></a>
 </div>
@@ -225,37 +224,37 @@ document.addEventListener('DOMContentLoaded', function() {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Présentation</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercices/ExpoLog/ExpoLog.html" class="sidebar-item-text sidebar-link">
+  <a href="../../exercices/ExpoLog/ExpoLog.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Les fonctions exponentielles et logarithmiques</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercices/Puissances/Puissances.html" class="sidebar-item-text sidebar-link">
+  <a href="../../exercices/Puissances/Puissances.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Les fonctions puissances</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercices/IntegraleRiemann/IntegraleRiemann.html" class="sidebar-item-text sidebar-link">
+  <a href="../../exercices/IntegraleRiemann/IntegraleRiemann.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">L’intégrale de Riemann</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercices/FonctionsHyp/FonctionsHyp.html" class="sidebar-item-text sidebar-link">
+  <a href="../../exercices/FonctionsHyp/FonctionsHyp.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Les fonctions hyperboliques</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./exercices/ED/ED.html" class="sidebar-item-text sidebar-link">
+  <a href="../../exercices/ED/ED.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Les équations différentielles</span></span></a>
   </div>
 </li>
@@ -269,12 +268,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <h2 id="toc-title">Table des matières</h2>
    
   <ul class="collapse">
-  <li><a href="#présentation" id="toc-présentation" class="nav-link active" data-scroll-target="#présentation">Présentation</a>
-  <ul class="collapse">
-  <li><a href="#les-fonctions-exponentielles-et-logarithmiques" id="toc-les-fonctions-exponentielles-et-logarithmiques" class="nav-link" data-scroll-target="#les-fonctions-exponentielles-et-logarithmiques"># Les fonctions exponentielles et logarithmiques</a></li>
-  <li><a href="#les-fonctions-puissances" id="toc-les-fonctions-puissances" class="nav-link" data-scroll-target="#les-fonctions-puissances">Les fonctions puissances</a></li>
-  <li><a href="#lintégrale-de-riemann" id="toc-lintégrale-de-riemann" class="nav-link" data-scroll-target="#lintégrale-de-riemann">L’intégrale de Riemann</a></li>
-  </ul></li>
+  <li><a href="#question-1" id="toc-question-1" class="nav-link active" data-scroll-target="#question-1">Question 1</a></li>
   </ul>
 </nav>
     </div>
@@ -283,7 +277,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">MAT-2904 : Complément d’analyse</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Les équations différentielles</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -300,7 +294,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <div>
     <div class="quarto-title-meta-heading">Dernière mise à jour</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">29 octobre 2024 à 22:39</p>
+      <p class="date">29 octobre 2024 à 11:09</p>
     </div>
   </div>
   
@@ -310,52 +304,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </header>
 
-<section id="présentation" class="level1 unnumbered">
-<h1 class="unnumbered">Présentation</h1>
-<p>Bienvenue sur un site web complémentaire au site monPortail du cours **MAT-2904 : Complément d’analyse**, à l’Université Laval.</p>
-<p>Ce site contient principalement des séries d’exercices conçues pour accompagner les étudiants et étudiantes dans le cours. Chaque série d’exercices est soigneusement élaborée pour approfondir votre compréhension des concepts clés et vous préparer aux évaluations.</p>
-<section id="les-fonctions-exponentielles-et-logarithmiques" class="level2">
-<h2 class="anchored" data-anchor-id="les-fonctions-exponentielles-et-logarithmiques"># Les fonctions exponentielles et logarithmiques</h2>
-<p>Ce document vous invite à explorer en profondeur les fonctions exponentielles et logarithmiques, des outils mathématiques essentiels tant en théorie qu’en applications pratiques. À travers onze exercices soigneusement structurés, vous allez découvrir les multiples facettes de ces fonctions.</p>
-<p>Nous commençons par des exercices techniques de résolution d’équations exponentielles, avant d’aborder des problèmes plus théoriques qui vous feront découvrir les propriétés fondamentales de la fonction exponentielle, notamment son unicité comme solution de l’équation différentielle f’=f.</p>
-<p>Le document intègre également des applications concrètes avec des problèmes d’intérêts composés et de croissance de populations bactériennes, illustrant ainsi l’utilité pratique de ces fonctions.</p>
-<p>Nous terminons par une exploration rigoureuse de la définition du nombre e, démontrant comment ce nombre fondamental émerge naturellement des limites de suites. Les solutions détaillées vous guideront à travers les raisonnements mathématiques nécessaires pour maîtriser ces concepts clés de l’analyse mathématique.</p>
-</section>
-<section id="les-fonctions-puissances" class="level2">
-<h2 class="anchored" data-anchor-id="les-fonctions-puissances">Les fonctions puissances</h2>
-<p>Ce document vous propose une exploration approfondie des fonctions puissances, un concept fondamental en analyse mathématique. À travers onze exercices progressifs, vous allez consolider votre compréhension des propriétés algébriques et analytiques de ces fonctions.</p>
-<p>Nous commençons par établir les propriétés fondamentales des puissances en utilisant la définition <span class="math inline">\(x^{\alpha} = e^{\alpha \log x}\)</span>, puis nous abordons des questions plus subtiles comme la rationalité des puissances de nombres irrationnels.</p>
-<p>Le document vous guide ensuite vers l’étude des dérivées des fonctions puissances, avec une attention particulière portée à l’analyse complète de la fonction racine cubique.</p>
-<p>Les exercices culminent avec des applications pratiques :</p>
-<ul>
-<li>Calcul de limites</li>
-<li>Résolution d’équations et d’inéquations</li>
-<li>Calcul d’intégrales faisant intervenir des puissances réelles</li>
-</ul>
-<p>Chaque exercice est accompagné d’une solution détaillée et, lorsque pertinent, de représentations graphiques pour faciliter votre compréhension.</p>
-</section>
-<section id="lintégrale-de-riemann" class="level2">
-<h2 class="anchored" data-anchor-id="lintégrale-de-riemann">L’intégrale de Riemann</h2>
-<p>Ce document vous propose une série d’exercices approfondis sur l’intégrale de Riemann, un concept fondamental en analyse mathématique. Vous y trouverez six questions (incluant plusieurs sous-questions) qui vous permettront de maîtriser différentes techniques d’intégration et de comprendre leurs applications.</p>
-<p>La première partie vous invite à pratiquer l’intégration indéfinie à travers douze cas différents, chacun nécessitant des techniques spécifiques comme :</p>
-<ul>
-<li>Les changements de variables</li>
-<li>L’intégration par parties</li>
-<li>La décomposition en fractions partielles</li>
-</ul>
-<p>Les exercices suivants vous amènent vers des concepts plus avancés :</p>
-<ul>
-<li>Le calcul d’intégrales définies, y compris avec des bornes infinies</li>
-<li>Le calcul d’aire entre des courbes</li>
-<li>Une démonstration rigoureuse par la méthode de Riemann</li>
-<li>Des questions plus théoriques sur les propriétés des fonctions impaires dans l’intégration</li>
-</ul>
-<p>Chaque exercice est accompagné d’une solution détaillée qui vous permet de comprendre pas à pas la méthode de résolution.</p>
+<section id="question-1" class="level2">
+<h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
 
 
 <!-- -->
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -760,63 +714,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../../exercices/FonctionsHyp/FonctionsHyp.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Les fonctions hyperboliques</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./exercices/ExpoLog/ExpoLog.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Les fonctions exponentielles et logarithmiques</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Code source</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Présentation {.unnumbered}</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Bienvenue sur un site web complémentaire au site monPortail du cours <span class="sc">\*\*</span>MAT-2904 : Complément d'analyse<span class="sc">\*\*</span>, à l'Université Laval.</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Ce site contient principalement des séries d'exercices conçues pour accompagner les étudiants et étudiantes dans le cours. Chaque série d'exercices est soigneusement élaborée pour approfondir votre compréhension des concepts clés et vous préparer aux évaluations.</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## \# Les fonctions exponentielles et logarithmiques</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>Ce document vous invite à explorer en profondeur les fonctions exponentielles et logarithmiques, des outils mathématiques essentiels tant en théorie qu'en applications pratiques. À travers onze exercices soigneusement structurés, vous allez découvrir les multiples facettes de ces fonctions.</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Nous commençons par des exercices techniques de résolution d'équations exponentielles, avant d'aborder des problèmes plus théoriques qui vous feront découvrir les propriétés fondamentales de la fonction exponentielle, notamment son unicité comme solution de l'équation différentielle f'=f.</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Le document intègre également des applications concrètes avec des problèmes d'intérêts composés et de croissance de populations bactériennes, illustrant ainsi l'utilité pratique de ces fonctions.</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>Nous terminons par une exploration rigoureuse de la définition du nombre e, démontrant comment ce nombre fondamental émerge naturellement des limites de suites. Les solutions détaillées vous guideront à travers les raisonnements mathématiques nécessaires pour maîtriser ces concepts clés de l'analyse mathématique.</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">## Les fonctions puissances</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>Ce document vous propose une exploration approfondie des fonctions puissances, un concept fondamental en analyse mathématique. À travers onze exercices progressifs, vous allez consolider votre compréhension des propriétés algébriques et analytiques de ces fonctions.</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>Nous commençons par établir les propriétés fondamentales des puissances en utilisant la définition $x^{\alpha} = e^{\alpha \log x}$, puis nous abordons des questions plus subtiles comme la rationalité des puissances de nombres irrationnels. </span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Le document vous guide ensuite vers l'étude des dérivées des fonctions puissances, avec une attention particulière portée à l'analyse complète de la fonction racine cubique. </span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>Les exercices culminent avec des applications pratiques : </span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Calcul de limites</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Résolution d'équations et d'inéquations</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Calcul d'intégrales faisant intervenir des puissances réelles</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>Chaque exercice est accompagné d'une solution détaillée et, lorsque pertinent, de représentations graphiques pour faciliter votre compréhension.</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="fu">## L'intégrale de Riemann</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>Ce document vous propose une série d'exercices approfondis sur l'intégrale de Riemann, un concept fondamental en analyse mathématique. Vous y trouverez six questions (incluant plusieurs sous-questions) qui vous permettront de maîtriser différentes techniques d'intégration et de comprendre leurs applications.</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>La première partie vous invite à pratiquer l'intégration indéfinie à travers douze cas différents, chacun nécessitant des techniques spécifiques comme :</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Les changements de variables</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>L'intégration par parties</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>La décomposition en fractions partielles</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>Les exercices suivants vous amènent vers des concepts plus avancés :</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Le calcul d'intégrales définies, y compris avec des bornes infinies</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Le calcul d'aire entre des courbes</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Une démonstration rigoureuse par la méthode de Riemann</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Des questions plus théoriques sur les propriétés des fonctions impaires dans l'intégration</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>Chaque exercice est accompagné d'une solution détaillée qui vous permet de comprendre pas à pas la méthode de résolution.</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Les équations différentielles"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Jérôme Soucy"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    theme: cosmo</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    css: styles.css</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 2</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: false</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">    highlight-style: github</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## Question 1</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

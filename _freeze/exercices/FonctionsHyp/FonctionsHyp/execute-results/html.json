@@ -1,0 +1,14 @@
+{
+  "hash": "607bc27dd7b85ac97329ba1bb2e5d863",
+  "result": {
+    "markdown": "---\ntitle: \"Les fonctions hyperboliques\"\nauthor: \"Jérôme Soucy\"\nformat:\n  html:\n    theme: cosmo\n    css: styles.css\n    toc: true\n    toc-depth: 2\n    number-sections: false\n    highlight-style: github\n    code-fold: true\n---\n\n\n\n\n## Question 1\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,0 +1,14 @@
+---
+title: "Les équations différentielles"
+author: "Jérôme Soucy"
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    toc-depth: 2
+    number-sections: false
+    highlight-style: github
+    code-fold: true
+---
+## Question 1

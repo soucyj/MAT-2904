@@ -1,0 +1,31 @@
+---
+title: "Les fonctions hyperboliques"
+author: "Jérôme Soucy"
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    toc-depth: 2
+    number-sections: false
+    highlight-style: github
+    code-fold: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  message = FALSE,
+  warning = FALSE,
+  fig.width = 8,
+  fig.height = 6,
+  fig.align = "center",
+  out.width = "100%"
+)
+
+# Chargement des packages nécessaires
+library(ggplot2)
+library(latex2exp)
+```
+
+## Question 1
