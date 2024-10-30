@@ -1,4 +1,4 @@
-# Présentation {.unnumbered}
+# Présentation
 
 Bienvenue sur un site web complémentaire au site monPortail du cours **MAT-2904 : Complément d'analyse**, à l'Université Laval.
 
