@@ -1,14 +1,97 @@
 ---
 title: "Les équations différentielles"
 author: "Jérôme Soucy"
-format:
-  html:
-    theme: cosmo
-    css: styles.css
-    toc: true
-    toc-depth: 2
-    number-sections: false
-    highlight-style: github
-    code-fold: true
 ---
+
 ## Question 1
+
+Résoudre l'équation différentielle : $\frac{dy}{dx} = 2xy$
+
+::: solution
+D'abord, on réorganise l'équation comme $\frac{1}{y}dy = 2x dx$. Nous avons divisé par $y$, que nous supposons différente de la fonction identiquement nulle pour la suite. Remarquons que la fonction identiquement nulle est une solution de l'équation différentielle.
+
+Intégrons les deux membres de l'équation : $\int \frac{1}{y}dy = \int 2x dx$. Nous obtenons que$\ln|y| = x^2 + C$. En prenant l'exponentielle, nous obtenons que $|y|=e^{C}e^{x^2}$. Ainsi, $|y|=C_1e^{x^2}$, où $C_1$ est une constante strictement positive. De là nous avons que $y=C_2e^{x^2}$, où $C_2$ est une constante réelle non nulle. Finalement, on se rappelle que $y=0$ est solution de l'équation différentielle de départ, ce qui nous permet d'écrire que l'ensemble des solutions de l'équation différentielle est formé de toutes les fonctions de la forme $y=Ke^{x^2}, K\in\mathbb{R}$.
+:::
+
+## Question 2
+
+Résoudre l'équation différentielle $$\frac{dy}{dx} = \frac{x}{y}.$$
+
+::: solution
+On sépare les variables pour obtenir l'équation $y dy = x dx$. On intègre ensuite les deux membres de l'équation : $\int y dy = \int x dx$. Nous obtenons que $\frac{y^2}{2} = \frac{x^2}{2} + C$. Ainsi, la solution générale est $$y = \pm\sqrt{x^2 + K},$$
+où $K$ est une constante arbitraire.
+:::
+
+## Question 3
+
+Résoudre l'équation différentielle $$\frac{dy}{dx} = \frac{y}{x}.$$
+
+::: solution
+On sépare les variables pour obtenir l'équation $\frac{dy}{y} = \frac{dx}{x}$. On a divisé par $y$, on supposera donc pour la suite que $y$ n'est pas identiquement nulle. On remarque aussi que la fonction identiquement nulle est une solution de l'équation différentielle.
+
+On intègre ensuite les deux membres de l'équation : $\int \frac{dy}{y} = \int \frac{dx}{x}$. Nous obtenons que $\ln|y| = \ln|x| + C$. Comme la fonction $\ln$ est une bijection des réels strictement positifs vers $\mathbb{R}$, il existe un unique $k\in\mathbb{R}_{>0}$ tel que $C=\ln k$. Ainsi,
+$$\ln|y| = \ln|x| + C=\ln|x| + \ln k=\ln k|x|.$$ L'injectivité de la fonction $\ln$ implique que
+$y=\pm k|x|$. Si on trace ces courbes, on constate qu'il s'agit des droites de pente non nulle passant par l'origine. Comme la droite $y(x)=0$ est une solution (on l'a remarqué plus tôt), l'ensemble des solutions consiste à être l'ensemble des droites passant par l'origine, c'est-à-dire aux courbes d'équation $y(x)=Dx, D\in\mathbb{R}$.
+:::
+
+## Question 4
+
+Résoudre l'équation différentielle : $\frac{dy}{dx} = y^2$
+
+::: solution
+On constate que $y(x)=0$ est une solution. Maintenant, pour trouver les solutions non nulles, divisons par $y^2$ pour séparer les variables. On obtient ainsi que
+$$\frac{dy}{y^2} = dx.$$
+En intégrant chacun des membres de l'équation, nous obtenons que
+$$-\frac{1}{y} = x + C,$$
+où $C$ est une constante réelle arbitraire. On isole par la suite $y$, pour obtenir une solution de la forme
+$$y = -\frac{1}{x + K},$$
+où $K$ est une constante réelle arbitraire.
+:::
+
+## Question 5
+
+Résoudre l'équation différentielle : $\frac{dy}{dx} = e^{x-y}$
+
+::: solution
+Pour résoudre cette équation, commençons par réorganiser les termes afin de séparer les variables. En multipliant chaque membre par $e^y$, nous obtenons
+$$e^y dy = e^x dx.$$
+En intégrant chacun des membres de l'équation, nous obtenons que
+$$e^y = e^x + C,$$
+où $C$ est une constante réelle arbitraire. On isole par la suite $y$ en appliquant le logarithme naturel de chaque côté, pour obtenir une solution de la forme
+$$y(x) = \ln(e^x + C).$$
+:::
+
+## Question 6
+Lorsqu'une personne avale une substance toxique, son foie tente de l'éliminer. Généralement, le taux d'élimination de la quantité de substance encore présente dans l'organisme au temps $t$ --- que nous noterons $Q(t)$ --- est proportionnel à la quantité de substance encore présente dans l'organisme au temps $t$. Au temps $t=0$, Jocelyn a avalé une quantité $Q_0$ d'un liquide toxique. Après 3 heures, on a estimé que son foie avait éliminé 50\% du liquide. D'après ce modèle, combien d'heures se seront écoulées entre le moment où Jocelyn a avalé le produit et celui où il en aura éliminé 90\%?
+
+## Question 7
+Un vêtement pesant 50 grammes est plongée dans un bassin d'eau. En le sortant du bassin, au temps $t=0$, sa masse est de 200 grammes. On l'étend immédiatement sur une corde à linge pour qu'il sèche. On observe qu'après 180 minutes, sa masse est de 100 grammes. Combien de minutes se seront écoulées entre le moment où le vêtement est sorti du bassin et celui où il aura évacué 99\% de l'eau qu'il contenait initialement? Arrondissez à la minute. Pour répondre à cette question, on fera l'hypothèse que le taux d'évaporation d'eau dans le vêtement est proportionnel à la quantité d'eau présente dans celui-ci.
+
+## Question 8
+Un réservoir contient initialement 100 kg de lait écrémé (le pourcentage de matière grasse du lait écrémé est de 0 %). Au temps $t=0$, on commence à y verser, à un taux constant de 10 kg/minute, du lait dont le pourcentage de matière grasse est de 4 %. Au même moment, un drain évacue le lait du réservoir vers le camion réfrigérée, à un taux constant de 10 kg/minute. Pour répondre à cette question, on fera l'hypothèse que le mélangeur du réservoir permet de garder son contenu homogène.
+
+#. Soit $M$ la masse (en kg) de matière grasse dans le réservoir en fonction du temps $t$ (en minutes). Trouvez la fonction $M(t)$.
+#. Évaluez $\lim_{t\rightarrow\infty}M(t)$.
+
+:::{.solution}
+#. Pendant un petit intervalle de temps $\Delta t$ minutes, il entre 10$\Delta t$ kilogrammes de lait, qui contient une proportion 4/100 de matières grasses. Donc la masse de matières grasses entrant est
+   $$M_{\text{entrant}} = \frac{4}{100} \times 10\Delta t = 0{,}4 \Delta t$$
+
+   Pendant le même intervalle, il sort une masse $10\Delta t$ de lait. La proportion de matières grasses dans ce lait est $M(t)/100$. Ainsi, on a $$M_{\text{entrant}} = \frac{M(t)}{100} \times 10\Delta t = \frac{M(t)}{10} \Delta t.$$
+
+   Le changement dans $M(t)$ est donc
+   $$\Delta M = M_{\text{entrant}} - M_{\text{sortant}} = 0{,}4 \Delta t - \frac{M(t)}{10} \Delta t.$$
+   Ainsi 
+   $$\frac{\Delta M}{\Delta t} = 0{,}4 - \frac{M(t)}{10}.$$
+   Quand $\Delta t$ tend vers 0, le membre de gauche tend vers $M'(t)$, et on obtient
+   $$M'(t) = 0{,}4 - \frac{M(t)}{10}.$$
+   Cette équation est séparable. On a
+   $$\frac{dM}{0{,}4 - \frac{M}{10}} = dt,$$
+   qui est équivalente à 
+   $$\int \frac{10dM}{4 - M} = \int dt.$$
+   On intègre et on obtient que $$-10 \ln|4 - M| = t + C,$$ équation qui est équivalente à $$|4 - M| = ke^{-t/10}.$$
+   Puisque $M(0) = 0$, on en déduit que $k = 4$ et finalement $$M(t) = 4 - 4e^{-t/10}.$$
+
+#. Puisque $e^{-t/10} \to 0$ quand $t \to \infty$, on a $\lim_{t \to \infty} M(t) = 4$.
+   Intuitivement, ce résultat est évident car à la longue, on s'attend à ce que l'état initial devienne négligeable et que la proportion de gras dans le lait du réservoir soit la même que celle du lait qu'on y ajoute.
+:::

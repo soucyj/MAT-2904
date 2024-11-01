@@ -22,19 +22,21 @@ book:
   author: "Jérôme Soucy"
   chapters:
     - index.qmd
-    - exercices/ExpoLog/ExpoLog.qmd
-    - exercices/Puissances/Puissances.qmd
-    - exercices/IntegraleRiemann/IntegraleRiemann.qmd
-    - exercices/FonctionsHyp/FonctionsHyp.qmd
-    - exercices/ED/ED.qmd
-
-bibliography: references.bib
-
+    - part: "Exercices"
+      chapters:
+      - exercices/ExpoLog/ExpoLog.qmd
+      - exercices/Puissances/Puissances.qmd
+      - exercices/IntegraleRiemann/IntegraleRiemann.qmd
+      - exercices/FonctionsHyp/FonctionsHyp.qmd
+      - exercices/ED/ED.qmd
+    - part: "Problèmes résolus"
+      chapters:
+      - theorie/pi/ballonmeteo.qmd
 format:
   html:
     theme:
-      dark: darkly
-      light: flatly
+      dark: [darkly, custom.scss]
+      light: lumen
     css:
       - styles.css # Assurez-vous que le chemin est correct
     include-in-header:
@@ -66,7 +68,8 @@ format:
             color: #333;
             border: 1px solid #BED9F3;
             border-radius: 4px;
-            padding: 0.6rem 1rem;
+            padding: 0.2rem 0.5rem; /* Avant: 0.3rem 0.8rem */
+            font-size: 0.9rem; /* Nouvelle ligne ajoutée */
             margin: 1rem 0;
             cursor: pointer;
             transition: all 0.2s ease;
@@ -108,13 +111,13 @@ format:
           document.addEventListener('DOMContentLoaded', function() {
             document.querySelectorAll('.solution').forEach(solution => {
               const button = document.createElement('button');
-              button.textContent = 'Afficher la solution';
+              button.textContent = 'Solution';
               button.className = 'solution-toggle';
               
               button.addEventListener('click', () => {
                 const isHidden = solution.style.display === 'none';
                 solution.style.display = isHidden ? 'block' : 'none';
-                button.textContent = isHidden ? 'Cacher la solution' : 'Afficher la solution';
+                button.textContent = isHidden ? 'Cacher la solution' : 'Solution';
               });
               
               solution.parentNode.insertBefore(button, solution);
@@ -122,6 +125,7 @@ format:
             });
           });
           </script>
+    number-sections: false
     toc: true
     toc-depth: 2
     toc-title: "Table des matières"
@@ -136,11 +140,37 @@ format:
     html-math-method:
       method: mathjax
       url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-
+  pdf:
+    documentclass: book
+    papersize: letter
+    fontsize: 12pt
+    geometry:
+      - margin=1in
+    number-sections: true
+    colorlinks: true
+    lot: true        # Liste des tableaux
+    lof: true        # Liste des figures
+    highlight-style: github
+    include-in-header: 
+      text: |
+        \usepackage{amsmath}
+        \usepackage{amssymb}
+        \usepackage{amsthm}
+    keep-tex: true   # Garde le fichier .tex généré
+    mainfont: "Latin Modern Roman"
+    sansfont: "Latin Modern Sans"
+    monofont: "Latin Modern Mono"
+    number-depth: 3
+    toc-depth: 3
+    fig-width: 6
+    fig-height: 4
+    linkcolor: blue
+    urlcolor: blue
+    cite-method: biblatex
+    pdf-engine: xelatex  # ou lualatex
 execute:
   freeze: auto
-  pdf:
-    documentclass: scrreprt
-
+  warning: false
+  message: false
 editor: visual
 

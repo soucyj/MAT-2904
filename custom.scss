@@ -1,0 +1,64 @@
+/*-- scss:defaults --*/
+// Couleurs principales
+$body-bg: #1a1b1e;
+$body-color: #e1e1e1;
+$link-color: #7eb6ff;
+$headings-color: #a8c7ff;
+
+// Couleurs pour le code
+$code-block-bg: #2d2d2d;
+$code-color: #f8f8f2;
+
+/*-- scss:rules --*/
+.solution {
+    background-color: #2a2d31;
+    border-left: 4px solid #4d7cc7;
+    padding: 1em;
+    margin: 1em 0;
+}
+
+.math {
+    background-color: transparent;
+}
+
+#TOC {
+    background-color: #22252a;
+    border-right: 1px solid #3a3f44;
+}
+
+pre {
+    border: 1px solid #3a3f44;
+}
+
+.katex {
+    color: $body-color;
+}
+
+a:hover {
+    color: #9cc7ff;
+    text-decoration: none;
+}
+
+code {
+    color: #ff9292;
+    background-color: $code-block-bg;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+table {
+    background-color: #2a2d31;
+    border: 1px solid #3a3f44;
+}
+
+th {
+    background-color: #2d2d2d;
+}
+
+tr:nth-child(even) {
+    background-color: #2a2d31;
+}
+
+tr:hover {
+    background-color: #32363b;
+}

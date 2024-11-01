@@ -124,7 +124,8 @@ ol > li::before {
   color: #333;
   border: 1px solid #BED9F3;
   border-radius: 4px;
-  padding: 0.6rem 1rem;
+  padding: 0.2rem 0.5rem; /* Avant: 0.3rem 0.8rem */
+  font-size: 0.9rem; /* Nouvelle ligne ajoutée */
   margin: 1rem 0;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -166,13 +167,13 @@ ol > li::before {
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.solution').forEach(solution => {
     const button = document.createElement('button');
-    button.textContent = 'Afficher la solution';
+    button.textContent = 'Solution';
     button.className = 'solution-toggle';
     
     button.addEventListener('click', () => {
       const isHidden = solution.style.display === 'none';
       solution.style.display = isHidden ? 'block' : 'none';
-      button.textContent = isHidden ? 'Cacher la solution' : 'Afficher la solution';
+      button.textContent = isHidden ? 'Cacher la solution' : 'Solution';
     });
     
     solution.parentNode.insertBefore(button, solution);
@@ -185,7 +186,6 @@ document.addEventListener('DOMContentLoaded', function() {
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../../styles.css">
-<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-sidebar floating">
@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../exercices/IntegraleRiemann/IntegraleRiemann.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">L'intégrale de Riemann</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../exercices/ExpoLog/ExpoLog.html">Exercices</a></li><li class="breadcrumb-item"><a href="../../exercices/IntegraleRiemann/IntegraleRiemann.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">L'intégrale de Riemann</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -231,36 +231,58 @@ document.addEventListener('DOMContentLoaded', function() {
  <span class="menu-text">Présentation</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Exercices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../exercices/ExpoLog/ExpoLog.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Les fonctions exponentielles et logarithmiques</span></span></a>
+  <a href="../../exercices/ExpoLog/ExpoLog.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Les fonctions exponentielles et logarithmiques</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../exercices/Puissances/Puissances.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Les fonctions puissances</span></span></a>
+  <a href="../../exercices/Puissances/Puissances.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Les fonctions puissances</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../exercices/IntegraleRiemann/IntegraleRiemann.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">L’intégrale de Riemann</span></span></a>
+  <a href="../../exercices/IntegraleRiemann/IntegraleRiemann.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">L’intégrale de Riemann</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../exercices/FonctionsHyp/FonctionsHyp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Les fonctions hyperboliques</span></span></a>
+  <a href="../../exercices/FonctionsHyp/FonctionsHyp.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Les fonctions hyperboliques</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../exercices/ED/ED.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Les équations différentielles</span></span></a>
+  <a href="../../exercices/ED/ED.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Les équations différentielles</span></a>
   </div>
 </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Problèmes résolus</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Basculer la section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../theorie/pi/ballonmeteo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Le ballon météorologique</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -287,7 +309,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">L’intégrale de Riemann</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-title">L’intégrale de Riemann</span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -304,7 +326,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <div>
     <div class="quarto-title-meta-heading">Dernière mise à jour</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">29 octobre 2024 à 21:59</p>
+      <p class="date">31 octobre 2024 à 20:54</p>
     </div>
   </div>
   
@@ -317,14 +339,12 @@ document.addEventListener('DOMContentLoaded', function() {
 <section id="question-1" class="level1">
 <h1>Question 1</h1>
 <p>Évaluez les intégrales indéfinies ci-dessous.</p>
-<section id="a-int-xx212007dx" class="level3">
-<h3 class="anchored" data-anchor-id="a-int-xx212007dx">(a) <span class="math display">\[\int x(x^2+1)^{2007}\,\,dx\]</span></h3>
+<ol>
+<li><p><span class="math display">\[\int x(x^2+1)^{2007}\,\,dx\]</span></p>
 <div class="solution proof">
 <p><span class="proof-title"><em>Solution</em>. </span>En posant <span class="math inline">\(u=x^2+1\)</span>, on obtient que <span class="math inline">\(\frac{\,du}{2}=x\,dx\)</span>. Par conséquent, <span class="math display">\[\int x(x^2+1)^{2007}\,dx=\frac{1}{2}\int u^{2007}\,du=\frac{1}{2}\cdot\frac{u^{2008}}{2008}+C=\frac{(1+x^2)^{2008}}{4016}+C.\]</span></p>
-</div>
-</section>
-<section id="b-int-xsqrtx-1dx" class="level3">
-<h3 class="anchored" data-anchor-id="b-int-xsqrtx-1dx">(b) <span class="math display">\[\int x\sqrt{x-1}\,dx\]</span></h3>
+</div></li>
+<li><p><span class="math display">\[\int x\sqrt{x-1}\,dx\]</span></p>
 <div class="solution proof">
 <p><span class="proof-title"><em>Solution</em>. </span>En posant <span class="math inline">\(u=x-1\)</span>, on obtient que <span class="math inline">\(\,du=\,dx\)</span>. Aussi, <span class="math inline">\(x=u+1\)</span>. Par conséquent, <span class="math display">\[\begin{align}
 \int x\sqrt{x-1}\,dx&amp;=\int (u+1)\sqrt{u}\,du \\
@@ -332,26 +352,20 @@ document.addEventListener('DOMContentLoaded', function() {
 &amp;=\frac{u^{5/2}}{5/2}+\frac{u^{3/2}}{3/2}+C \\
 &amp;=\frac{2(x-1)^{5/2}}{5}+\frac{2(x-1)^{3/2}}{3}+C
 \end{align}\]</span></p>
-</div>
-</section>
-<section id="c-intfrace2xdxsqrt1e2x" class="level3">
-<h3 class="anchored" data-anchor-id="c-intfrace2xdxsqrt1e2x">(c) <span class="math display">\[\int\frac{e^{2x}\,dx}{\sqrt{1+e^{2x}}}\]</span></h3>
+</div></li>
+<li><p><span class="math display">\[\int\frac{e^{2x}\,dx}{\sqrt{1+e^{2x}}}\]</span></p>
 <div class="solution proof">
 <p><span class="proof-title"><em>Solution</em>. </span>En posant <span class="math inline">\(u=1+e^{2x}\)</span>, on obtient que <span class="math inline">\(\frac{\,du}{2}=e^{2x}\,dx\)</span>. Ainsi, <span class="math display">\[\int\frac{e^{2x}\,dx}{\sqrt{1+e^{2x}}}=\frac{1}{2}\int\frac{\,du}{\sqrt{u}}=\frac{1}{2}\cdot\frac{u^{1/2}}{1/2}+C=\sqrt{1+e^{2x}}+C.\]</span></p>
-</div>
-</section>
-<section id="d-intfraccosxsinxdx2cos2x" class="level3">
-<h3 class="anchored" data-anchor-id="d-intfraccosxsinxdx2cos2x">(d) <span class="math display">\[\int\frac{\cos(x)\sin(x)\,dx}{2+\cos(2x)}\]</span></h3>
+</div></li>
+<li><p><span class="math display">\[\int\frac{\cos(x)\sin(x)\,dx}{2+\cos(2x)}\]</span></p>
 <div class="solution proof">
 <p><span class="proof-title"><em>Solution</em>. </span>Remarquons en premier lieu que l’intégrande est composée de fonctions trigonométriques d’argument différent. Pour réussir à intégrer cette fonction, il serait souhaitable que les fonctions trigonométriques présentes aient le même argument.</p>
 <p><strong>Première méthode: L’argument commun des fonctions trigonométrique de l’intégrande est</strong> <span class="math inline">\(x\)</span>.</p>
 <p>Il nous faut ici utiliser une formule pour exprimer <span class="math inline">\(\cos(2x)\)</span> est fonction de <span class="math inline">\(\sin(x)\)</span> et de <span class="math inline">\(\cos(x)\)</span>. On sait que <span class="math inline">\(\cos^2(x)-\sin^2(x)=\cos(2x)\)</span>. Par conséquent, <span class="math display">\[\int\frac{\cos(x)\sin(x)\,dx}{2+\cos(2x)}=\frac{\cos(x)\sin(x)\,dx}{2+\cos^2(x)-\sin^2(x)}.\]</span> En posant <span class="math inline">\(u=2+\cos^2(x)-\sin^2(x)\)</span>, on trouve que <span class="math inline">\(\,du=-4\cos(x)\sin(x)\,dx\)</span>. Ainsi, <span class="math display">\[\int\frac{\cos(x)\sin(x)\,dx}{2+\cos^2(x)-\sin^2(x)}=-\frac{1}{4}\int\frac{\,du}{u}=-\frac{1}{4}\log(2+\cos^2(x)-\sin^2(x))+C.\]</span></p>
 <p><strong>Deuxième méthode: l’argument commun des fonctions trigonométrique de l’intégrande est</strong> <span class="math inline">\(2x\)</span>.</p>
 <p>On doit donc exprimer <span class="math inline">\(\cos(x)\sin(x)\)</span> en fonction de <span class="math inline">\(\sin(2x)\)</span> et de <span class="math inline">\(\cos(2x)\)</span>. Or, <span class="math inline">\(\sin(2x)=2\sin(x)\cos(x)\)</span>. Par conséquent, nous avons que <span class="math display">\[\int\frac{\cos(x)\sin(x)\,dx}{2+\cos(2x)}=\frac{1}{2}\int\frac{\sin(2x)\,dx}{2+\cos(2x)}.\]</span> En posant <span class="math inline">\(u=2+\cos(2x)\)</span>, on trouve que <span class="math inline">\(\,du=-2\sin(2x)\,dx\)</span>, et donc <span class="math display">\[\frac{1}{2}\int\frac{\sin(2x)\,dx}{2+\cos(2x)}=-\frac{1}{4}\int\frac{\,du}{u}=-\frac{1}{4}\ln(2+\cos(2x))+C.\]</span></p>
-</div>
-</section>
-<section id="e-int-exsinxdx" class="level3">
-<h3 class="anchored" data-anchor-id="e-int-exsinxdx">(e) <span class="math display">\[\int e^x\sin(x)\,dx\]</span></h3>
+</div></li>
+<li><p><span class="math display">\[\int e^x\sin(x)\,dx\]</span></p>
 <div class="solution proof">
 <p><span class="proof-title"><em>Solution</em>. </span>On pose <span class="math inline">\(u=e^x\)</span> et <span class="math inline">\(\,dv=\sin(x)\,dx\)</span>. Ainsi, <span class="math inline">\(\,du=e^x\,dx\)</span> et <span class="math inline">\(v=-\cos(x)\)</span>. Nous avons donc que <span class="math display">\[\begin{align}
 \int e^x\sin(x)\,dx&amp;=\int u\,dv \\
@@ -365,20 +379,16 @@ document.addEventListener('DOMContentLoaded', function() {
 \int e^x\sin(x)\,dx&amp;=-e^x\cos(x)+\int e^x\cos(x)\,dx &amp; \qquad(\text{d'après}(\star)) \\
 &amp;=-e^x\cos(x)+e^x\sin(x)-\int e^x\sin(x)\,dx. &amp; \qquad(\text{d'après}(\star\star))
 \end{align}\]</span> Ainsi, <span class="math inline">\(2\int e^x\sin(x)\,dx=-e^x\cos(x)+e^x\sin(x)\)</span>, d’où <span class="math display">\[\int e^x\sin(x)\,dx=\frac{e^x}{2}\left(\sin(x)-\cos(x)\right)+C.\]</span></p>
-</div>
-</section>
-<section id="f-intarctanxdx" class="level3">
-<h3 class="anchored" data-anchor-id="f-intarctanxdx">(f) <span class="math display">\[\int\arctan(x)\,dx\]</span></h3>
+</div></li>
+<li><p><span class="math display">\[\int\arctan(x)\,dx\]</span></p>
 <div class="solution proof">
 <p><span class="proof-title"><em>Solution</em>. </span>On pose <span class="math inline">\(u=\arctan(x)\)</span> et <span class="math inline">\(\,dv=\,dx\)</span>. Ainsi, <span class="math inline">\(\,du=\frac{\,dx}{1+x^2}\)</span> et <span class="math inline">\(v=x\)</span>. Nous avons donc que <span class="math display">\[\begin{align}
 \int\arctan(x)\,dx&amp;=\int u\,dv \\
 &amp;=uv-\int v\,du \\
 &amp;=x\arctan(x)-\int \frac{x\,dx}{1+x^2}.
 \end{align}\]</span> En posant <span class="math inline">\(r=1+x^2\)</span>, on trouve que <span class="math inline">\(\frac{\,dr}{2}=x\,dx\)</span>, d’où <span class="math display">\[\int\frac{x\,dx}{1+x^2}=\frac{1}{2}\int\frac{\,dr}{r}=\frac{1}{2}\log(1+x^2)+C.\]</span> Ainsi, <span class="math display">\[\int\arctan(x)\,dx=x\arctan(x)-\frac{1}{2}\log(1+x^2)+C=x\arctan(x)-\log\left(\sqrt{1+x^2}\right)+C.\]</span></p>
-</div>
-</section>
-<section id="g-intsinlog-xdx" class="level3">
-<h3 class="anchored" data-anchor-id="g-intsinlog-xdx">(g) <span class="math display">\[\int\sin(\log x)\,dx\]</span></h3>
+</div></li>
+<li><p><span class="math display">\[\int\sin(\log x)\,dx\]</span></p>
 <div class="solution proof">
 <p><span class="proof-title"><em>Solution</em>. </span>On pose <span class="math inline">\(u=\sin(\log x)\)</span> et <span class="math inline">\(\,dv=\,dx\)</span>. Ainsi, <span class="math inline">\(\,du=\frac{\cos(\log x)\,dx}{x}\)</span> et <span class="math inline">\(v=x\)</span>. Nous avons donc que <span class="math display">\[\begin{align}
 \int\sin(\log x)\,dx&amp;=\int u\,dv \\
@@ -389,10 +399,8 @@ document.addEventListener('DOMContentLoaded', function() {
 &amp;=rs-\int s\,dr \\
 &amp;=x\cos(\log x)+\int \sin(\log x)\,dx. \qquad(\star\star)
 \end{align}\]</span> Les équations <span class="math inline">\((\star)\)</span> et <span class="math inline">\((\star\star)\)</span> entraînent que <span class="math display">\[\int\sin(\log x)\,dx=x\sin(\log x)-x\cos(\log x )-\int \sin(\log x)\,dx,\]</span> d’où <span class="math display">\[\int\sin(\log x)\,dx=\frac{x}{2}\left(\sin(\log x)-\cos(\log x)\right)+C.\]</span></p>
-</div>
-</section>
-<section id="h-intfracdxsqrt1-x2" class="level3">
-<h3 class="anchored" data-anchor-id="h-intfracdxsqrt1-x2">(h) <span class="math display">\[\int\frac{\,dx}{\sqrt{1-x^2}}\]</span></h3>
+</div></li>
+<li><p><span class="math display">\[\int\frac{\,dx}{\sqrt{1-x^2}}\]</span></p>
 <div class="solution proof">
 <p><span class="proof-title"><em>Solution</em>. </span>On pose <span class="math inline">\(x=\cos\theta\)</span>, d’où <span class="math inline">\(\,dx=-\sin\theta \,d\theta\)</span>. Ainsi, <span class="math display">\[\begin{align}
 \int\frac{\,dx}{\sqrt{1-x^2}}&amp;=-\int\frac{\sin\theta \,d\theta}{\sqrt{1-\cos^2\theta}} \\
@@ -401,16 +409,12 @@ document.addEventListener('DOMContentLoaded', function() {
 &amp;=-\theta +C \\
 &amp;=-\arccos x +C
 \end{align}\]</span></p>
-</div>
-</section>
-<section id="i-intfracdxx3-x2x-1" class="level3">
-<h3 class="anchored" data-anchor-id="i-intfracdxx3-x2x-1">(i) <span class="math display">\[\int\frac{\,dx}{x^3-x^2+x-1}\]</span></h3>
+</div></li>
+<li><p><span class="math display">\[\int\frac{\,dx}{x^3-x^2+x-1}\]</span></p>
 <div class="solution proof">
 <p><span class="proof-title"><em>Solution</em>. </span>On observe que le dénominateur s’annule lorsque <span class="math inline">\(x=1\)</span>. Ainsi, <span class="math inline">\(x-1\)</span> est un de ses facteurs. En divisant <span class="math inline">\(x^3-x^2+x-1\)</span> par <span class="math inline">\(x-1\)</span>, on obtient <span class="math inline">\(1+x^2\)</span>. Il existe donc des constantes <span class="math inline">\(A,B\)</span> et <span class="math inline">\(C\)</span> telles que <span class="math display">\[\frac{1}{x^3-x^2+x-1}=\frac{A}{x-1}+\frac{Bx+C}{1+x^2}.\]</span> On trouve que <span class="math inline">\(A=1/2\)</span> et <span class="math inline">\(B=C=-1/2\)</span>. Comme <span class="math inline">\(\int\frac{1/2\,dx}{x-1}=\frac{1}{2}\ln (x-1)+C_1\)</span> et <span class="math inline">\(\int-\frac{1}{2}\frac{(x+1)\,dx}{1+x^2}=-\frac{1}{4}\ln (x^2+1)-\frac{1}{2}\arctan (x)+C_2\)</span>, il suit que <span class="math display">\[\int\frac{\,dx}{x^3-x^2+x-1}=\frac{1}{2}\ln (x-1)-\frac{1}{4}\ln (x^2+1)-\frac{1}{2}\arctan (x)+C.\]</span></p>
-</div>
-</section>
-<section id="j-intfracdxsqrt94x2" class="level3">
-<h3 class="anchored" data-anchor-id="j-intfracdxsqrt94x2">(j) <span class="math display">\[\int\frac{\,dx}{\sqrt{9+4x^2}}\]</span></h3>
+</div></li>
+<li><p><span class="math display">\[\int\frac{\,dx}{\sqrt{9+4x^2}}\]</span></p>
 <div class="solution proof">
 <p><span class="proof-title"><em>Solution</em>. </span><span class="math display">\[\begin{align}
 \int\frac{\,dx}{\sqrt{9+4x^2}}&amp;=\frac{1}{3}\int\frac{\,dx}{\frac{1}{3}\sqrt{9+4x^2}} \\
@@ -428,10 +432,8 @@ document.addEventListener('DOMContentLoaded', function() {
 &amp;=\frac{1}{2}\log\frac{1}{3}+\frac{1}{2}\log\left|\sqrt{9+4x^2}+2x\right|+C \\
 &amp;=\frac{1}{2}\log\left|\sqrt{9+4x^2}+2x\right|+D
 \end{align}\]</span></p>
-</div>
-</section>
-<section id="k-intfracdxsqrtx2-2x5" class="level3">
-<h3 class="anchored" data-anchor-id="k-intfracdxsqrtx2-2x5">(k) <span class="math display">\[\int\frac{\,dx}{\sqrt{x^2-2x+5}}\]</span></h3>
+</div></li>
+<li><p><span class="math display">\[\int\frac{\,dx}{\sqrt{x^2-2x+5}}\]</span></p>
 <div class="solution proof">
 <p><span class="proof-title"><em>Solution</em>. </span>En complétant le carré, on obtient que <span class="math display">\[\int\frac{\,dx}{\sqrt{x^2-2x+5}}=\int\frac{\,dx}{\sqrt{(x-1)^2+4}}.\]</span> En posant <span class="math inline">\(u=x-1\)</span>, on trouve que <span class="math inline">\(\,dx=\,du\)</span>, ce qui permet d’écrire <span class="math display">\[\begin{align}
 \int\frac{\,dx}{\sqrt{(x-1)^2+4}}&amp;=\int\frac{\,du}{\sqrt{u^2+4}} \\
@@ -446,29 +448,25 @@ document.addEventListener('DOMContentLoaded', function() {
 &amp;=\log\left|\sqrt{4+u^2}+u\right|+D \\
 &amp;=\log\left|\sqrt{4+(x-1)^2}+x-1\right|+D
 \end{align}\]</span></p>
-</div>
-</section>
-<section id="l-intfrace2xdx1e4x" class="level3">
-<h3 class="anchored" data-anchor-id="l-intfrace2xdx1e4x">(l) <span class="math display">\[\int\frac{e^{2x}\,dx}{1+e^{4x}}\]</span></h3>
+</div></li>
+<li><p><span class="math display">\[\int\frac{e^{2x}\,dx}{1+e^{4x}}\]</span></p>
 <div class="solution proof">
 <p><span class="proof-title"><em>Solution</em>. </span>Posons <span class="math inline">\(u=e^{2x}\)</span>. Ainsi, <span class="math inline">\(\frac{\,du}{2}=e^{2x}\,dx\)</span> et <span class="math inline">\(u^2=e^{4x}\)</span>. On peut donc écrire <span class="math display">\[\begin{align}
 \int\frac{e^{2x}\,dx}{1+e^{4x}}&amp;=\frac{1}{2}\int\frac{\,du}{1+u^2} \\
 &amp;=\arctan(u)+C \\
 &amp;=\frac{\arctan(e^{2x})}{2}+C
 \end{align}\]</span></p>
-</div>
-</section>
+</div></li>
+</ol>
 <section id="question-2" class="level2">
 <h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
 <p>Évaluez les intégrales définies ci-dessous.</p>
-<section id="a-int_1inftyfracdxx" class="level3">
-<h3 class="anchored" data-anchor-id="a-int_1inftyfracdxx">(a) <span class="math display">\[\int_{1}^{\infty}\frac{\,dx}{x}\]</span></h3>
+<ol>
+<li><p><span class="math display">\[\int_{1}^{\infty}\frac{\,dx}{x}\]</span></p>
 <div class="solution proof">
 <p><span class="proof-title"><em>Solution</em>. </span>Nous avons que <span class="math display">\[\int_{1}^{\infty}\frac{\,dx}{x}=\lim_{b\rightarrow\infty}\int_{1}^{b}\frac{\,dx}{x}=\lim_{b\rightarrow\infty}\left(\log b-\log 1\right)=\infty.\]</span></p>
-</div>
-</section>
-<section id="b-int_-pipisin2xdx" class="level3">
-<h3 class="anchored" data-anchor-id="b-int_-pipisin2xdx">(b) <span class="math display">\[\int_{-\pi}^{\pi}\sin^2(x)\,dx\]</span></h3>
+</div></li>
+<li><p><span class="math display">\[\int_{-\pi}^{\pi}\sin^2(x)\,dx\]</span></p>
 <div class="solution proof">
 <p><span class="proof-title"><em>Solution</em>. </span>Nous avons que <span class="math inline">\(\sin^2(x)=\frac{1-\cos(2x)}{2}\)</span>. Ainsi, <span class="math display">\[\begin{align}
 \int_{-\pi}^{\pi}\sin^2(x)\,dx&amp;=\int_{-\pi}^{\pi}\frac{1-\cos(2x)}{2}\,dx \\
@@ -476,10 +474,8 @@ document.addEventListener('DOMContentLoaded', function() {
 &amp;=\left. \frac{x}{2}\right|_{x=-\pi}^{\pi}-\left. \frac{1}{4}\sin(2x)\right|_{x=-\pi}^{\pi} \\
 &amp;=\pi
 \end{align}\]</span></p>
-</div>
-</section>
-<section id="c-int_0pi4tanleftfractheta2rightdx" class="level3">
-<h3 class="anchored" data-anchor-id="c-int_0pi4tanleftfractheta2rightdx">(c) <span class="math display">\[\int_{0}^{\pi/4}\tan\left(\frac{\theta}{2}\right)\,dx\]</span></h3>
+</div></li>
+<li><p><span class="math display">\[\int_{0}^{\pi/4}\tan\left(\frac{\theta}{2}\right)\,dx\]</span></p>
 <div class="solution proof">
 <p><span class="proof-title"><em>Solution</em>. </span>Posons <span class="math inline">\(u=\theta/2\)</span>. Ainsi, <span class="math inline">\(2\,du=\,d\theta\)</span>. Nous avons donc que <span class="math display">\[\begin{align}
 \int_{0}^{\pi/4}\tan\left(\frac{\theta}{2}\right)\,d\theta&amp;=2\int_{\theta=0}^{\theta=\pi/4}\tan(u)\,du \\
@@ -489,8 +485,8 @@ document.addEventListener('DOMContentLoaded', function() {
 &amp;=2\left(\frac{1}{\sqrt{2+\sqrt{2}}}-1\right) \\
 &amp;=\frac{2\left(\sqrt{2+\sqrt{2}}-2-\sqrt{2}\right)}{2+\sqrt{2}}
 \end{align}\]</span> Pour obtenir que <span class="math inline">\(\cos(\pi/8)=\sqrt{2+\sqrt{2}}\)</span>, nous avons utilisé l’identité <span class="math inline">\(\cos^2(x)=\frac{1+\cos(2x)}{2}\)</span> en observant que <span class="math inline">\(\cos(\pi/4)=\sqrt{2}/2\)</span> et en posant <span class="math inline">\(x=\pi/4\)</span>.</p>
-</div>
-</section>
+</div></li>
+</ol>
 </section>
 <section id="question-3" class="level2">
 <h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
@@ -507,40 +503,39 @@ document.addEventListener('DOMContentLoaded', function() {
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>y1 <span class="op">=</span> x <span class="op">*</span> np.sin(x)  <span class="co"># Courbe y = x*sin(x)</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>y2 <span class="op">=</span> <span class="op">-</span>x             <span class="co"># Droite y = -x</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Création de la figure</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">8</span>))</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="fl">7.5</span>, <span class="dv">8</span>))</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Tracer les courbes</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y1, <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'y = x·sin(x)'</span>)</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y2, <span class="st">'r-'</span>, label<span class="op">=</span><span class="st">'y = -x'</span>)  <span class="co"># Changé ici de 'b-' à 'r-'</span></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Remplir la région entre les courbes</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>plt.fill_between(x, y1, y2, color<span class="op">=</span><span class="st">'darkblue'</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajouter une ligne verticale à x = 3π/2</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span><span class="dv">3</span><span class="op">*</span>np.pi<span class="op">/</span><span class="dv">2</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, label<span class="op">=</span><span class="st">'x = 3π/2'</span>)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Paramètres des axes</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>plt.axhline(y<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">'-'</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">'-'</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Étiquettes des axes</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'x'</span>)</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'y'</span>)</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Limites des axes</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="op">-</span><span class="fl">0.5</span>, <span class="dv">5</span>)</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>)</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajouter les ticks spéciaux pour π</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>ticks <span class="op">=</span> [<span class="dv">0</span>, np.pi<span class="op">/</span><span class="dv">2</span>, np.pi, <span class="dv">3</span><span class="op">*</span>np.pi<span class="op">/</span><span class="dv">2</span>]</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [<span class="st">'0'</span>, <span class="st">'π/2'</span>, <span class="st">'π'</span>, <span class="st">'3π/2'</span>]</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>plt.xticks(ticks, labels)</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajouter une grille</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajouter une légende</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajuster la mise en page</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher le graphique</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span><span class="dv">3</span><span class="op">*</span>np.pi<span class="op">/</span><span class="dv">2</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, label<span class="op">=</span><span class="st">'x = 3π/2'</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Paramètres des axes</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>plt.axhline(y<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">'-'</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">'-'</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Étiquettes des axes</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'x'</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'y'</span>)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Limites des axes</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="op">-</span><span class="fl">0.1</span>, <span class="dv">5</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajouter les ticks spéciaux pour</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>ticks <span class="op">=</span> [<span class="dv">0</span>, np.pi<span class="op">/</span><span class="dv">2</span>, np.pi, <span class="dv">3</span><span class="op">*</span>np.pi<span class="op">/</span><span class="dv">2</span>]</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [<span class="st">'0'</span>, <span class="st">'π/2'</span>, <span class="st">'π'</span>, <span class="st">'3π/2'</span>]</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>plt.xticks(ticks, labels)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajouter une grille</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajouter une légende</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajuster la mise en page</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher le graphique</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-region" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="IntegraleRiemann_files/figure-html/fig-region-output-1.png" width="758" height="758" class="figure-img"></p>
+<p><img src="IntegraleRiemann_files/figure-html/fig-region-output-1.png" width="710" height="758" class="figure-img"></p>
 <figcaption class="figure-caption">Figure&nbsp;4.1: Région bornée par les courbes</figcaption>
 </figure>
 </div>
@@ -587,7 +582,7 @@ A_n&amp;=\frac{1}{n}f(0)+\frac{1}{n}f\left(0+\frac{1}{n}\right)+\frac{1}{n}f\lef
 </section>
 <section id="question-6" class="level2">
 <h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
-<p>Évaluez l’intégrale définie suivante : <span class="math inline">\(\int_{-\pi}^{\pi}x^{2017}\sin\left(\frac{1}{x^2+1}\right)\,dx\)</span>.</p>
+<p>Évaluez l’intégrale définie <span class="math display">\[\int_{-\pi}^{\pi}x^{2017}\sin\left(\frac{1}{x^2+1}\right)\,dx.\]</span></p>
 <div class="solution proof">
 <p><span class="proof-title"><em>Solution</em>. </span>La fonction est impaire et l’intervalle d’intégration est symétrique par rapport à <span class="math inline">\(0\)</span>, donc l’intégrale vaut <span class="math inline">\(0\)</span>.</p>
 </div>
@@ -1001,311 +996,322 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../exercices/Puissances/Puissances.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Les fonctions puissances</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Les fonctions puissances</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../../exercices/FonctionsHyp/FonctionsHyp.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Les fonctions hyperboliques</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-title">Les fonctions hyperboliques</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Code source</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "L'intégrale de Riemann"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Jérôme Soucy"</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">    theme: cosmo</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">    css: styles.css</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">    toc-depth: 2</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: false</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">    highlight-style: github</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="an">jupyther:</span><span class="co"> python3</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="fu"># Question 1</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>Évaluez les intégrales indéfinies ci-dessous.</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="fu">### (a) $$\int x(x^2+1)^{2007}\,\,dx$$</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>::: solution</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>En posant $u=x^2+1$, on obtient que $\frac{\,du}{2}=x\,dx$. Par conséquent, $$\int x(x^2+1)^{2007}\,dx=\frac{1}{2}\int u^{2007}\,du=\frac{1}{2}\cdot\frac{u^{2008}}{2008}+C=\frac{(1+x^2)^{2008}}{4016}+C.$$</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="fu">### (b) $$\int x\sqrt{x-1}\,dx$$</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">jupyther:</span><span class="co"> python3</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu"># Question 1</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>Évaluez les intégrales indéfinies ci-dessous.</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>#. $$\int x(x^2+1)^{2007}\,\,dx$$</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>   ::: solution</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>   En posant $u=x^2+1$, on obtient que $\frac{\,du}{2}=x\,dx$. Par conséquent, $$\int x(x^2+1)^{2007}\,dx=\frac{1}{2}\int u^{2007}\,du=\frac{1}{2}\cdot\frac{u^{2008}}{2008}+C=\frac{(1+x^2)^{2008}}{4016}+C.$$</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>   :::</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>#. $$\int x\sqrt{x-1}\,dx$$</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>   ::: solution</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>   En posant $u=x-1$, on obtient que $\,du=\,dx$. Aussi, $x=u+1$. Par conséquent, \begin{align}</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>   \int x\sqrt{x-1}\,dx&amp;=\int (u+1)\sqrt{u}\,du <span class="sc">\\</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>   &amp;=\int u^{3/2}\,du+\int u^{1/2}\,du <span class="sc">\\</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>   &amp;=\frac{u^{5/2}}{5/2}+\frac{u^{3/2}}{3/2}+C <span class="sc">\\</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>   &amp;=\frac{2(x-1)^{5/2}}{5}+\frac{2(x-1)^{3/2}}{3}+C</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>   \end{align}</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>   :::</span>
 <span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>::: solution</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>En posant $u=x-1$, on obtient que $\,du=\,dx$. Aussi, $x=u+1$. Par conséquent, \begin{align}</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>\int x\sqrt{x-1}\,dx&amp;=\int (u+1)\sqrt{u}\,du <span class="sc">\\</span></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>&amp;=\int u^{3/2}\,du+\int u^{1/2}\,du <span class="sc">\\</span></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>&amp;=\frac{u^{5/2}}{5/2}+\frac{u^{3/2}}{3/2}+C <span class="sc">\\</span></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>&amp;=\frac{2(x-1)^{5/2}}{5}+\frac{2(x-1)^{3/2}}{3}+C</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>\end{align}</span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="fu">### (c) $$\int\frac{e^{2x}\,dx}{\sqrt{1+e^{2x}}}$$</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>#. $$\int\frac{e^{2x}\,dx}{\sqrt{1+e^{2x}}}$$</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>   ::: solution</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>   En posant $u=1+e^{2x}$, on obtient que $\frac{\,du}{2}=e^{2x}\,dx$. Ainsi, $$\int\frac{e^{2x}\,dx}{\sqrt{1+e^{2x}}}=\frac{1}{2}\int\frac{\,du}{\sqrt{u}}=\frac{1}{2}\cdot\frac{u^{1/2}}{1/2}+C=\sqrt{1+e^{2x}}+C.$$</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>   :::</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>#. $$\int\frac{\cos(x)\sin(x)\,dx}{2+\cos(2x)}$$</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>   ::: solution</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>   Remarquons en premier lieu que l'intégrande est composée de fonctions trigonométriques d'argument différent. Pour réussir à intégrer cette fonction, il serait souhaitable que les fonctions trigonométriques présentes aient le même argument.</span>
 <span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>::: solution</span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>En posant $u=1+e^{2x}$, on obtient que $\frac{\,du}{2}=e^{2x}\,dx$. Ainsi, $$\int\frac{e^{2x}\,dx}{\sqrt{1+e^{2x}}}=\frac{1}{2}\int\frac{\,du}{\sqrt{u}}=\frac{1}{2}\cdot\frac{u^{1/2}}{1/2}+C=\sqrt{1+e^{2x}}+C.$$</span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>   **Première méthode: L'argument commun des fonctions trigonométrique de l'intégrande est** $x$.</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>   Il nous faut ici utiliser une formule pour exprimer $\cos(2x)$ est fonction de $\sin(x)$ et de $\cos(x)$. On sait que $\cos^2(x)-\sin^2(x)=\cos(2x)$. Par conséquent, $$\int\frac{\cos(x)\sin(x)\,dx}{2+\cos(2x)}=\frac{\cos(x)\sin(x)\,dx}{2+\cos^2(x)-\sin^2(x)}.$$ En posant $u=2+\cos^2(x)-\sin^2(x)$, on trouve que $\,du=-4\cos(x)\sin(x)\,dx$. Ainsi, $$\int\frac{\cos(x)\sin(x)\,dx}{2+\cos^2(x)-\sin^2(x)}=-\frac{1}{4}\int\frac{\,du}{u}=-\frac{1}{4}\log(2+\cos^2(x)-\sin^2(x))+C.$$</span>
 <span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="fu">### (d) $$\int\frac{\cos(x)\sin(x)\,dx}{2+\cos(2x)}$$</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>   **Deuxième méthode: l'argument commun des fonctions trigonométrique de l'intégrande est** $2x$.</span>
 <span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>::: solution</span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>Remarquons en premier lieu que l'intégrande est composée de fonctions trigonométriques d'argument différent. Pour réussir à intégrer cette fonction, il serait souhaitable que les fonctions trigonométriques présentes aient le même argument.</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>   On doit donc exprimer $\cos(x)\sin(x)$ en fonction de $\sin(2x)$ et de $\cos(2x)$. Or, $\sin(2x)=2\sin(x)\cos(x)$. Par conséquent, nous avons que $$\int\frac{\cos(x)\sin(x)\,dx}{2+\cos(2x)}=\frac{1}{2}\int\frac{\sin(2x)\,dx}{2+\cos(2x)}.$$ En posant $u=2+\cos(2x)$, on trouve que $\,du=-2\sin(2x)\,dx$, et donc $$\frac{1}{2}\int\frac{\sin(2x)\,dx}{2+\cos(2x)}=-\frac{1}{4}\int\frac{\,du}{u}=-\frac{1}{4}\ln(2+\cos(2x))+C.$$</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>   :::</span>
 <span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>**Première méthode: L'argument commun des fonctions trigonométrique de l'intégrande est** $x$.</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>#. $$\int e^x\sin(x)\,dx$$</span>
 <span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>Il nous faut ici utiliser une formule pour exprimer $\cos(2x)$ est fonction de $\sin(x)$ et de $\cos(x)$. On sait que $\cos^2(x)-\sin^2(x)=\cos(2x)$. Par conséquent, $$\int\frac{\cos(x)\sin(x)\,dx}{2+\cos(2x)}=\frac{\cos(x)\sin(x)\,dx}{2+\cos^2(x)-\sin^2(x)}.$$ En posant $u=2+\cos^2(x)-\sin^2(x)$, on trouve que $\,du=-4\cos(x)\sin(x)\,dx$. Ainsi, $$\int\frac{\cos(x)\sin(x)\,dx}{2+\cos^2(x)-\sin^2(x)}=-\frac{1}{4}\int\frac{\,du}{u}=-\frac{1}{4}\log(2+\cos^2(x)-\sin^2(x))+C.$$</span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>**Deuxième méthode: l'argument commun des fonctions trigonométrique de l'intégrande est** $2x$.</span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>On doit donc exprimer $\cos(x)\sin(x)$ en fonction de $\sin(2x)$ et de $\cos(2x)$. Or, $\sin(2x)=2\sin(x)\cos(x)$. Par conséquent, nous avons que $$\int\frac{\cos(x)\sin(x)\,dx}{2+\cos(2x)}=\frac{1}{2}\int\frac{\sin(2x)\,dx}{2+\cos(2x)}.$$ En posant $u=2+\cos(2x)$, on trouve que $\,du=-2\sin(2x)\,dx$, et donc $$\frac{1}{2}\int\frac{\sin(2x)\,dx}{2+\cos(2x)}=-\frac{1}{4}\int\frac{\,du}{u}=-\frac{1}{4}\ln(2+\cos(2x))+C.$$</span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="fu">### (e) $$\int e^x\sin(x)\,dx$$</span></span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>::: solution</span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>On pose $u=e^x$ et $\,dv=\sin(x)\,dx$. Ainsi, $\,du=e^x\,dx$ et $v=-\cos(x)$. Nous avons donc que \begin{align}</span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>\int e^x\sin(x)\,dx&amp;=\int u\,dv <span class="sc">\\</span></span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>&amp;=uv-\int v\,du <span class="sc">\\</span></span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>&amp;=-e^x\cos(x)+\int e^x\cos(x)\,dx. \qquad(\star)</span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>\end{align} Il nous faut maintenant effectuer l'intégrale de la fonction $e^x\cos(x)$. Encore une fois, on procède en utilisant la méthode d'intégration par parties. Posons $r=e^x$ et $\,ds=\cos(x)\,dx$. On obtient que $\,dr=e^x\,dx$ et $s=\sin(x)$. On a ainsi que \begin{align}</span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>\int e^x\cos(x)\,dx&amp;=\int r\,ds <span class="sc">\\</span></span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>&amp;=rs-\int s\,dr <span class="sc">\\</span></span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>&amp;=e^x\sin(x)-\int e^x\sin(x)\,dx. \qquad(\star\star)</span>
-<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>\end{align} Nous voyons apparaître à nouveau l'intégrale qui est en fait l'inconnu de notre problème de départ. On pourrait penser que tout ce que nous avons fait dans ce problème jusqu'à présent est tourner en rond. Cependant, il n'en est rien de cela puisqu'en utilisant les équations $(\star)$ et $(\star\star)$, on obtient que \begin{align}</span>
-<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>\int e^x\sin(x)\,dx&amp;=-e^x\cos(x)+\int e^x\cos(x)\,dx &amp; \qquad(\text{d'après}(\star)) <span class="sc">\\</span></span>
-<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>&amp;=-e^x\cos(x)+e^x\sin(x)-\int e^x\sin(x)\,dx. &amp; \qquad(\text{d'après}(\star\star))</span>
-<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>\end{align} Ainsi, $2\int e^x\sin(x)\,dx=-e^x\cos(x)+e^x\sin(x)$, d'où $$\int e^x\sin(x)\,dx=\frac{e^x}{2}\left(\sin(x)-\cos(x)\right)+C.$$</span>
-<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a><span class="fu">### (f) $$\int\arctan(x)\,dx$$</span></span>
-<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>::: solution</span>
-<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>On pose $u=\arctan(x)$ et $\,dv=\,dx$. Ainsi, $\,du=\frac{\,dx}{1+x^2}$ et $v=x$. Nous avons donc que \begin{align}</span>
-<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>\int\arctan(x)\,dx&amp;=\int u\,dv <span class="sc">\\</span></span>
-<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>&amp;=uv-\int v\,du <span class="sc">\\</span></span>
-<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>&amp;=x\arctan(x)-\int \frac{x\,dx}{1+x^2}.</span>
-<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>\end{align} En posant $r=1+x^2$, on trouve que $\frac{\,dr}{2}=x\,dx$, d'où $$\int\frac{x\,dx}{1+x^2}=\frac{1}{2}\int\frac{\,dr}{r}=\frac{1}{2}\log(1+x^2)+C.$$ Ainsi, $$\int\arctan(x)\,dx=x\arctan(x)-\frac{1}{2}\log(1+x^2)+C=x\arctan(x)-\log\left(\sqrt{1+x^2}\right)+C.$$</span>
-<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a><span class="fu">### (g) $$\int\sin(\log x)\,dx$$</span></span>
-<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>::: solution</span>
-<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>On pose $u=\sin(\log x)$ et $\,dv=\,dx$. Ainsi, $\,du=\frac{\cos(\log x)\,dx}{x}$ et $v=x$. Nous avons donc que \begin{align}</span>
-<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>\int\sin(\log x)\,dx&amp;=\int u\,dv <span class="sc">\\</span></span>
-<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>&amp;=uv-\int v\,du <span class="sc">\\</span></span>
-<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>&amp;=x\sin(\log x)-\int \cos(\log x)\,dx. \qquad(\star)</span>
-<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>\end{align} Il nous faut maintenant effectuer l'intégrale de la fonction $\cos(\log x)$. On procède encore en utilisant la méthode d'intégration par parties. Posons $r=\cos(\log x)$ et $\,ds=\,dx$. On obtient que $\,dr=-\frac{\sin(\log x)}{x}\,dx$ et $s=x$. On a ainsi que \begin{align}</span>
-<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>\int \cos(\log x)\,dx&amp;=\int r\,ds <span class="sc">\\</span></span>
-<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>&amp;=rs-\int s\,dr <span class="sc">\\</span></span>
-<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>&amp;=x\cos(\log x)+\int \sin(\log x)\,dx. \qquad(\star\star)</span>
-<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>\end{align} Les équations $(\star)$ et $(\star\star)$ entraînent que $$\int\sin(\log x)\,dx=x\sin(\log x)-x\cos(\log x )-\int \sin(\log x)\,dx,$$ d'où $$\int\sin(\log x)\,dx=\frac{x}{2}\left(\sin(\log x)-\cos(\log x)\right)+C.$$</span>
-<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a><span class="fu">### (h) $$\int\frac{\,dx}{\sqrt{1-x^2}}$$</span></span>
-<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>::: solution</span>
-<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>On pose $x=\cos\theta$, d'où $\,dx=-\sin\theta \,d\theta$. Ainsi, \begin{align}</span>
-<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>\int\frac{\,dx}{\sqrt{1-x^2}}&amp;=-\int\frac{\sin\theta \,d\theta}{\sqrt{1-\cos^2\theta}} <span class="sc">\\</span></span>
-<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>&amp;=-\int\frac{\sin\theta \,d\theta}{\sqrt{\sin^2\theta}} <span class="sc">\\</span></span>
-<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>&amp;=-\int \,d\theta <span class="sc">\\</span></span>
-<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>&amp;=-\theta +C <span class="sc">\\</span></span>
-<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>&amp;=-\arccos x +C</span>
-<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>\end{align}</span>
-<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a><span class="fu">### (i) $$\int\frac{\,dx}{x^3-x^2+x-1}$$</span></span>
-<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>::: solution</span>
-<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>On observe que le dénominateur s'annule lorsque $x=1$. Ainsi, $x-1$ est un de ses facteurs. En divisant $x^3-x^2+x-1$ par $x-1$, on obtient $1+x^2$. Il existe donc des constantes $A,B$ et $C$ telles que $$\frac{1}{x^3-x^2+x-1}=\frac{A}{x-1}+\frac{Bx+C}{1+x^2}.$$ On trouve que $A=1/2$ et $B=C=-1/2$. Comme $\int\frac{1/2\,dx}{x-1}=\frac{1}{2}\ln (x-1)+C_1$ et $\int-\frac{1}{2}\frac{(x+1)\,dx}{1+x^2}=-\frac{1}{4}\ln (x^2+1)-\frac{1}{2}\arctan (x)+C_2$, il suit que $$\int\frac{\,dx}{x^3-x^2+x-1}=\frac{1}{2}\ln (x-1)-\frac{1}{4}\ln (x^2+1)-\frac{1}{2}\arctan (x)+C.$$</span>
-<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>   ::: solution</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>   On pose $u=e^x$ et $\,dv=\sin(x)\,dx$. Ainsi, $\,du=e^x\,dx$ et $v=-\cos(x)$. Nous avons donc que</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>   \begin{align}</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>   \int e^x\sin(x)\,dx&amp;=\int u\,dv <span class="sc">\\</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>   &amp;=uv-\int v\,du <span class="sc">\\</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>   &amp;=-e^x\cos(x)+\int e^x\cos(x)\,dx. \qquad(\star)</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>   \end{align}</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>   Il nous faut maintenant effectuer l'intégrale de la fonction $e^x\cos(x)$. Encore une fois, on procède en utilisant la méthode d'intégration par parties. Posons $r=e^x$ et $\,ds=\cos(x)\,dx$. On obtient que $\,dr=e^x\,dx$ et $s=\sin(x)$. On a ainsi que</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>   \begin{align}</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>   \int e^x\cos(x)\,dx&amp;=\int r\,ds <span class="sc">\\</span></span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>   &amp;=rs-\int s\,dr <span class="sc">\\</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>   &amp;=e^x\sin(x)-\int e^x\sin(x)\,dx. \qquad(\star\star)</span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>   \end{align}</span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>   Nous voyons apparaître à nouveau l'intégrale qui est en fait l'inconnu de notre problème de départ. On pourrait penser que tout ce que nous avons fait dans ce problème jusqu'à présent est tourner en rond. Cependant, il n'en est rien de cela puisqu'en utilisant les équations $(\star)$ et $(\star\star)$, on obtient que</span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>   \begin{align}</span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>   \int e^x\sin(x)\,dx&amp;=-e^x\cos(x)+\int e^x\cos(x)\,dx &amp; \qquad(\text{d'après}(\star)) <span class="sc">\\</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>   &amp;=-e^x\cos(x)+e^x\sin(x)-\int e^x\sin(x)\,dx. &amp; \qquad(\text{d'après}(\star\star))</span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>   \end{align}</span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>   Ainsi, $2\int e^x\sin(x)\,dx=-e^x\cos(x)+e^x\sin(x)$, d'où $$\int e^x\sin(x)\,dx=\frac{e^x}{2}\left(\sin(x)-\cos(x)\right)+C.$$</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>   :::</span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>#. $$\int\arctan(x)\,dx$$</span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>   ::: solution</span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>   On pose $u=\arctan(x)$ et $\,dv=\,dx$. Ainsi, $\,du=\frac{\,dx}{1+x^2}$ et $v=x$. Nous avons donc que</span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>   \begin{align}</span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>   \int\arctan(x)\,dx&amp;=\int u\,dv <span class="sc">\\</span></span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>   &amp;=uv-\int v\,du <span class="sc">\\</span></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>   &amp;=x\arctan(x)-\int \frac{x\,dx}{1+x^2}.</span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>   \end{align}</span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>   En posant $r=1+x^2$, on trouve que $\frac{\,dr}{2}=x\,dx$, d'où $$\int\frac{x\,dx}{1+x^2}=\frac{1}{2}\int\frac{\,dr}{r}=\frac{1}{2}\log(1+x^2)+C.$$ Ainsi, $$\int\arctan(x)\,dx=x\arctan(x)-\frac{1}{2}\log(1+x^2)+C=x\arctan(x)-\log\left(\sqrt{1+x^2}\right)+C.$$</span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a>   :::</span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>#. $$\int\sin(\log x)\,dx$$</span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>   ::: solution</span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>   On pose $u=\sin(\log x)$ et $\,dv=\,dx$. Ainsi, $\,du=\frac{\cos(\log x)\,dx}{x}$ et $v=x$. Nous avons donc que</span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>   \begin{align}</span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>   \int\sin(\log x)\,dx&amp;=\int u\,dv <span class="sc">\\</span></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>   &amp;=uv-\int v\,du <span class="sc">\\</span></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>   &amp;=x\sin(\log x)-\int \cos(\log x)\,dx. \qquad(\star)</span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>   \end{align}</span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>   Il nous faut maintenant effectuer l'intégrale de la fonction $\cos(\log x)$. On procède encore en utilisant la méthode d'intégration par parties. Posons $r=\cos(\log x)$ et $\,ds=\,dx$. On obtient que $\,dr=-\frac{\sin(\log x)}{x}\,dx$ et $s=x$. On a ainsi que</span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>   \begin{align}</span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>   \int \cos(\log x)\,dx&amp;=\int r\,ds <span class="sc">\\</span></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>   &amp;=rs-\int s\,dr <span class="sc">\\</span></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>   &amp;=x\cos(\log x)+\int \sin(\log x)\,dx. \qquad(\star\star)</span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>   \end{align}</span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>   Les équations $(\star)$ et $(\star\star)$ entraînent que $$\int\sin(\log x)\,dx=x\sin(\log x)-x\cos(\log x )-\int \sin(\log x)\,dx,$$ d'où $$\int\sin(\log x)\,dx=\frac{x}{2}\left(\sin(\log x)-\cos(\log x)\right)+C.$$</span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>   :::</span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>#. $$\int\frac{\,dx}{\sqrt{1-x^2}}$$</span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>   ::: solution</span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>   On pose $x=\cos\theta$, d'où $\,dx=-\sin\theta \,d\theta$. Ainsi,</span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>   \begin{align}</span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>   \int\frac{\,dx}{\sqrt{1-x^2}}&amp;=-\int\frac{\sin\theta \,d\theta}{\sqrt{1-\cos^2\theta}} <span class="sc">\\</span></span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>   &amp;=-\int\frac{\sin\theta \,d\theta}{\sqrt{\sin^2\theta}} <span class="sc">\\</span></span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>   &amp;=-\int \,d\theta <span class="sc">\\</span></span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a>   &amp;=-\theta +C <span class="sc">\\</span></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>   &amp;=-\arccos x +C</span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>   \end{align}</span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>   :::</span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>#. $$\int\frac{\,dx}{x^3-x^2+x-1}$$</span>
 <span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a><span class="fu">### (j) $$\int\frac{\,dx}{\sqrt{9+4x^2}}$$</span></span>
-<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>::: solution</span>
-<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a>\begin{align}</span>
-<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>\int\frac{\,dx}{\sqrt{9+4x^2}}&amp;=\frac{1}{3}\int\frac{\,dx}{\frac{1}{3}\sqrt{9+4x^2}} <span class="sc">\\</span></span>
-<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a>&amp;=\frac{1}{3}\int\frac{\,dx}{\sqrt{1+\frac{4x^2}{9}}} <span class="sc">\\</span></span>
-<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a>&amp;=\frac{1}{3}\int\frac{\,dx}{\sqrt{1+\left(\frac{2x}{3}\right)^2}}</span>
-<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>\end{align} Posons $u=\frac{2x}{3}$. Ainsi, $\frac{3}{2}\,du=\,dx$, d'où $$\int\frac{\,dx}{\sqrt{9+4x^2}}=\frac{1}{3}\int\frac{\,dx}{\sqrt{1+\left(\frac{2x}{3}\right)^2}}=\frac{1}{2}\int\frac{\,du}{\sqrt{1+u^2}}.$$ On effectue maintenant le changement de variable $u=\tan\theta$. Nous avons donc que $\,du=\sec^2\theta \,d\theta$, ce qui nous permet d'écrire que \begin{align}</span>
-<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a>\frac{1}{2}\int\frac{\,du}{\sqrt{1+u^2}}&amp;=\frac{1}{2}\int\frac{\sec^2\theta \,d\theta}{\sqrt{1+\tan^2\theta}} <span class="sc">\\</span></span>
-<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a>&amp;=\frac{1}{2}\int\frac{\sec^2\theta \,d\theta}{\sqrt{\sec^2\theta}} <span class="sc">\\</span></span>
-<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a>&amp;=\frac{1}{2}\int\sec\theta \,d\theta <span class="sc">\\</span></span>
-<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a>&amp;=\frac{1}{2}\log|\sec\theta+\tan\theta|+C <span class="sc">\\</span></span>
-<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>&amp;=\frac{1}{2}\log|\sqrt{1+u^2}+u|+C <span class="sc">\\</span></span>
-<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>&amp;=\frac{1}{2}\log\left|\sqrt{1+\left(\frac{2x}{3}\right)^2}+\frac{2x}{3}\right|+C <span class="sc">\\</span></span>
-<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>&amp;=\frac{1}{2}\log\left|\frac{1}{3}\sqrt{9+4x^2}+\frac{2x}{3}\right|+C <span class="sc">\\</span></span>
-<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a>&amp;=\frac{1}{2}\log\left|\frac{1}{3}\left(\sqrt{9+4x^2}+2x\right)\right|+C <span class="sc">\\</span></span>
-<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a>&amp;=\frac{1}{2}\log\frac{1}{3}+\frac{1}{2}\log\left|\sqrt{9+4x^2}+2x\right|+C <span class="sc">\\</span></span>
-<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a>&amp;=\frac{1}{2}\log\left|\sqrt{9+4x^2}+2x\right|+D</span>
-<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a>\end{align}</span>
-<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a><span class="fu">### (k) $$\int\frac{\,dx}{\sqrt{x^2-2x+5}}$$</span></span>
-<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a>::: solution</span>
-<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a>En complétant le carré, on obtient que $$\int\frac{\,dx}{\sqrt{x^2-2x+5}}=\int\frac{\,dx}{\sqrt{(x-1)^2+4}}.$$ En posant $u=x-1$, on trouve que $\,dx=\,du$, ce qui permet d'écrire \begin{align}</span>
-<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a>\int\frac{\,dx}{\sqrt{(x-1)^2+4}}&amp;=\int\frac{\,du}{\sqrt{u^2+4}} <span class="sc">\\</span></span>
-<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a>&amp;=\frac{1}{2}\int\frac{\,du}{\frac{1}{2}\sqrt{u^2+4}} <span class="sc">\\</span></span>
-<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a>&amp;=\frac{1}{2}\int\frac{\,du}{\sqrt{\left(\frac{u}{2}\right)^2+1}} <span class="sc">\\</span></span>
-<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a>&amp;=\int\frac{\,dv}{\sqrt{v^2+1}}. \qquad\text{(en posant $v=u/2$)}</span>
-<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a>\end{align} Au numéro précédent, nous avons montré que $$\int\frac{\,dv}{\sqrt{v^2+1}}=\log\left|\sqrt{1+v^2}+v\right|+C.$$ Par conséquent, \begin{align}</span>
-<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a>\int\frac{\,dx}{\sqrt{x^2-2x+5}}&amp;=\log\left|\sqrt{1+v^2}+v\right|+C <span class="sc">\\</span></span>
-<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a>&amp;=\log\left|\sqrt{1+u^2/4}+u/2\right|+C <span class="sc">\\</span></span>
-<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a>&amp;=\log\left|\frac{1}{2}\sqrt{4+u^2}+u/2\right|+C <span class="sc">\\</span></span>
-<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a>&amp;=\log\left|\frac{\sqrt{4+u^2}+u}{2}\right|+C <span class="sc">\\</span></span>
-<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>&amp;=\log\left|\sqrt{4+u^2}+u\right|+D <span class="sc">\\</span></span>
-<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a>&amp;=\log\left|\sqrt{4+(x-1)^2}+x-1\right|+D</span>
-<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a>\end{align}</span>
-<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a><span class="fu">### (l) $$\int\frac{e^{2x}\,dx}{1+e^{4x}}$$</span></span>
-<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a>::: solution</span>
-<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a>Posons $u=e^{2x}$. Ainsi, $\frac{\,du}{2}=e^{2x}\,dx$ et $u^2=e^{4x}$. On peut donc écrire \begin{align}</span>
-<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a>\int\frac{e^{2x}\,dx}{1+e^{4x}}&amp;=\frac{1}{2}\int\frac{\,du}{1+u^2} <span class="sc">\\</span></span>
-<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a>&amp;=\arctan(u)+C <span class="sc">\\</span></span>
-<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a>&amp;=\frac{\arctan(e^{2x})}{2}+C</span>
-<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a>\end{align}</span>
-<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a>   ::: solution</span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>   On observe que le dénominateur s'annule lorsque $x=1$. Ainsi, $x-1$ est un de ses facteurs. En divisant $x^3-x^2+x-1$ par $x-1$, on obtient $1+x^2$. Il existe donc des constantes $A,B$ et $C$ telles que $$\frac{1}{x^3-x^2+x-1}=\frac{A}{x-1}+\frac{Bx+C}{1+x^2}.$$ On trouve que $A=1/2$ et $B=C=-1/2$. Comme $\int\frac{1/2\,dx}{x-1}=\frac{1}{2}\ln (x-1)+C_1$ et $\int-\frac{1}{2}\frac{(x+1)\,dx}{1+x^2}=-\frac{1}{4}\ln (x^2+1)-\frac{1}{2}\arctan (x)+C_2$, il suit que $$\int\frac{\,dx}{x^3-x^2+x-1}=\frac{1}{2}\ln (x-1)-\frac{1}{4}\ln (x^2+1)-\frac{1}{2}\arctan (x)+C.$$</span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>   :::</span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>#. $$\int\frac{\,dx}{\sqrt{9+4x^2}}$$</span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a>   ::: solution</span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>   \begin{align}</span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a>   \int\frac{\,dx}{\sqrt{9+4x^2}}&amp;=\frac{1}{3}\int\frac{\,dx}{\frac{1}{3}\sqrt{9+4x^2}} <span class="sc">\\</span></span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a>   &amp;=\frac{1}{3}\int\frac{\,dx}{\sqrt{1+\frac{4x^2}{9}}} <span class="sc">\\</span></span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a>   &amp;=\frac{1}{3}\int\frac{\,dx}{\sqrt{1+\left(\frac{2x}{3}\right)^2}}</span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a>   \end{align}</span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>   Posons $u=\frac{2x}{3}$. Ainsi, $\frac{3}{2}\,du=\,dx$, d'où $$\int\frac{\,dx}{\sqrt{9+4x^2}}=\frac{1}{3}\int\frac{\,dx}{\sqrt{1+\left(\frac{2x}{3}\right)^2}}=\frac{1}{2}\int\frac{\,du}{\sqrt{1+u^2}}.$$ On effectue maintenant le changement de variable $u=\tan\theta$. Nous avons donc que $\,du=\sec^2\theta \,d\theta$, ce qui nous permet d'écrire que    \begin{align}</span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>   \frac{1}{2}\int\frac{\,du}{\sqrt{1+u^2}}&amp;=\frac{1}{2}\int\frac{\sec^2\theta \,d\theta}{\sqrt{1+\tan^2\theta}} <span class="sc">\\</span></span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>   &amp;=\frac{1}{2}\int\frac{\sec^2\theta \,d\theta}{\sqrt{\sec^2\theta}} <span class="sc">\\</span></span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a>   &amp;=\frac{1}{2}\int\sec\theta \,d\theta <span class="sc">\\</span></span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a>   &amp;=\frac{1}{2}\log|\sec\theta+\tan\theta|+C <span class="sc">\\</span></span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a>   &amp;=\frac{1}{2}\log|\sqrt{1+u^2}+u|+C <span class="sc">\\</span></span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a>   &amp;=\frac{1}{2}\log\left|\sqrt{1+\left(\frac{2x}{3}\right)^2}+\frac{2x}{3}\right|+C <span class="sc">\\</span></span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a>   &amp;=\frac{1}{2}\log\left|\frac{1}{3}\sqrt{9+4x^2}+\frac{2x}{3}\right|+C <span class="sc">\\</span></span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a>   &amp;=\frac{1}{2}\log\left|\frac{1}{3}\left(\sqrt{9+4x^2}+2x\right)\right|+C <span class="sc">\\</span></span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a>   &amp;=\frac{1}{2}\log\frac{1}{3}+\frac{1}{2}\log\left|\sqrt{9+4x^2}+2x\right|+C <span class="sc">\\</span></span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a>   &amp;=\frac{1}{2}\log\left|\sqrt{9+4x^2}+2x\right|+D</span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a>   \end{align}</span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a>   :::</span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a>#. $$\int\frac{\,dx}{\sqrt{x^2-2x+5}}$$</span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a>   ::: solution</span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a>   En complétant le carré, on obtient que $$\int\frac{\,dx}{\sqrt{x^2-2x+5}}=\int\frac{\,dx}{\sqrt{(x-1)^2+4}}.$$ En posant $u=x-1$, on trouve que $\,dx=\,du$, ce qui permet d'écrire</span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a>   \begin{align}</span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a>   \int\frac{\,dx}{\sqrt{(x-1)^2+4}}&amp;=\int\frac{\,du}{\sqrt{u^2+4}} <span class="sc">\\</span></span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a>   &amp;=\frac{1}{2}\int\frac{\,du}{\frac{1}{2}\sqrt{u^2+4}} <span class="sc">\\</span></span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a>   &amp;=\frac{1}{2}\int\frac{\,du}{\sqrt{\left(\frac{u}{2}\right)^2+1}} <span class="sc">\\</span></span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>   &amp;=\int\frac{\,dv}{\sqrt{v^2+1}}. \qquad\text{(en posant $v=u/2$)}</span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a>   \end{align}</span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a>   Au numéro précédent, nous avons montré que $$\int\frac{\,dv}{\sqrt{v^2+1}}=\log\left|\sqrt{1+v^2}+v\right|+C.$$ Par conséquent,</span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a>   \begin{align}</span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a>   \int\frac{\,dx}{\sqrt{x^2-2x+5}}&amp;=\log\left|\sqrt{1+v^2}+v\right|+C <span class="sc">\\</span></span>
+<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a>   &amp;=\log\left|\sqrt{1+u^2/4}+u/2\right|+C <span class="sc">\\</span></span>
+<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a>   &amp;=\log\left|\frac{1}{2}\sqrt{4+u^2}+u/2\right|+C <span class="sc">\\</span></span>
+<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a>   &amp;=\log\left|\frac{\sqrt{4+u^2}+u}{2}\right|+C <span class="sc">\\</span></span>
+<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a>   &amp;=\log\left|\sqrt{4+u^2}+u\right|+D <span class="sc">\\</span></span>
+<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a>   &amp;=\log\left|\sqrt{4+(x-1)^2}+x-1\right|+D</span>
+<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a>   \end{align}</span>
+<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a>   :::</span>
+<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a>#. $$\int\frac{e^{2x}\,dx}{1+e^{4x}}$$</span>
 <span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a><span class="fu">## Question 2</span></span>
-<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a>Évaluez les intégrales définies ci-dessous.</span>
-<span id="cb2-168"><a href="#cb2-168" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-169"><a href="#cb2-169" aria-hidden="true" tabindex="-1"></a><span class="fu">### (a) $$\int_{1}^{\infty}\frac{\,dx}{x}$$</span></span>
-<span id="cb2-170"><a href="#cb2-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a>::: solution</span>
-<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a>Nous avons que $$\int_{1}^{\infty}\frac{\,dx}{x}=\lim_{b\rightarrow\infty}\int_{1}^{b}\frac{\,dx}{x}=\lim_{b\rightarrow\infty}\left(\log b-\log 1\right)=\infty.$$</span>
-<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-175"><a href="#cb2-175" aria-hidden="true" tabindex="-1"></a><span class="fu">### (b) $$\int_{-\pi}^{\pi}\sin^2(x)\,dx$$</span></span>
-<span id="cb2-176"><a href="#cb2-176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-177"><a href="#cb2-177" aria-hidden="true" tabindex="-1"></a>::: solution</span>
-<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a>Nous avons que $\sin^2(x)=\frac{1-\cos(2x)}{2}$. Ainsi, \begin{align}</span>
-<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a>\int_{-\pi}^{\pi}\sin^2(x)\,dx&amp;=\int_{-\pi}^{\pi}\frac{1-\cos(2x)}{2}\,dx <span class="sc">\\</span></span>
-<span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a>&amp;=\frac{1}{2}\int_{-\pi}^{\pi}\,dx-\frac{1}{2}\int_{-\pi}^{\pi}\cos(2x)\,dx <span class="sc">\\</span></span>
-<span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a>&amp;=\left. \frac{x}{2}\right|_{x=-\pi}^{\pi}-\left. \frac{1}{4}\sin(2x)\right|_{x=-\pi}^{\pi} <span class="sc">\\</span></span>
-<span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a>&amp;=\pi</span>
-<span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a>\end{align}</span>
-<span id="cb2-184"><a href="#cb2-184" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a>   ::: solution</span>
+<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a>   Posons $u=e^{2x}$. Ainsi, $\frac{\,du}{2}=e^{2x}\,dx$ et $u^2=e^{4x}$. On peut donc écrire</span>
+<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a>   \begin{align}</span>
+<span id="cb2-168"><a href="#cb2-168" aria-hidden="true" tabindex="-1"></a>   \int\frac{e^{2x}\,dx}{1+e^{4x}}&amp;=\frac{1}{2}\int\frac{\,du}{1+u^2} <span class="sc">\\</span></span>
+<span id="cb2-169"><a href="#cb2-169" aria-hidden="true" tabindex="-1"></a>   &amp;=\arctan(u)+C <span class="sc">\\</span></span>
+<span id="cb2-170"><a href="#cb2-170" aria-hidden="true" tabindex="-1"></a>   &amp;=\frac{\arctan(e^{2x})}{2}+C</span>
+<span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a>   \end{align}</span>
+<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a>   :::</span>
+<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a><span class="fu">## Question 2</span></span>
+<span id="cb2-175"><a href="#cb2-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-176"><a href="#cb2-176" aria-hidden="true" tabindex="-1"></a>Évaluez les intégrales définies ci-dessous.</span>
+<span id="cb2-177"><a href="#cb2-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a>#. $$\int_{1}^{\infty}\frac{\,dx}{x}$$</span>
+<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a>   ::: solution</span>
+<span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a>   Nous avons que $$\int_{1}^{\infty}\frac{\,dx}{x}=\lim_{b\rightarrow\infty}\int_{1}^{b}\frac{\,dx}{x}=\lim_{b\rightarrow\infty}\left(\log b-\log 1\right)=\infty.$$</span>
+<span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a>   :::</span>
+<span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-184"><a href="#cb2-184" aria-hidden="true" tabindex="-1"></a>#. $$\int_{-\pi}^{\pi}\sin^2(x)\,dx$$</span>
 <span id="cb2-185"><a href="#cb2-185" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-186"><a href="#cb2-186" aria-hidden="true" tabindex="-1"></a><span class="fu">### (c) $$\int_{0}^{\pi/4}\tan\left(\frac{\theta}{2}\right)\,dx$$</span></span>
-<span id="cb2-187"><a href="#cb2-187" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-188"><a href="#cb2-188" aria-hidden="true" tabindex="-1"></a>::: solution</span>
-<span id="cb2-189"><a href="#cb2-189" aria-hidden="true" tabindex="-1"></a>Posons $u=\theta/2$. Ainsi, $2\,du=\,d\theta$. Nous avons donc que \begin{align}</span>
-<span id="cb2-190"><a href="#cb2-190" aria-hidden="true" tabindex="-1"></a>\int_{0}^{\pi/4}\tan\left(\frac{\theta}{2}\right)\,d\theta&amp;=2\int_{\theta=0}^{\theta=\pi/4}\tan(u)\,du <span class="sc">\\</span></span>
-<span id="cb2-191"><a href="#cb2-191" aria-hidden="true" tabindex="-1"></a>&amp;=\left. 2\log|\sec u|\right|_{\theta=0}^{\theta=\pi/4} <span class="sc">\\</span></span>
-<span id="cb2-192"><a href="#cb2-192" aria-hidden="true" tabindex="-1"></a>&amp;=\left. 2\log\left|\sec \theta/2\right|\right|_{0}^{\pi/4} <span class="sc">\\</span></span>
-<span id="cb2-193"><a href="#cb2-193" aria-hidden="true" tabindex="-1"></a>&amp;=2\left(\frac{1}{\cos \frac{\pi}{8}}-\frac{1}{\cos 0}\right) <span class="sc">\\</span></span>
-<span id="cb2-194"><a href="#cb2-194" aria-hidden="true" tabindex="-1"></a>&amp;=2\left(\frac{1}{\sqrt{2+\sqrt{2}}}-1\right) <span class="sc">\\</span></span>
-<span id="cb2-195"><a href="#cb2-195" aria-hidden="true" tabindex="-1"></a>&amp;=\frac{2\left(\sqrt{2+\sqrt{2}}-2-\sqrt{2}\right)}{2+\sqrt{2}}</span>
-<span id="cb2-196"><a href="#cb2-196" aria-hidden="true" tabindex="-1"></a>\end{align} Pour obtenir que $\cos(\pi/8)=\sqrt{2+\sqrt{2}}$, nous avons utilisé l'identité $\cos^2(x)=\frac{1+\cos(2x)}{2}$ en observant que $\cos(\pi/4)=\sqrt{2}/2$ et en posant $x=\pi/4$.</span>
-<span id="cb2-197"><a href="#cb2-197" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-198"><a href="#cb2-198" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-199"><a href="#cb2-199" aria-hidden="true" tabindex="-1"></a><span class="fu">## Question 3</span></span>
-<span id="cb2-200"><a href="#cb2-200" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-201"><a href="#cb2-201" aria-hidden="true" tabindex="-1"></a>Représentez la région bornée délimitée par les courbes $y=x\sin x$, $y=-x$, $x=0$ et $x=\tfrac{3\pi}{2}$ dans le plan $Oxy$. Déterminez ensuite son aire.</span>
-<span id="cb2-202"><a href="#cb2-202" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-203"><a href="#cb2-203" aria-hidden="true" tabindex="-1"></a>::: solution</span>
-<span id="cb2-204"><a href="#cb2-204" aria-hidden="true" tabindex="-1"></a>Nous allons représenter la région bornée délimitée par les courbes suivantes : 1. $y = x\sin(x)$ 2. $y = -x$ 3. $x = 0$ 4. $x = \frac{3\pi}{2}$</span>
-<span id="cb2-205"><a href="#cb2-205" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-208"><a href="#cb2-208" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb2-209"><a href="#cb2-209" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-region</span></span>
-<span id="cb2-210"><a href="#cb2-210" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Région bornée par les courbes"</span></span>
-<span id="cb2-211"><a href="#cb2-211" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb2-186"><a href="#cb2-186" aria-hidden="true" tabindex="-1"></a>   ::: solution</span>
+<span id="cb2-187"><a href="#cb2-187" aria-hidden="true" tabindex="-1"></a>   Nous avons que $\sin^2(x)=\frac{1-\cos(2x)}{2}$. Ainsi,</span>
+<span id="cb2-188"><a href="#cb2-188" aria-hidden="true" tabindex="-1"></a>   \begin{align}</span>
+<span id="cb2-189"><a href="#cb2-189" aria-hidden="true" tabindex="-1"></a>   \int_{-\pi}^{\pi}\sin^2(x)\,dx&amp;=\int_{-\pi}^{\pi}\frac{1-\cos(2x)}{2}\,dx <span class="sc">\\</span></span>
+<span id="cb2-190"><a href="#cb2-190" aria-hidden="true" tabindex="-1"></a>   &amp;=\frac{1}{2}\int_{-\pi}^{\pi}\,dx-\frac{1}{2}\int_{-\pi}^{\pi}\cos(2x)\,dx <span class="sc">\\</span></span>
+<span id="cb2-191"><a href="#cb2-191" aria-hidden="true" tabindex="-1"></a>   &amp;=\left. \frac{x}{2}\right|_{x=-\pi}^{\pi}-\left. \frac{1}{4}\sin(2x)\right|_{x=-\pi}^{\pi} <span class="sc">\\</span></span>
+<span id="cb2-192"><a href="#cb2-192" aria-hidden="true" tabindex="-1"></a>   &amp;=\pi</span>
+<span id="cb2-193"><a href="#cb2-193" aria-hidden="true" tabindex="-1"></a>   \end{align}</span>
+<span id="cb2-194"><a href="#cb2-194" aria-hidden="true" tabindex="-1"></a>   :::</span>
+<span id="cb2-195"><a href="#cb2-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-196"><a href="#cb2-196" aria-hidden="true" tabindex="-1"></a>#. $$\int_{0}^{\pi/4}\tan\left(\frac{\theta}{2}\right)\,dx$$</span>
+<span id="cb2-197"><a href="#cb2-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-198"><a href="#cb2-198" aria-hidden="true" tabindex="-1"></a>   ::: solution</span>
+<span id="cb2-199"><a href="#cb2-199" aria-hidden="true" tabindex="-1"></a>   Posons $u=\theta/2$. Ainsi, $2\,du=\,d\theta$. Nous avons donc que</span>
+<span id="cb2-200"><a href="#cb2-200" aria-hidden="true" tabindex="-1"></a>   \begin{align}</span>
+<span id="cb2-201"><a href="#cb2-201" aria-hidden="true" tabindex="-1"></a>   \int_{0}^{\pi/4}\tan\left(\frac{\theta}{2}\right)\,d\theta&amp;=2\int_{\theta=0}^{\theta=\pi/4}\tan(u)\,du <span class="sc">\\</span></span>
+<span id="cb2-202"><a href="#cb2-202" aria-hidden="true" tabindex="-1"></a>   &amp;=\left. 2\log|\sec u|\right|_{\theta=0}^{\theta=\pi/4} <span class="sc">\\</span></span>
+<span id="cb2-203"><a href="#cb2-203" aria-hidden="true" tabindex="-1"></a>   &amp;=\left. 2\log\left|\sec \theta/2\right|\right|_{0}^{\pi/4} <span class="sc">\\</span></span>
+<span id="cb2-204"><a href="#cb2-204" aria-hidden="true" tabindex="-1"></a>   &amp;=2\left(\frac{1}{\cos \frac{\pi}{8}}-\frac{1}{\cos 0}\right) <span class="sc">\\</span></span>
+<span id="cb2-205"><a href="#cb2-205" aria-hidden="true" tabindex="-1"></a>   &amp;=2\left(\frac{1}{\sqrt{2+\sqrt{2}}}-1\right) <span class="sc">\\</span></span>
+<span id="cb2-206"><a href="#cb2-206" aria-hidden="true" tabindex="-1"></a>   &amp;=\frac{2\left(\sqrt{2+\sqrt{2}}-2-\sqrt{2}\right)}{2+\sqrt{2}}</span>
+<span id="cb2-207"><a href="#cb2-207" aria-hidden="true" tabindex="-1"></a>   \end{align}</span>
+<span id="cb2-208"><a href="#cb2-208" aria-hidden="true" tabindex="-1"></a>   Pour obtenir que $\cos(\pi/8)=\sqrt{2+\sqrt{2}}$, nous avons utilisé l'identité $\cos^2(x)=\frac{1+\cos(2x)}{2}$ en observant que $\cos(\pi/4)=\sqrt{2}/2$ et en posant $x=\pi/4$.</span>
+<span id="cb2-209"><a href="#cb2-209" aria-hidden="true" tabindex="-1"></a>   :::</span>
+<span id="cb2-210"><a href="#cb2-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-211"><a href="#cb2-211" aria-hidden="true" tabindex="-1"></a><span class="fu">## Question 3</span></span>
 <span id="cb2-212"><a href="#cb2-212" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-213"><a href="#cb2-213" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb2-214"><a href="#cb2-214" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb2-215"><a href="#cb2-215" aria-hidden="true" tabindex="-1"></a><span class="co"># Création des points pour les courbes</span></span>
-<span id="cb2-216"><a href="#cb2-216" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">3</span><span class="op">*</span>np.pi<span class="op">/</span><span class="dv">2</span>, <span class="dv">1000</span>)</span>
-<span id="cb2-217"><a href="#cb2-217" aria-hidden="true" tabindex="-1"></a>y1 <span class="op">=</span> x <span class="op">*</span> np.sin(x)  <span class="co"># Courbe y = x*sin(x)</span></span>
-<span id="cb2-218"><a href="#cb2-218" aria-hidden="true" tabindex="-1"></a>y2 <span class="op">=</span> <span class="op">-</span>x             <span class="co"># Droite y = -x</span></span>
-<span id="cb2-219"><a href="#cb2-219" aria-hidden="true" tabindex="-1"></a><span class="co"># Création de la figure</span></span>
-<span id="cb2-220"><a href="#cb2-220" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">8</span>))</span>
-<span id="cb2-221"><a href="#cb2-221" aria-hidden="true" tabindex="-1"></a><span class="co"># Tracer les courbes</span></span>
-<span id="cb2-222"><a href="#cb2-222" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y1, <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'y = x·sin(x)'</span>)</span>
-<span id="cb2-223"><a href="#cb2-223" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y2, <span class="st">'r-'</span>, label<span class="op">=</span><span class="st">'y = -x'</span>)  <span class="co"># Changé ici de 'b-' à 'r-'</span></span>
-<span id="cb2-224"><a href="#cb2-224" aria-hidden="true" tabindex="-1"></a><span class="co"># Remplir la région entre les courbes</span></span>
-<span id="cb2-225"><a href="#cb2-225" aria-hidden="true" tabindex="-1"></a>plt.fill_between(x, y1, y2, color<span class="op">=</span><span class="st">'darkblue'</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb2-226"><a href="#cb2-226" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajouter une ligne verticale à x = 3π/2</span></span>
-<span id="cb2-227"><a href="#cb2-227" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span><span class="dv">3</span><span class="op">*</span>np.pi<span class="op">/</span><span class="dv">2</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, label<span class="op">=</span><span class="st">'x = 3π/2'</span>)</span>
-<span id="cb2-228"><a href="#cb2-228" aria-hidden="true" tabindex="-1"></a><span class="co"># Paramètres des axes</span></span>
-<span id="cb2-229"><a href="#cb2-229" aria-hidden="true" tabindex="-1"></a>plt.axhline(y<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">'-'</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb2-230"><a href="#cb2-230" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">'-'</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb2-231"><a href="#cb2-231" aria-hidden="true" tabindex="-1"></a><span class="co"># Étiquettes des axes</span></span>
-<span id="cb2-232"><a href="#cb2-232" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'x'</span>)</span>
-<span id="cb2-233"><a href="#cb2-233" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'y'</span>)</span>
-<span id="cb2-234"><a href="#cb2-234" aria-hidden="true" tabindex="-1"></a><span class="co"># Limites des axes</span></span>
-<span id="cb2-235"><a href="#cb2-235" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="op">-</span><span class="fl">0.5</span>, <span class="dv">5</span>)</span>
-<span id="cb2-236"><a href="#cb2-236" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>)</span>
-<span id="cb2-237"><a href="#cb2-237" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajouter les ticks spéciaux pour π</span></span>
-<span id="cb2-238"><a href="#cb2-238" aria-hidden="true" tabindex="-1"></a>ticks <span class="op">=</span> [<span class="dv">0</span>, np.pi<span class="op">/</span><span class="dv">2</span>, np.pi, <span class="dv">3</span><span class="op">*</span>np.pi<span class="op">/</span><span class="dv">2</span>]</span>
-<span id="cb2-239"><a href="#cb2-239" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [<span class="st">'0'</span>, <span class="st">'π/2'</span>, <span class="st">'π'</span>, <span class="st">'3π/2'</span>]</span>
-<span id="cb2-240"><a href="#cb2-240" aria-hidden="true" tabindex="-1"></a>plt.xticks(ticks, labels)</span>
-<span id="cb2-241"><a href="#cb2-241" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajouter une grille</span></span>
-<span id="cb2-242"><a href="#cb2-242" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
-<span id="cb2-243"><a href="#cb2-243" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajouter une légende</span></span>
-<span id="cb2-244"><a href="#cb2-244" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb2-245"><a href="#cb2-245" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajuster la mise en page</span></span>
-<span id="cb2-246"><a href="#cb2-246" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb2-247"><a href="#cb2-247" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher le graphique</span></span>
-<span id="cb2-248"><a href="#cb2-248" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb2-249"><a href="#cb2-249" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-250"><a href="#cb2-250" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-251"><a href="#cb2-251" aria-hidden="true" tabindex="-1"></a>L'aire de la région considérée correspond à l'intégrale $\int_{0}^{\frac{3\pi}{2}}(x\sin(x)-(-x))\,dx$. D'abord, en intégrant par parties, on trouve que la fonction $-x\cos(x)+\sin(x)$ est une primitive de la fonction $x\sin(x)$. Ainsi, \begin{align}</span>
-<span id="cb2-252"><a href="#cb2-252" aria-hidden="true" tabindex="-1"></a>\int_{0}^{\frac{3\pi}{2}}(x\sin(x)-(-x))\,dx&amp;=\int_{0}^{\frac{3\pi}{2}}x\sin(x)\,dx+\int_{0}^{\frac{3\pi}{2}}x\,dx <span class="sc">\\</span></span>
-<span id="cb2-253"><a href="#cb2-253" aria-hidden="true" tabindex="-1"></a>&amp;=\left(-x\cos(x)+\sin(x)\right)\Big|_{0}^{\frac{3\pi}{2}}+\frac{x^2}{2}\Big|_{0}^{\frac{3\pi}{2}} <span class="sc">\\</span></span>
-<span id="cb2-254"><a href="#cb2-254" aria-hidden="true" tabindex="-1"></a>&amp;=\frac{9\pi^2-8}{8}</span>
-<span id="cb2-255"><a href="#cb2-255" aria-hidden="true" tabindex="-1"></a>\end{align}</span>
-<span id="cb2-256"><a href="#cb2-256" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-257"><a href="#cb2-257" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-258"><a href="#cb2-258" aria-hidden="true" tabindex="-1"></a><span class="fu">## Question 4</span></span>
-<span id="cb2-259"><a href="#cb2-259" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-260"><a href="#cb2-260" aria-hidden="true" tabindex="-1"></a>En utilisant la méthode de Riemann, montrez que $\int_0^1x^2\,dx=\frac{1}{3}$.</span>
+<span id="cb2-213"><a href="#cb2-213" aria-hidden="true" tabindex="-1"></a>Représentez la région bornée délimitée par les courbes $y=x\sin x$, $y=-x$, $x=0$ et $x=\tfrac{3\pi}{2}$ dans le plan $Oxy$. Déterminez ensuite son aire.</span>
+<span id="cb2-214"><a href="#cb2-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-215"><a href="#cb2-215" aria-hidden="true" tabindex="-1"></a>::: solution</span>
+<span id="cb2-216"><a href="#cb2-216" aria-hidden="true" tabindex="-1"></a>Nous allons représenter la région bornée délimitée par les courbes suivantes : 1. $y = x\sin(x)$ 2. $y = -x$ 3. $x = 0$ 4. $x = \frac{3\pi}{2}$</span>
+<span id="cb2-217"><a href="#cb2-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-220"><a href="#cb2-220" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb2-221"><a href="#cb2-221" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-region</span></span>
+<span id="cb2-222"><a href="#cb2-222" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Région bornée par les courbes"</span></span>
+<span id="cb2-223"><a href="#cb2-223" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb2-224"><a href="#cb2-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-225"><a href="#cb2-225" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-226"><a href="#cb2-226" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-227"><a href="#cb2-227" aria-hidden="true" tabindex="-1"></a><span class="co"># Création des points pour les courbes</span></span>
+<span id="cb2-228"><a href="#cb2-228" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">3</span><span class="op">*</span>np.pi<span class="op">/</span><span class="dv">2</span>, <span class="dv">1000</span>)</span>
+<span id="cb2-229"><a href="#cb2-229" aria-hidden="true" tabindex="-1"></a>y1 <span class="op">=</span> x <span class="op">*</span> np.sin(x)  <span class="co"># Courbe y = x*sin(x)</span></span>
+<span id="cb2-230"><a href="#cb2-230" aria-hidden="true" tabindex="-1"></a>y2 <span class="op">=</span> <span class="op">-</span>x             <span class="co"># Droite y = -x</span></span>
+<span id="cb2-231"><a href="#cb2-231" aria-hidden="true" tabindex="-1"></a><span class="co"># Création de la figure</span></span>
+<span id="cb2-232"><a href="#cb2-232" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="fl">7.5</span>, <span class="dv">8</span>))</span>
+<span id="cb2-233"><a href="#cb2-233" aria-hidden="true" tabindex="-1"></a><span class="co"># Tracer les courbes</span></span>
+<span id="cb2-234"><a href="#cb2-234" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y1, <span class="st">'b-'</span>, label<span class="op">=</span><span class="st">'y = x·sin(x)'</span>)</span>
+<span id="cb2-235"><a href="#cb2-235" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y2, <span class="st">'r-'</span>, label<span class="op">=</span><span class="st">'y = -x'</span>)  <span class="co"># Changé ici de 'b-' à 'r-'</span></span>
+<span id="cb2-236"><a href="#cb2-236" aria-hidden="true" tabindex="-1"></a><span class="co"># Remplir la région entre les courbes</span></span>
+<span id="cb2-237"><a href="#cb2-237" aria-hidden="true" tabindex="-1"></a>plt.fill_between(x, y1, y2, color<span class="op">=</span><span class="st">'darkblue'</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb2-238"><a href="#cb2-238" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span><span class="dv">3</span><span class="op">*</span>np.pi<span class="op">/</span><span class="dv">2</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, label<span class="op">=</span><span class="st">'x = 3π/2'</span>)</span>
+<span id="cb2-239"><a href="#cb2-239" aria-hidden="true" tabindex="-1"></a><span class="co"># Paramètres des axes</span></span>
+<span id="cb2-240"><a href="#cb2-240" aria-hidden="true" tabindex="-1"></a>plt.axhline(y<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">'-'</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb2-241"><a href="#cb2-241" aria-hidden="true" tabindex="-1"></a>plt.axvline(x<span class="op">=</span><span class="dv">0</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">'-'</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb2-242"><a href="#cb2-242" aria-hidden="true" tabindex="-1"></a><span class="co"># Étiquettes des axes</span></span>
+<span id="cb2-243"><a href="#cb2-243" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'x'</span>)</span>
+<span id="cb2-244"><a href="#cb2-244" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'y'</span>)</span>
+<span id="cb2-245"><a href="#cb2-245" aria-hidden="true" tabindex="-1"></a><span class="co"># Limites des axes</span></span>
+<span id="cb2-246"><a href="#cb2-246" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="op">-</span><span class="fl">0.1</span>, <span class="dv">5</span>)</span>
+<span id="cb2-247"><a href="#cb2-247" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>)</span>
+<span id="cb2-248"><a href="#cb2-248" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajouter les ticks spéciaux pour</span></span>
+<span id="cb2-249"><a href="#cb2-249" aria-hidden="true" tabindex="-1"></a>ticks <span class="op">=</span> [<span class="dv">0</span>, np.pi<span class="op">/</span><span class="dv">2</span>, np.pi, <span class="dv">3</span><span class="op">*</span>np.pi<span class="op">/</span><span class="dv">2</span>]</span>
+<span id="cb2-250"><a href="#cb2-250" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [<span class="st">'0'</span>, <span class="st">'π/2'</span>, <span class="st">'π'</span>, <span class="st">'3π/2'</span>]</span>
+<span id="cb2-251"><a href="#cb2-251" aria-hidden="true" tabindex="-1"></a>plt.xticks(ticks, labels)</span>
+<span id="cb2-252"><a href="#cb2-252" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajouter une grille</span></span>
+<span id="cb2-253"><a href="#cb2-253" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb2-254"><a href="#cb2-254" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajouter une légende</span></span>
+<span id="cb2-255"><a href="#cb2-255" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb2-256"><a href="#cb2-256" aria-hidden="true" tabindex="-1"></a><span class="co"># Ajuster la mise en page</span></span>
+<span id="cb2-257"><a href="#cb2-257" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb2-258"><a href="#cb2-258" aria-hidden="true" tabindex="-1"></a><span class="co"># Afficher le graphique</span></span>
+<span id="cb2-259"><a href="#cb2-259" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb2-260"><a href="#cb2-260" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb2-261"><a href="#cb2-261" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-262"><a href="#cb2-262" aria-hidden="true" tabindex="-1"></a>::: solution</span>
-<span id="cb2-263"><a href="#cb2-263" aria-hidden="true" tabindex="-1"></a>On divise l'intervalle $<span class="co">[</span><span class="ot">0,1</span><span class="co">]</span>$ en $n$ intervalles de longueur $1/n$. Soit $A_n$ l'aire de la région occupée par les $n$ rectangles inscrits sous la parabole. Posons $f(x)=x^2$. Ainsi, \begin{align}</span>
-<span id="cb2-264"><a href="#cb2-264" aria-hidden="true" tabindex="-1"></a>A_n&amp;=\frac{1}{n}f(0)+\frac{1}{n}f\left(0+\frac{1}{n}\right)+\frac{1}{n}f\left(0+\frac{2}{n}\right)+\ldots+\frac{1}{n}f\left(0+\frac{n-1}{n}\right) <span class="sc">\\</span></span>
-<span id="cb2-265"><a href="#cb2-265" aria-hidden="true" tabindex="-1"></a>&amp;=\frac{1}{n}\sum_{k=0}^{n-1}f\left(\frac{k}{n}\right) <span class="sc">\\</span></span>
-<span id="cb2-266"><a href="#cb2-266" aria-hidden="true" tabindex="-1"></a>&amp;=\frac{1}{n}\sum_{k=0}^{n-1}\frac{k^2}{n^2} <span class="sc">\\</span></span>
-<span id="cb2-267"><a href="#cb2-267" aria-hidden="true" tabindex="-1"></a>&amp;=\frac{1}{n^3}\sum_{k=0}^{n-1}k^2 <span class="sc">\\</span></span>
-<span id="cb2-268"><a href="#cb2-268" aria-hidden="true" tabindex="-1"></a>&amp;=\frac{1}{n^3}\cdot\frac{n(n-1)(2(n-1)+1)}{6} <span class="sc">\\</span></span>
-<span id="cb2-269"><a href="#cb2-269" aria-hidden="true" tabindex="-1"></a>&amp;=\frac{(n-1)(2n-1)}{6n^2}</span>
-<span id="cb2-270"><a href="#cb2-270" aria-hidden="true" tabindex="-1"></a>\end{align} Au passage, nous avons utilisé la formule $\sum_{k=1}^nk^2=\frac{n(n+1)(2n+1)}{6}$. Ainsi, \begin{align}</span>
-<span id="cb2-271"><a href="#cb2-271" aria-hidden="true" tabindex="-1"></a>\int_{0}^1 x^2\,dx&amp;=\lim_{n\rightarrow\infty}A_n=\lim_{n\rightarrow\infty}\frac{(n-1)(2n-1)}{6n^2} <span class="sc">\\</span></span>
-<span id="cb2-272"><a href="#cb2-272" aria-hidden="true" tabindex="-1"></a>&amp;=\lim_{n\rightarrow\infty}\frac{2n^2-3n+1}{6n^2} <span class="sc">\\</span></span>
-<span id="cb2-273"><a href="#cb2-273" aria-hidden="true" tabindex="-1"></a>&amp;=1/3.</span>
-<span id="cb2-274"><a href="#cb2-274" aria-hidden="true" tabindex="-1"></a>\end{align}</span>
-<span id="cb2-275"><a href="#cb2-275" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb2-276"><a href="#cb2-276" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-277"><a href="#cb2-277" aria-hidden="true" tabindex="-1"></a><span class="fu">## Question 5</span></span>
-<span id="cb2-278"><a href="#cb2-278" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-279"><a href="#cb2-279" aria-hidden="true" tabindex="-1"></a>Soit $a\in\mathbb{R}$ et soit $f$ une fonction continue et impaire sur l'intervalle $<span class="co">[</span><span class="ot">-a,a</span><span class="co">]</span>$. Montrez que $\int_{-a}^{a}f(x)\,dx=0$.</span>
-<span id="cb2-280"><a href="#cb2-280" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-281"><a href="#cb2-281" aria-hidden="true" tabindex="-1"></a>::: solution</span>
-<span id="cb2-282"><a href="#cb2-282" aria-hidden="true" tabindex="-1"></a>Géométriquement, le fait que la fonction soit impaire entraîne que l'axe des $x$ partage la région entre le graphe de la fonction et l'axe des $x$ en deux régions dont l'aire géométrique est la même. La région sous l'axe des $x$ possède une aire algébrique négative, et celle au-dessus de l'axe des $x$ possède une aire algébrique positive. Donc en choisissant un intervalle qui possède son point milieu en 0, on a nécessairement que la somme de l'aire (algébrique) de la région considérée est nulle. \begin{align}</span>
-<span id="cb2-283"><a href="#cb2-283" aria-hidden="true" tabindex="-1"></a>\int_{-a}^{0}f(x)\,dx&amp;=\int_{-a}^{0}-f(-x)\,dx &amp; \qquad\text{(car $f(-x)=-f(x)$ si $f$ est impaire)} <span class="sc">\\</span></span>
-<span id="cb2-284"><a href="#cb2-284" aria-hidden="true" tabindex="-1"></a>&amp;=-\int_{x=-a}^{x=0}f(-x)\,dx <span class="sc">\\</span></span>
-<span id="cb2-285"><a href="#cb2-285" aria-hidden="true" tabindex="-1"></a>&amp;=\int_{x=-a}^{x=0}f(u)\,du &amp; \qquad \text{(en posant $u=-x$)} <span class="sc">\\</span></span>
-<span id="cb2-286"><a href="#cb2-286" aria-hidden="true" tabindex="-1"></a>&amp;=\int_{u=a}^{u=0}f(u)\,du <span class="sc">\\</span></span>
-<span id="cb2-287"><a href="#cb2-287" aria-hidden="true" tabindex="-1"></a>&amp;=-\int_{u=0}^{u=a}f(u)\,du &amp; \qquad \text{(propriété de l'intégrale)} <span class="sc">\\</span></span>
-<span id="cb2-288"><a href="#cb2-288" aria-hidden="true" tabindex="-1"></a>&amp;=-\int_{0}^{a}f(u)\,du.</span>
-<span id="cb2-289"><a href="#cb2-289" aria-hidden="true" tabindex="-1"></a>\end{align}</span>
-<span id="cb2-290"><a href="#cb2-290" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-262"><a href="#cb2-262" aria-hidden="true" tabindex="-1"></a>L'aire de la région considérée correspond à l'intégrale $\int_{0}^{\frac{3\pi}{2}}(x\sin(x)-(-x))\,dx$. D'abord, en intégrant par parties, on trouve que la fonction $-x\cos(x)+\sin(x)$ est une primitive de la fonction $x\sin(x)$. Ainsi, \begin{align}</span>
+<span id="cb2-263"><a href="#cb2-263" aria-hidden="true" tabindex="-1"></a>\int_{0}^{\frac{3\pi}{2}}(x\sin(x)-(-x))\,dx&amp;=\int_{0}^{\frac{3\pi}{2}}x\sin(x)\,dx+\int_{0}^{\frac{3\pi}{2}}x\,dx <span class="sc">\\</span></span>
+<span id="cb2-264"><a href="#cb2-264" aria-hidden="true" tabindex="-1"></a>&amp;=\left(-x\cos(x)+\sin(x)\right)\Big|_{0}^{\frac{3\pi}{2}}+\frac{x^2}{2}\Big|_{0}^{\frac{3\pi}{2}} <span class="sc">\\</span></span>
+<span id="cb2-265"><a href="#cb2-265" aria-hidden="true" tabindex="-1"></a>&amp;=\frac{9\pi^2-8}{8}</span>
+<span id="cb2-266"><a href="#cb2-266" aria-hidden="true" tabindex="-1"></a>\end{align}</span>
+<span id="cb2-267"><a href="#cb2-267" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-268"><a href="#cb2-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-269"><a href="#cb2-269" aria-hidden="true" tabindex="-1"></a><span class="fu">## Question 4</span></span>
+<span id="cb2-270"><a href="#cb2-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-271"><a href="#cb2-271" aria-hidden="true" tabindex="-1"></a>En utilisant la méthode de Riemann, montrez que $\int_0^1x^2\,dx=\frac{1}{3}$.</span>
+<span id="cb2-272"><a href="#cb2-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-273"><a href="#cb2-273" aria-hidden="true" tabindex="-1"></a>::: solution</span>
+<span id="cb2-274"><a href="#cb2-274" aria-hidden="true" tabindex="-1"></a>On divise l'intervalle $<span class="co">[</span><span class="ot">0,1</span><span class="co">]</span>$ en $n$ intervalles de longueur $1/n$. Soit $A_n$ l'aire de la région occupée par les $n$ rectangles inscrits sous la parabole. Posons $f(x)=x^2$. Ainsi, \begin{align}</span>
+<span id="cb2-275"><a href="#cb2-275" aria-hidden="true" tabindex="-1"></a>A_n&amp;=\frac{1}{n}f(0)+\frac{1}{n}f\left(0+\frac{1}{n}\right)+\frac{1}{n}f\left(0+\frac{2}{n}\right)+\ldots+\frac{1}{n}f\left(0+\frac{n-1}{n}\right) <span class="sc">\\</span></span>
+<span id="cb2-276"><a href="#cb2-276" aria-hidden="true" tabindex="-1"></a>&amp;=\frac{1}{n}\sum_{k=0}^{n-1}f\left(\frac{k}{n}\right) <span class="sc">\\</span></span>
+<span id="cb2-277"><a href="#cb2-277" aria-hidden="true" tabindex="-1"></a>&amp;=\frac{1}{n}\sum_{k=0}^{n-1}\frac{k^2}{n^2} <span class="sc">\\</span></span>
+<span id="cb2-278"><a href="#cb2-278" aria-hidden="true" tabindex="-1"></a>&amp;=\frac{1}{n^3}\sum_{k=0}^{n-1}k^2 <span class="sc">\\</span></span>
+<span id="cb2-279"><a href="#cb2-279" aria-hidden="true" tabindex="-1"></a>&amp;=\frac{1}{n^3}\cdot\frac{n(n-1)(2(n-1)+1)}{6} <span class="sc">\\</span></span>
+<span id="cb2-280"><a href="#cb2-280" aria-hidden="true" tabindex="-1"></a>&amp;=\frac{(n-1)(2n-1)}{6n^2}</span>
+<span id="cb2-281"><a href="#cb2-281" aria-hidden="true" tabindex="-1"></a>\end{align} Au passage, nous avons utilisé la formule $\sum_{k=1}^nk^2=\frac{n(n+1)(2n+1)}{6}$. Ainsi, \begin{align}</span>
+<span id="cb2-282"><a href="#cb2-282" aria-hidden="true" tabindex="-1"></a>\int_{0}^1 x^2\,dx&amp;=\lim_{n\rightarrow\infty}A_n=\lim_{n\rightarrow\infty}\frac{(n-1)(2n-1)}{6n^2} <span class="sc">\\</span></span>
+<span id="cb2-283"><a href="#cb2-283" aria-hidden="true" tabindex="-1"></a>&amp;=\lim_{n\rightarrow\infty}\frac{2n^2-3n+1}{6n^2} <span class="sc">\\</span></span>
+<span id="cb2-284"><a href="#cb2-284" aria-hidden="true" tabindex="-1"></a>&amp;=1/3.</span>
+<span id="cb2-285"><a href="#cb2-285" aria-hidden="true" tabindex="-1"></a>\end{align}</span>
+<span id="cb2-286"><a href="#cb2-286" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-287"><a href="#cb2-287" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-288"><a href="#cb2-288" aria-hidden="true" tabindex="-1"></a><span class="fu">## Question 5</span></span>
+<span id="cb2-289"><a href="#cb2-289" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-290"><a href="#cb2-290" aria-hidden="true" tabindex="-1"></a>Soit $a\in\mathbb{R}$ et soit $f$ une fonction continue et impaire sur l'intervalle $<span class="co">[</span><span class="ot">-a,a</span><span class="co">]</span>$. Montrez que $\int_{-a}^{a}f(x)\,dx=0$.</span>
 <span id="cb2-291"><a href="#cb2-291" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-292"><a href="#cb2-292" aria-hidden="true" tabindex="-1"></a><span class="fu">## Question 6</span></span>
-<span id="cb2-293"><a href="#cb2-293" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-294"><a href="#cb2-294" aria-hidden="true" tabindex="-1"></a>Évaluez l'intégrale définie suivante : $\int_{-\pi}^{\pi}x^{2017}\sin\left(\frac{1}{x^2+1}\right)\,dx$.</span>
-<span id="cb2-295"><a href="#cb2-295" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-296"><a href="#cb2-296" aria-hidden="true" tabindex="-1"></a>::: solution</span>
-<span id="cb2-297"><a href="#cb2-297" aria-hidden="true" tabindex="-1"></a>La fonction est impaire et l'intervalle d'intégration est symétrique par rapport à $0$, donc l'intégrale vaut $0$.</span>
-<span id="cb2-298"><a href="#cb2-298" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-292"><a href="#cb2-292" aria-hidden="true" tabindex="-1"></a>::: solution</span>
+<span id="cb2-293"><a href="#cb2-293" aria-hidden="true" tabindex="-1"></a>Géométriquement, le fait que la fonction soit impaire entraîne que l'axe des $x$ partage la région entre le graphe de la fonction et l'axe des $x$ en deux régions dont l'aire géométrique est la même. La région sous l'axe des $x$ possède une aire algébrique négative, et celle au-dessus de l'axe des $x$ possède une aire algébrique positive. Donc en choisissant un intervalle qui possède son point milieu en 0, on a nécessairement que la somme de l'aire (algébrique) de la région considérée est nulle. \begin{align}</span>
+<span id="cb2-294"><a href="#cb2-294" aria-hidden="true" tabindex="-1"></a>\int_{-a}^{0}f(x)\,dx&amp;=\int_{-a}^{0}-f(-x)\,dx &amp; \qquad\text{(car $f(-x)=-f(x)$ si $f$ est impaire)} <span class="sc">\\</span></span>
+<span id="cb2-295"><a href="#cb2-295" aria-hidden="true" tabindex="-1"></a>&amp;=-\int_{x=-a}^{x=0}f(-x)\,dx <span class="sc">\\</span></span>
+<span id="cb2-296"><a href="#cb2-296" aria-hidden="true" tabindex="-1"></a>&amp;=\int_{x=-a}^{x=0}f(u)\,du &amp; \qquad \text{(en posant $u=-x$)} <span class="sc">\\</span></span>
+<span id="cb2-297"><a href="#cb2-297" aria-hidden="true" tabindex="-1"></a>&amp;=\int_{u=a}^{u=0}f(u)\,du <span class="sc">\\</span></span>
+<span id="cb2-298"><a href="#cb2-298" aria-hidden="true" tabindex="-1"></a>&amp;=-\int_{u=0}^{u=a}f(u)\,du &amp; \qquad \text{(propriété de l'intégrale)} <span class="sc">\\</span></span>
+<span id="cb2-299"><a href="#cb2-299" aria-hidden="true" tabindex="-1"></a>&amp;=-\int_{0}^{a}f(u)\,du.</span>
+<span id="cb2-300"><a href="#cb2-300" aria-hidden="true" tabindex="-1"></a>\end{align}</span>
+<span id="cb2-301"><a href="#cb2-301" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb2-302"><a href="#cb2-302" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-303"><a href="#cb2-303" aria-hidden="true" tabindex="-1"></a><span class="fu">## Question 6</span></span>
+<span id="cb2-304"><a href="#cb2-304" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-305"><a href="#cb2-305" aria-hidden="true" tabindex="-1"></a>Évaluez l'intégrale définie $$\int_{-\pi}^{\pi}x^{2017}\sin\left(\frac{1}{x^2+1}\right)\,dx.$$</span>
+<span id="cb2-306"><a href="#cb2-306" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-307"><a href="#cb2-307" aria-hidden="true" tabindex="-1"></a>::: solution</span>
+<span id="cb2-308"><a href="#cb2-308" aria-hidden="true" tabindex="-1"></a>La fonction est impaire et l'intervalle d'intégration est symétrique par rapport à $0$, donc l'intégrale vaut $0$.</span>
+<span id="cb2-309"><a href="#cb2-309" aria-hidden="true" tabindex="-1"></a>:::</span>
 </code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
