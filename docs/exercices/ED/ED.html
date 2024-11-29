@@ -326,7 +326,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <div>
     <div class="quarto-title-meta-heading">Dernière mise à jour</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">31 octobre 2024 à 15:01</p>
+      <p class="date">29 novembre 2024 à 08:27</p>
     </div>
   </div>
   
@@ -376,21 +376,100 @@ document.addEventListener('DOMContentLoaded', function() {
 <section id="question-6" class="level2">
 <h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
 <p>Lorsqu’une personne avale une substance toxique, son foie tente de l’éliminer. Généralement, le taux d’élimination de la quantité de substance encore présente dans l’organisme au temps <span class="math inline">\(t\)</span> — que nous noterons <span class="math inline">\(Q(t)\)</span> — est proportionnel à la quantité de substance encore présente dans l’organisme au temps <span class="math inline">\(t\)</span>. Au temps <span class="math inline">\(t=0\)</span>, Jocelyn a avalé une quantité <span class="math inline">\(Q_0\)</span> d’un liquide toxique. Après 3 heures, on a estimé que son foie avait éliminé 50% du liquide. D’après ce modèle, combien d’heures se seront écoulées entre le moment où Jocelyn a avalé le produit et celui où il en aura éliminé 90%?</p>
+<div class="solution proof">
+<p><span class="proof-title"><em>Solution</em>. </span>L’équation différentielle qui modélise ce problème est : <span class="math display">\[
+\frac{dQ}{dt} = -kQ,
+\]</span> où <span class="math inline">\(k &gt; 0\)</span> est une constante de proportionnalité.</p>
+<p><strong>Solution générale</strong><br>
+La solution de cette équation différentielle est donnée par : <span class="math display">\[
+Q(t) = Q_0 e^{-kt},
+\]</span> où <span class="math inline">\(Q_0\)</span> est la quantité initiale de la substance au temps <span class="math inline">\(t = 0\)</span>.</p>
+<p><strong>Détermination de la constante</strong> <span class="math inline">\(k\)</span><br>
+On utilise l’information donnée : après 3 heures, <span class="math inline">\(Q(3) = \frac{Q_0}{2}\)</span>. Substituons dans l’équation <span class="math inline">\(Q(t) = Q_0 e^{-kt}\)</span> : <span class="math display">\[
+\frac{Q_0}{2} = Q_0 e^{-3k}.
+\]</span> En simplifiant par <span class="math inline">\(Q_0\)</span> (non nul) : <span class="math display">\[
+\frac{1}{2} = e^{-3k}.
+\]</span> Prenons le logarithme naturel des deux côtés : <span class="math display">\[
+\ln\left(\frac{1}{2}\right) = -3k \quad \implies \quad k = -\frac{\ln\left(\frac{1}{2}\right)}{3} = \frac{\ln(2)}{3}.
+\]</span></p>
+<p><strong>Détermination du temps pour éliminer 90% de la substance</strong><br>
+Pour éliminer 90% de la substance, il doit rester 10% de la quantité initiale, soit <span class="math inline">\(Q(t) = 0{,}1Q_0\)</span>. Substituons dans l’équation <span class="math inline">\(Q(t) = Q_0 e^{-kt}\)</span> : <span class="math display">\[
+0{,}1Q_0 = Q_0 e^{-kt}.
+\]</span> Simplifions par <span class="math inline">\(Q_0\)</span> : <span class="math display">\[
+0{,}1 = e^{-kt}.
+\]</span> Prenons le logarithme naturel des deux côtés : <span class="math display">\[
+\ln(0{,}1) = -kt.
+\]</span> Substituons la valeur de <span class="math inline">\(k = \frac{\ln(2)}{3}\)</span> : <span class="math display">\[
+\ln(0{,}1) = -\frac{\ln(2)}{3} t.
+\]</span> Isolons <span class="math inline">\(t\)</span> : <span class="math display">\[
+t = -\frac{\ln(0{,}1)}{\frac{\ln(2)}{3}} = -\frac{3 \ln(0{,}1)}{\ln(2)}.
+\]</span></p>
+<p><strong>Calcul numérique</strong><br>
+Les logarithmes naturels de <span class="math inline">\(0{,}1\)</span> et <span class="math inline">\(2\)</span> sont approximativement : <span class="math display">\[
+\ln(0{,}1) \approx -2{,}3026, \quad \ln(2) \approx 0{,}6931.
+\]</span> Substituons ces valeurs : <span class="math display">\[
+t = -\frac{3 \times -2{,}3026}{0{,}6931} \approx \frac{6{,}9078}{0{,}6931} \approx 9{,}97.
+\]</span></p>
+<p><strong>Conclusion</strong><br>
+Jocelyn mettra environ <span class="math inline">\(10\)</span> heures pour éliminer 90 % du liquide toxique.</p>
+</div>
 </section>
 <section id="question-7" class="level2">
 <h2 class="anchored" data-anchor-id="question-7">Question 7</h2>
 <p>Un vêtement pesant 50 grammes est plongée dans un bassin d’eau. En le sortant du bassin, au temps <span class="math inline">\(t=0\)</span>, sa masse est de 200 grammes. On l’étend immédiatement sur une corde à linge pour qu’il sèche. On observe qu’après 180 minutes, sa masse est de 100 grammes. Combien de minutes se seront écoulées entre le moment où le vêtement est sorti du bassin et celui où il aura évacué 99% de l’eau qu’il contenait initialement? Arrondissez à la minute. Pour répondre à cette question, on fera l’hypothèse que le taux d’évaporation d’eau dans le vêtement est proportionnel à la quantité d’eau présente dans celui-ci.</p>
+<div class="solution proof">
+<p><span class="proof-title"><em>Solution</em>. </span>Un vêtement pesant <span class="math inline">\(50\)</span> grammes est plongé dans un bassin d’eau. Au temps <span class="math inline">\(t=0\)</span>, sa masse est de <span class="math inline">\(200\)</span> grammes. Cela signifie qu’il contient <span class="math inline">\(200 - 50 = 150\)</span> grammes d’eau au départ. On observe qu’après <span class="math inline">\(180\)</span> minutes, sa masse est de <span class="math inline">\(100\)</span> grammes, soit <span class="math inline">\(100 - 50 = 50\)</span> grammes d’eau. Le taux d’évaporation de l’eau est supposé proportionnel à la quantité d’eau présente.</p>
+<p><strong>Modélisation mathématique</strong></p>
+<p>Soit <span class="math inline">\(Q(t)\)</span> la quantité d’eau (en grammes) présente dans le vêtement au temps <span class="math inline">\(t\)</span>. Le modèle donné est : <span class="math display">\[
+\frac{dQ}{dt} = -kQ,
+\]</span> où <span class="math inline">\(k &gt; 0\)</span> est une constante de proportionnalité. La solution de cette équation différentielle est : <span class="math display">\[
+Q(t) = Q_0 e^{-kt},
+\]</span> où <span class="math inline">\(Q_0\)</span> est la quantité initiale d’eau dans le vêtement (<span class="math inline">\(Q_0 = 150\)</span> g).</p>
+<p><strong>Étape 1 : Détermination de la constante</strong> <span class="math inline">\(k\)</span></p>
+<p>On sait qu’après <span class="math inline">\(t = 180\)</span> minutes, il reste <span class="math inline">\(50\)</span> grammes d’eau, soit <span class="math inline">\(Q(180) = 50\)</span>. Substituons dans l’équation de la solution : <span class="math display">\[
+Q(180) = Q_0 e^{-k \cdot 180}.
+\]</span> Cela donne : <span class="math display">\[
+50 = 150 e^{-180k}.
+\]</span> Simplifions par <span class="math inline">\(150\)</span> : <span class="math display">\[
+\frac{50}{150} = e^{-180k} \quad \implies \quad \frac{1}{3} = e^{-180k}.
+\]</span> Prenons le logarithme naturel des deux côtés : <span class="math display">\[
+\ln\left(\frac{1}{3}\right) = -180k \quad \implies \quad k = -\frac{\ln\left(\frac{1}{3}\right)}{180}.
+\]</span> Utilisons la propriété <span class="math inline">\(\ln\left(\frac{1}{3}\right) = -\ln(3)\)</span> : <span class="math display">\[
+k = \frac{\ln(3)}{180}.
+\]</span></p>
+<p><strong>Étape 2 : Temps pour éliminer 99 % de l’eau</strong></p>
+<p>Éliminer <span class="math inline">\(99\%\)</span> de l’eau signifie qu’il reste <span class="math inline">\(1\%\)</span> de la quantité initiale, soit : <span class="math display">\[
+Q(t) = 0{,}01 \cdot Q_0 = 0{,}01 \cdot 150 = 1{,}5 \text{ grammes}.
+\]</span> Substituons dans l’équation <span class="math inline">\(Q(t) = Q_0 e^{-kt}\)</span> : <span class="math display">\[
+1{,}5 = 150 e^{-kt}.
+\]</span> Simplifions par <span class="math inline">\(150\)</span> : <span class="math display">\[
+\frac{1{,}5}{150} = e^{-kt} \quad \implies \quad 0{,}01 = e^{-kt}.
+\]</span> Prenons le logarithme naturel des deux côtés : <span class="math display">\[
+\ln(0{,}01) = -kt.
+\]</span> Substituons la valeur de <span class="math inline">\(k = \frac{\ln(3)}{180}\)</span> : <span class="math display">\[
+\ln(0{,}01) = -\frac{\ln(3)}{180} \cdot t.
+\]</span> Isolons <span class="math inline">\(t\)</span> : <span class="math display">\[
+t = -\frac{\ln(0{,}01)}{\frac{\ln(3)}{180}} = -\frac{3 \ln(0{,}01)}{\ln(3)}.
+\]</span></p>
+<p><strong>Étape 3 : Calcul numérique</strong></p>
+<p>Les valeurs des logarithmes naturels sont <span class="math inline">\(\ln(0{,}01) \approx -4{,}6052\)</span> et <span class="math inline">\(\ln(3) \approx 1{,}0986\)</span>.</p>
+<p>Substituons ces valeurs : <span class="math display">\[
+t = -\frac{180 \cdot (-4{,}6052)}{1{,}0986} \approx \frac{180 \cdot 4{,}6052}{1{,}0986} \approx \frac{828{,}936}{1{,}0986} \approx 754{,}4.
+\]</span></p>
+<p><strong>Résultat final</strong></p>
+<p>Le temps total nécessaire pour éliminer <span class="math inline">\(99\%\)</span> de l’eau est d’environ 754 minutes. Comme le vêtement a commencé à sécher au temps <span class="math inline">\(t=0\)</span>, cela représente 754 minutes après son retrait du bassin, soit environ 12 heures et 34 minutes.</p>
+</div>
 </section>
 <section id="question-8" class="level2">
 <h2 class="anchored" data-anchor-id="question-8">Question 8</h2>
 <p>Un réservoir contient initialement 100 kg de lait écrémé (le pourcentage de matière grasse du lait écrémé est de 0 %). Au temps <span class="math inline">\(t=0\)</span>, on commence à y verser, à un taux constant de 10 kg/minute, du lait dont le pourcentage de matière grasse est de 4 %. Au même moment, un drain évacue le lait du réservoir vers le camion réfrigérée, à un taux constant de 10 kg/minute. Pour répondre à cette question, on fera l’hypothèse que le mélangeur du réservoir permet de garder son contenu homogène.</p>
-<ol>
+<ol type="1">
 <li>Soit <span class="math inline">\(M\)</span> la masse (en kg) de matière grasse dans le réservoir en fonction du temps <span class="math inline">\(t\)</span> (en minutes). Trouvez la fonction <span class="math inline">\(M(t)\)</span>.</li>
 <li>Évaluez <span class="math inline">\(\lim_{t\rightarrow\infty}M(t)\)</span>.</li>
 </ol>
 <div class="solution proof">
 <p><span class="proof-title"><em>Solution</em>. </span></p>
-<ol>
+<ol type="1">
 <li><p>Pendant un petit intervalle de temps <span class="math inline">\(\Delta t\)</span> minutes, il entre 10<span class="math inline">\(\Delta t\)</span> kilogrammes de lait, qui contient une proportion 4/100 de matières grasses. Donc la masse de matières grasses entrant est <span class="math display">\[M_{\text{entrant}} = \frac{4}{100} \times 10\Delta t = 0{,}4 \Delta t\]</span></p>
 <p>Pendant le même intervalle, il sort une masse <span class="math inline">\(10\Delta t\)</span> de lait. La proportion de matières grasses dans ce lait est <span class="math inline">\(M(t)/100\)</span>. Ainsi, on a <span class="math display">\[M_{\text{entrant}} = \frac{M(t)}{100} \times 10\Delta t = \frac{M(t)}{10} \Delta t.\]</span></p>
 <p>Le changement dans <span class="math inline">\(M(t)\)</span> est donc <span class="math display">\[\Delta M = M_{\text{entrant}} - M_{\text{sortant}} = 0{,}4 \Delta t - \frac{M(t)}{10} \Delta t.\]</span> Ainsi <span class="math display">\[\frac{\Delta M}{\Delta t} = 0{,}4 - \frac{M(t)}{10}.\]</span> Quand <span class="math inline">\(\Delta t\)</span> tend vers 0, le membre de gauche tend vers <span class="math inline">\(M'(t)\)</span>, et on obtient <span class="math display">\[M'(t) = 0{,}4 - \frac{M(t)}{10}.\]</span> Cette équation est séparable. On a <span class="math display">\[\frac{dM}{0{,}4 - \frac{M}{10}} = dt,\]</span> qui est équivalente à <span class="math display">\[\int \frac{10dM}{4 - M} = \int dt.\]</span> On intègre et on obtient que <span class="math display">\[-10 \ln|4 - M| = t + C,\]</span> équation qui est équivalente à <span class="math display">\[|4 - M| = ke^{-t/10}.\]</span> Puisque <span class="math inline">\(M(0) = 0\)</span>, on en déduit que <span class="math inline">\(k = 4\)</span> et finalement <span class="math display">\[M(t) = 4 - 4e^{-t/10}.\]</span></p></li>
@@ -835,83 +914,156 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>Résoudre l'équation différentielle $$\frac{dy}{dx} = \frac{x}{y}.$$</span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>::: solution</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>On sépare les variables pour obtenir l'équation $y dy = x dx$. On intègre ensuite les deux membres de l'équation : $\int y dy = \int x dx$. Nous obtenons que $\frac{y^2}{2} = \frac{x^2}{2} + C$. Ainsi, la solution générale est $$y = \pm\sqrt{x^2 + K},$$</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>où $K$ est une constante arbitraire.</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## Question 3</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>Résoudre l'équation différentielle $$\frac{dy}{dx} = \frac{y}{x}.$$</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>::: solution</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>On sépare les variables pour obtenir l'équation $\frac{dy}{y} = \frac{dx}{x}$. On a divisé par $y$, on supposera donc pour la suite que $y$ n'est pas identiquement nulle. On remarque aussi que la fonction identiquement nulle est une solution de l'équation différentielle.</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>On intègre ensuite les deux membres de l'équation : $\int \frac{dy}{y} = \int \frac{dx}{x}$. Nous obtenons que $\ln|y| = \ln|x| + C$. Comme la fonction $\ln$ est une bijection des réels strictement positifs vers $\mathbb{R}$, il existe un unique $k\in\mathbb{R}_{&gt;0}$ tel que $C=\ln k$. Ainsi,</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>$$\ln|y| = \ln|x| + C=\ln|x| + \ln k=\ln k|x|.$$ L'injectivité de la fonction $\ln$ implique que</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>$y=\pm k|x|$. Si on trace ces courbes, on constate qu'il s'agit des droites de pente non nulle passant par l'origine. Comme la droite $y(x)=0$ est une solution (on l'a remarqué plus tôt), l'ensemble des solutions consiste à être l'ensemble des droites passant par l'origine, c'est-à-dire aux courbes d'équation $y(x)=Dx, D\in\mathbb{R}$.</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="fu">## Question 4</span></span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>Résoudre l'équation différentielle : $\frac{dy}{dx} = y^2$</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>::: solution</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>On constate que $y(x)=0$ est une solution. Maintenant, pour trouver les solutions non nulles, divisons par $y^2$ pour séparer les variables. On obtient ainsi que</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>$$\frac{dy}{y^2} = dx.$$</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>En intégrant chacun des membres de l'équation, nous obtenons que</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>$$-\frac{1}{y} = x + C,$$</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>où $C$ est une constante réelle arbitraire. On isole par la suite $y$, pour obtenir une solution de la forme</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>$$y = -\frac{1}{x + K},$$</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>où $K$ est une constante réelle arbitraire.</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="fu">## Question 5</span></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>Résoudre l'équation différentielle : $\frac{dy}{dx} = e^{x-y}$</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>::: solution</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>Pour résoudre cette équation, commençons par réorganiser les termes afin de séparer les variables. En multipliant chaque membre par $e^y$, nous obtenons</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>$$e^y dy = e^x dx.$$</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>En intégrant chacun des membres de l'équation, nous obtenons que</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>$$e^y = e^x + C,$$</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>où $C$ est une constante réelle arbitraire. On isole par la suite $y$ en appliquant le logarithme naturel de chaque côté, pour obtenir une solution de la forme</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>$$y(x) = \ln(e^x + C).$$</span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>On sépare les variables pour obtenir l'équation $y dy = x dx$. On intègre ensuite les deux membres de l'équation : $\int y dy = \int x dx$. Nous obtenons que $\frac{y^2}{2} = \frac{x^2}{2} + C$. Ainsi, la solution générale est $$y = \pm\sqrt{x^2 + K},$$ où $K$ est une constante arbitraire.</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## Question 3</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>Résoudre l'équation différentielle $$\frac{dy}{dx} = \frac{y}{x}.$$</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>::: solution</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>On sépare les variables pour obtenir l'équation $\frac{dy}{y} = \frac{dx}{x}$. On a divisé par $y$, on supposera donc pour la suite que $y$ n'est pas identiquement nulle. On remarque aussi que la fonction identiquement nulle est une solution de l'équation différentielle.</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>On intègre ensuite les deux membres de l'équation : $\int \frac{dy}{y} = \int \frac{dx}{x}$. Nous obtenons que $\ln|y| = \ln|x| + C$. Comme la fonction $\ln$ est une bijection des réels strictement positifs vers $\mathbb{R}$, il existe un unique $k\in\mathbb{R}_{&gt;0}$ tel que $C=\ln k$. Ainsi, $$\ln|y| = \ln|x| + C=\ln|x| + \ln k=\ln k|x|.$$ L'injectivité de la fonction $\ln$ implique que $y=\pm k|x|$. Si on trace ces courbes, on constate qu'il s'agit des droites de pente non nulle passant par l'origine. Comme la droite $y(x)=0$ est une solution (on l'a remarqué plus tôt), l'ensemble des solutions consiste à être l'ensemble des droites passant par l'origine, c'est-à-dire aux courbes d'équation $y(x)=Dx, D\in\mathbb{R}$.</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="fu">## Question 4</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>Résoudre l'équation différentielle : $\frac{dy}{dx} = y^2$</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>::: solution</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>On constate que $y(x)=0$ est une solution. Maintenant, pour trouver les solutions non nulles, divisons par $y^2$ pour séparer les variables. On obtient ainsi que $$\frac{dy}{y^2} = dx.$$ En intégrant chacun des membres de l'équation, nous obtenons que $$-\frac{1}{y} = x + C,$$ où $C$ est une constante réelle arbitraire. On isole par la suite $y$, pour obtenir une solution de la forme $$y = -\frac{1}{x + K},$$ où $K$ est une constante réelle arbitraire.</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="fu">## Question 5</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>Résoudre l'équation différentielle : $\frac{dy}{dx} = e^{x-y}$</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>::: solution</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>Pour résoudre cette équation, commençons par réorganiser les termes afin de séparer les variables. En multipliant chaque membre par $e^y$, nous obtenons $$e^y dy = e^x dx.$$ En intégrant chacun des membres de l'équation, nous obtenons que $$e^y = e^x + C,$$ où $C$ est une constante réelle arbitraire. On isole par la suite $y$ en appliquant le logarithme naturel de chaque côté, pour obtenir une solution de la forme $$y(x) = \ln(e^x + C).$$</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="fu">## Question 6</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>Lorsqu'une personne avale une substance toxique, son foie tente de l'éliminer. Généralement, le taux d'élimination de la quantité de substance encore présente dans l'organisme au temps $t$ --- que nous noterons $Q(t)$ --- est proportionnel à la quantité de substance encore présente dans l'organisme au temps $t$. Au temps $t=0$, Jocelyn a avalé une quantité $Q_0$ d'un liquide toxique. Après 3 heures, on a estimé que son foie avait éliminé 50% du liquide. D'après ce modèle, combien d'heures se seront écoulées entre le moment où Jocelyn a avalé le produit et celui où il en aura éliminé 90%?</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>::: solution</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>L'équation différentielle qui modélise ce problème est : $$</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>\frac{dQ}{dt} = -kQ,</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>$$ où $k &gt; 0$ est une constante de proportionnalité.</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>**Solution générale**\</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>La solution de cette équation différentielle est donnée par : $$</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>Q(t) = Q_0 e^{-kt},</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>$$ où $Q_0$ est la quantité initiale de la substance au temps $t = 0$.</span>
 <span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="fu">## Question 6</span></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>Lorsqu'une personne avale une substance toxique, son foie tente de l'éliminer. Généralement, le taux d'élimination de la quantité de substance encore présente dans l'organisme au temps $t$ --- que nous noterons $Q(t)$ --- est proportionnel à la quantité de substance encore présente dans l'organisme au temps $t$. Au temps $t=0$, Jocelyn a avalé une quantité $Q_0$ d'un liquide toxique. Après 3 heures, on a estimé que son foie avait éliminé 50\% du liquide. D'après ce modèle, combien d'heures se seront écoulées entre le moment où Jocelyn a avalé le produit et celui où il en aura éliminé 90\%?</span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="fu">## Question 7</span></span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>Un vêtement pesant 50 grammes est plongée dans un bassin d'eau. En le sortant du bassin, au temps $t=0$, sa masse est de 200 grammes. On l'étend immédiatement sur une corde à linge pour qu'il sèche. On observe qu'après 180 minutes, sa masse est de 100 grammes. Combien de minutes se seront écoulées entre le moment où le vêtement est sorti du bassin et celui où il aura évacué 99\% de l'eau qu'il contenait initialement? Arrondissez à la minute. Pour répondre à cette question, on fera l'hypothèse que le taux d'évaporation d'eau dans le vêtement est proportionnel à la quantité d'eau présente dans celui-ci.</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="fu">## Question 8</span></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>Un réservoir contient initialement 100 kg de lait écrémé (le pourcentage de matière grasse du lait écrémé est de 0 %). Au temps $t=0$, on commence à y verser, à un taux constant de 10 kg/minute, du lait dont le pourcentage de matière grasse est de 4 %. Au même moment, un drain évacue le lait du réservoir vers le camion réfrigérée, à un taux constant de 10 kg/minute. Pour répondre à cette question, on fera l'hypothèse que le mélangeur du réservoir permet de garder son contenu homogène.</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>**Détermination de la constante** $k$\</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>On utilise l’information donnée : après 3 heures, $Q(3) = \frac{Q_0}{2}$. Substituons dans l’équation $Q(t) = Q_0 e^{-kt}$ : $$</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>\frac{Q_0}{2} = Q_0 e^{-3k}.</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>$$ En simplifiant par $Q_0$ (non nul) : $$</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>\frac{1}{2} = e^{-3k}.</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>$$ Prenons le logarithme naturel des deux côtés : $$</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>\ln\left(\frac{1}{2}\right) = -3k \quad \implies \quad k = -\frac{\ln\left(\frac{1}{2}\right)}{3} = \frac{\ln(2)}{3}.</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>#. Soit $M$ la masse (en kg) de matière grasse dans le réservoir en fonction du temps $t$ (en minutes). Trouvez la fonction $M(t)$.</span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>#. Évaluez $\lim_{t\rightarrow\infty}M(t)$.</span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>:::{.solution}</span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>#. Pendant un petit intervalle de temps $\Delta t$ minutes, il entre 10$\Delta t$ kilogrammes de lait, qui contient une proportion 4/100 de matières grasses. Donc la masse de matières grasses entrant est</span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>   $$M_{\text{entrant}} = \frac{4}{100} \times 10\Delta t = 0{,}4 \Delta t$$</span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>   Pendant le même intervalle, il sort une masse $10\Delta t$ de lait. La proportion de matières grasses dans ce lait est $M(t)/100$. Ainsi, on a $$M_{\text{entrant}} = \frac{M(t)}{100} \times 10\Delta t = \frac{M(t)}{10} \Delta t.$$</span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>   Le changement dans $M(t)$ est donc</span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>   $$\Delta M = M_{\text{entrant}} - M_{\text{sortant}} = 0{,}4 \Delta t - \frac{M(t)}{10} \Delta t.$$</span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>   Ainsi </span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>   $$\frac{\Delta M}{\Delta t} = 0{,}4 - \frac{M(t)}{10}.$$</span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>   Quand $\Delta t$ tend vers 0, le membre de gauche tend vers $M'(t)$, et on obtient</span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>   $$M'(t) = 0{,}4 - \frac{M(t)}{10}.$$</span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>   Cette équation est séparable. On a</span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>   $$\frac{dM}{0{,}4 - \frac{M}{10}} = dt,$$</span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>   qui est équivalente à </span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>   $$\int \frac{10dM}{4 - M} = \int dt.$$</span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>   On intègre et on obtient que $$-10 \ln|4 - M| = t + C,$$ équation qui est équivalente à $$|4 - M| = ke^{-t/10}.$$</span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>   Puisque $M(0) = 0$, on en déduit que $k = 4$ et finalement $$M(t) = 4 - 4e^{-t/10}.$$</span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>#. Puisque $e^{-t/10} \to 0$ quand $t \to \infty$, on a $\lim_{t \to \infty} M(t) = 4$.</span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>   Intuitivement, ce résultat est évident car à la longue, on s'attend à ce que l'état initial devienne négligeable et que la proportion de gras dans le lait du réservoir soit la même que celle du lait qu'on y ajoute.</span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>**Détermination du temps pour éliminer 90% de la substance**\</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>Pour éliminer 90% de la substance, il doit rester 10% de la quantité initiale, soit $Q(t) = 0{,}1Q_0$. Substituons dans l’équation $Q(t) = Q_0 e^{-kt}$ : $$</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>0{,}1Q_0 = Q_0 e^{-kt}.</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>$$ Simplifions par $Q_0$ : $$</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>0{,}1 = e^{-kt}.</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>$$ Prenons le logarithme naturel des deux côtés : $$</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>\ln(0{,}1) = -kt.</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>$$ Substituons la valeur de $k = \frac{\ln(2)}{3}$ : $$</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>\ln(0{,}1) = -\frac{\ln(2)}{3} t.</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>$$ Isolons $t$ : $$</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>t = -\frac{\ln(0{,}1)}{\frac{\ln(2)}{3}} = -\frac{3 \ln(0{,}1)}{\ln(2)}.</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>**Calcul numérique**\</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>Les logarithmes naturels de $0{,}1$ et $2$ sont approximativement : $$</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>\ln(0{,}1) \approx -2{,}3026, \quad \ln(2) \approx 0{,}6931.</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>$$ Substituons ces valeurs : $$</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>t = -\frac{3 \times -2{,}3026}{0{,}6931} \approx \frac{6{,}9078}{0{,}6931} \approx 9{,}97.</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>**Conclusion**\</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>Jocelyn mettra environ $10$ heures pour éliminer 90 % du liquide toxique.</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="fu">## Question 7</span></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>Un vêtement pesant 50 grammes est plongée dans un bassin d'eau. En le sortant du bassin, au temps $t=0$, sa masse est de 200 grammes. On l'étend immédiatement sur une corde à linge pour qu'il sèche. On observe qu'après 180 minutes, sa masse est de 100 grammes. Combien de minutes se seront écoulées entre le moment où le vêtement est sorti du bassin et celui où il aura évacué 99% de l'eau qu'il contenait initialement? Arrondissez à la minute. Pour répondre à cette question, on fera l'hypothèse que le taux d'évaporation d'eau dans le vêtement est proportionnel à la quantité d'eau présente dans celui-ci.</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>::: solution</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>Un vêtement pesant $50$ grammes est plongé dans un bassin d'eau. Au temps $t=0$, sa masse est de $200$ grammes. Cela signifie qu'il contient $200 - 50 = 150$ grammes d'eau au départ. On observe qu'après $180$ minutes, sa masse est de $100$ grammes, soit $100 - 50 = 50$ grammes d'eau. Le taux d'évaporation de l'eau est supposé proportionnel à la quantité d'eau présente.</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>**Modélisation mathématique**</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>Soit $Q(t)$ la quantité d'eau (en grammes) présente dans le vêtement au temps $t$. Le modèle donné est : $$</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>\frac{dQ}{dt} = -kQ,</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>$$ où $k &gt; 0$ est une constante de proportionnalité. La solution de cette équation différentielle est : $$</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>Q(t) = Q_0 e^{-kt},</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>$$ où $Q_0$ est la quantité initiale d'eau dans le vêtement ($Q_0 = 150$ g).</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>**Étape 1 : Détermination de la constante** $k$</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>On sait qu'après $t = 180$ minutes, il reste $50$ grammes d'eau, soit $Q(180) = 50$. Substituons dans l'équation de la solution : $$</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>Q(180) = Q_0 e^{-k \cdot 180}.</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>$$ Cela donne : $$</span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>50 = 150 e^{-180k}.</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>$$ Simplifions par $150$ : $$</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>\frac{50}{150} = e^{-180k} \quad \implies \quad \frac{1}{3} = e^{-180k}.</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>$$ Prenons le logarithme naturel des deux côtés : $$</span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>\ln\left(\frac{1}{3}\right) = -180k \quad \implies \quad k = -\frac{\ln\left(\frac{1}{3}\right)}{180}.</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>$$ Utilisons la propriété $\ln\left(\frac{1}{3}\right) = -\ln(3)$ : $$</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>k = \frac{\ln(3)}{180}.</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>**Étape 2 : Temps pour éliminer 99 % de l'eau**</span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>Éliminer $99\%$ de l'eau signifie qu'il reste $1\%$ de la quantité initiale, soit : $$</span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>Q(t) = 0{,}01 \cdot Q_0 = 0{,}01 \cdot 150 = 1{,}5 \text{ grammes}.</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>$$ Substituons dans l’équation $Q(t) = Q_0 e^{-kt}$ : $$</span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>1{,}5 = 150 e^{-kt}.</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>$$ Simplifions par $150$ : $$</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>\frac{1{,}5}{150} = e^{-kt} \quad \implies \quad 0{,}01 = e^{-kt}.</span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>$$ Prenons le logarithme naturel des deux côtés : $$</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>\ln(0{,}01) = -kt.</span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>$$ Substituons la valeur de $k = \frac{\ln(3)}{180}$ : $$</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>\ln(0{,}01) = -\frac{\ln(3)}{180} \cdot t.</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>$$ Isolons $t$ : $$</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>t = -\frac{\ln(0{,}01)}{\frac{\ln(3)}{180}} = -\frac{3 \ln(0{,}01)}{\ln(3)}.</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>**Étape 3 : Calcul numérique**</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>Les valeurs des logarithmes naturels sont $\ln(0{,}01) \approx -4{,}6052$ et $\ln(3) \approx 1{,}0986$.</span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>Substituons ces valeurs : $$</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>t = -\frac{180 \cdot (-4{,}6052)}{1{,}0986} \approx \frac{180 \cdot 4{,}6052}{1{,}0986} \approx \frac{828{,}936}{1{,}0986} \approx 754{,}4.</span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>**Résultat final**</span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>Le temps total nécessaire pour éliminer $99\%$ de l'eau est d’environ 754 minutes. Comme le vêtement a commencé à sécher au temps $t=0$, cela représente 754 minutes après son retrait du bassin, soit environ 12 heures et 34 minutes.</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a><span class="fu">## Question 8</span></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>Un réservoir contient initialement 100 kg de lait écrémé (le pourcentage de matière grasse du lait écrémé est de 0 %). Au temps $t=0$, on commence à y verser, à un taux constant de 10 kg/minute, du lait dont le pourcentage de matière grasse est de 4 %. Au même moment, un drain évacue le lait du réservoir vers le camion réfrigérée, à un taux constant de 10 kg/minute. Pour répondre à cette question, on fera l'hypothèse que le mélangeur du réservoir permet de garder son contenu homogène.</span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Soit $M$ la masse (en kg) de matière grasse dans le réservoir en fonction du temps $t$ (en minutes). Trouvez la fonction $M(t)$.</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Évaluez $\lim_{t\rightarrow\infty}M(t)$.</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>::: solution</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a><span class="ss">1.  </span>Pendant un petit intervalle de temps $\Delta t$ minutes, il entre 10$\Delta t$ kilogrammes de lait, qui contient une proportion 4/100 de matières grasses. Donc la masse de matières grasses entrant est $$M_{\text{entrant}} = \frac{4}{100} \times 10\Delta t = 0{,}4 \Delta t$$</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>    Pendant le même intervalle, il sort une masse $10\Delta t$ de lait. La proportion de matières grasses dans ce lait est $M(t)/100$. Ainsi, on a $$M_{\text{entrant}} = \frac{M(t)}{100} \times 10\Delta t = \frac{M(t)}{10} \Delta t.$$</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a>    Le changement dans $M(t)$ est donc $$\Delta M = M_{\text{entrant}} - M_{\text{sortant}} = 0{,}4 \Delta t - \frac{M(t)}{10} \Delta t.$$ Ainsi $$\frac{\Delta M}{\Delta t} = 0{,}4 - \frac{M(t)}{10}.$$ Quand $\Delta t$ tend vers 0, le membre de gauche tend vers $M'(t)$, et on obtient $$M'(t) = 0{,}4 - \frac{M(t)}{10}.$$ Cette équation est séparable. On a $$\frac{dM}{0{,}4 - \frac{M}{10}} = dt,$$ qui est équivalente à $$\int \frac{10dM}{4 - M} = \int dt.$$ On intègre et on obtient que $$-10 \ln|4 - M| = t + C,$$ équation qui est équivalente à $$|4 - M| = ke^{-t/10}.$$ Puisque $M(0) = 0$, on en déduit que $k = 4$ et finalement $$M(t) = 4 - 4e^{-t/10}.$$</span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a><span class="ss">2.  </span>Puisque $e^{-t/10} \to 0$ quand $t \to \infty$, on a $\lim_{t \to \infty} M(t) = 4$. Intuitivement, ce résultat est évident car à la longue, on s'attend à ce que l'état initial devienne négligeable et que la proportion de gras dans le lait du réservoir soit la même que celle du lait qu'on y ajoute.</span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
