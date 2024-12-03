@@ -5,151 +5,117 @@ author: "Jérôme Soucy"
 
 ## Question 1
 
-#. La fonction $\tanh x$ est définie par : $$\tanh x = \frac{\sinh x}{\cosh x}.$$
-   Effectuez l'analyse de cette fonction afin de pouvoir esquisser son graphique.
-   
-   :::{.solution}
-   ```{python}
-   import numpy as np
-   import matplotlib.pyplot as plt
-   
-   # Création des données
-   x = np.linspace(-4, 4, 1000)  # Intervalle de -4 à 4
-   y = np.tanh(x)
-   
-   # Création de la figure
-   plt.figure(figsize=(7.5, 6))
-   
-   # Tracé de la fonction
-   plt.plot(x, y, 'b-', label='tanh(x)')
-   
-   # Ajout des asymptotes horizontales
-   plt.axhline(y=1, color='r', linestyle='--', alpha=0.5, label='y = ±1')
-   plt.axhline(y=-1, color='r', linestyle='--', alpha=0.5)
-   
-   # Ajout des axes
-   plt.axhline(y=0, color='k', linestyle='-', alpha=0.3)
-   plt.axvline(x=0, color='k', linestyle='-', alpha=0.3)
-   
-   # Configuration du graphique
-   plt.grid(True, alpha=0.3)
-   plt.title('Fonction tanh(x)')
-   plt.xlabel('x')
-   plt.ylabel('y')
-   plt.legend()
-   
-   # Ajustement des limites
-   plt.ylim(-1.5, 1.5)
-   
-   plt.show()
-   ```
-   :::
+1.  La fonction $\tanh x$ est définie par : $$\tanh x = \frac{\sinh x}{\cosh x}.$$ Effectuez l'analyse de cette fonction afin de pouvoir esquisser son graphique.
 
-#. Montrez que la fonction réciproque de $\tanh x$, notée $\text{arctanh}\,x$, peut s'exprimer par $$\text{arctanh}\,x = \ln \sqrt{\frac{1+x}{1-x}}.$$
+    ::: solution
+    ```{python}
+    import numpy as np
+    import matplotlib.pyplot as plt
 
-   :::{.solution}
-   Montrons que $\text{arctanh}\,x = \ln \sqrt{\frac{1+x}{1-x}}$. Posons $y = \text{arctanh}\,x$. Par définition, cela signifie que $x = \tanh y$.
-   La fonction tanh est définie par : 
-   $$\tanh y = \frac{\sinh y}{\cosh y} = \frac{e^y - e^{-y}}{e^y + e^{-y}}.$$
-   Donc nous avons que $x = \dfrac{e^y - e^{-y}}{e^y + e^{-y}}$.
-   Multiplions les deux membres par $(e^y + e^{-y})$ :
-   $$x(e^y + e^{-y}) = e^y - e^{-y}.$$
-   Développons :
-   $$xe^y + xe^{-y} = e^y - e^{-y}.$$
-   Regroupons les termes en $e^y$ et $e^{-y}$ :
-   $$e^y(x-1) = e^{-y}(x+1).$$
-   Donc :
-   $$\frac{e^y}{e^{-y}} = \frac{x+1}{1-x}.\qquad(x\neq 1)$$
-   Simplifions :
-   $$e^{2y} = \frac{1+x}{1-x}.$$
-   Prenons le logarithme naturel des deux côtés :
-   $$2y = \ln\left(\frac{1+x}{1-x}\right).$$
-   Donc :
-    $$y = \frac{1}{2}\ln\left(\frac{1+x}{1-x}\right) = \ln\sqrt{\frac{1+x}{1-x}}.$$
-   Puisque $y = \text{arctanh}\,x$, nous avons bien $$\text{arctanh}\,x = \ln\sqrt{\frac{1+x}{1-x}}.$$
-   :::
-   
-#. Esquissez le graphique de $\text{arctanh}\,x$.
+    # Création des données
+    x = np.linspace(-4, 4, 1000)  # Intervalle de -4 à 4
+    y = np.tanh(x)
 
-   :::{.solution}
-   ```{python}
-   import numpy as np
-   import matplotlib.pyplot as plt
-   # Création des données
-   x = np.linspace(-0.99, 0.99, 1000)  # On évite -1 et 1 car arctanh non défini
-   y = np.arctanh(x)
-   # Création de la figure
-   plt.figure(figsize=(8, 6))
-   # Tracé de la fonction
-   plt.plot(x, y, 'b-', label='arctanh(x)')
-   # Ajout des axes
-   plt.axhline(y=0, color='k', linestyle='-', alpha=0.3)
-   plt.axvline(x=0, color='k', linestyle='-', alpha=0.3)
-   # Ajout des asymptotes verticales
-   plt.axvline(x=1, color='r', linestyle='--', alpha=0.5, label='x = ±1')
-   plt.axvline(x=-1, color='r', linestyle='--', alpha=0.5)
-   # Configuration du graphique
-   plt.grid(True, alpha=0.3)
-   plt.title('Fonction arctanh(x)')
-   plt.xlabel('x')
-   plt.ylabel('y')
-   plt.legend()
-   # Ajustement des limites pour mieux voir les asymptotes
-   plt.ylim(-4, 4)
-   plt.xlim(-1.1, 1.1)
-   plt.show()
-   ```
-   :::
+    # Création de la figure
+    plt.figure(figsize=(7.5, 6))
+
+    # Tracé de la fonction
+    plt.plot(x, y, 'b-', label='tanh(x)')
+
+    # Ajout des asymptotes horizontales
+    plt.axhline(y=1, color='r', linestyle='--', alpha=0.5, label='y = ±1')
+    plt.axhline(y=-1, color='r', linestyle='--', alpha=0.5)
+
+    # Ajout des axes
+    plt.axhline(y=0, color='k', linestyle='-', alpha=0.3)
+    plt.axvline(x=0, color='k', linestyle='-', alpha=0.3)
+
+    # Configuration du graphique
+    plt.grid(True, alpha=0.3)
+    plt.title('Fonction tanh(x)')
+    plt.xlabel('x')
+    plt.ylabel('y')
+    plt.legend()
+
+    # Ajustement des limites
+    plt.ylim(-1.5, 1.5)
+
+    plt.show()
+    ```
+    :::
+
+2.  Montrez que la fonction réciproque de $\tanh x$, notée $\text{arctanh}\,x$, peut s'exprimer par $$\text{arctanh}\,x = \ln \sqrt{\frac{1+x}{1-x}}.$$
+
+    ::: solution
+    Montrons que $\text{arctanh}\,x = \ln \sqrt{\frac{1+x}{1-x}}$. Posons $y = \text{arctanh}\,x$. Par définition, cela signifie que $x = \tanh y$. La fonction tanh est définie par : $$\tanh y = \frac{\sinh y}{\cosh y} = \frac{e^y - e^{-y}}{e^y + e^{-y}}.$$ Donc nous avons que $x = \dfrac{e^y - e^{-y}}{e^y + e^{-y}}$. Multiplions les deux membres par $(e^y + e^{-y})$ : $$x(e^y + e^{-y}) = e^y - e^{-y}.$$ Développons : $$xe^y + xe^{-y} = e^y - e^{-y}.$$ Regroupons les termes en $e^y$ et $e^{-y}$ : $$e^y(x-1) = e^{-y}(x+1).$$ Donc : $$\frac{e^y}{e^{-y}} = \frac{x+1}{1-x}.\qquad(x\neq 1)$$ Simplifions : $$e^{2y} = \frac{1+x}{1-x}.$$ Prenons le logarithme naturel des deux côtés : $$2y = \ln\left(\frac{1+x}{1-x}\right).$$ Donc : $$y = \frac{1}{2}\ln\left(\frac{1+x}{1-x}\right) = \ln\sqrt{\frac{1+x}{1-x}}.$$ Puisque $y = \text{arctanh}\,x$, nous avons bien $$\text{arctanh}\,x = \ln\sqrt{\frac{1+x}{1-x}}.$$
+    :::
+
+3.  Esquissez le graphique de $\text{arctanh}\,x$.
+
+    ::: solution
+    ```{python}
+    import numpy as np
+    import matplotlib.pyplot as plt
+    # Création des données
+    x = np.linspace(-0.99, 0.99, 1000)  # On évite -1 et 1 car arctanh non défini
+    y = np.arctanh(x)
+    # Création de la figure
+    plt.figure(figsize=(8, 6))
+    # Tracé de la fonction
+    plt.plot(x, y, 'b-', label='arctanh(x)')
+    # Ajout des axes
+    plt.axhline(y=0, color='k', linestyle='-', alpha=0.3)
+    plt.axvline(x=0, color='k', linestyle='-', alpha=0.3)
+    # Ajout des asymptotes verticales
+    plt.axvline(x=1, color='r', linestyle='--', alpha=0.5, label='x = ±1')
+    plt.axvline(x=-1, color='r', linestyle='--', alpha=0.5)
+    # Configuration du graphique
+    plt.grid(True, alpha=0.3)
+    plt.title('Fonction arctanh(x)')
+    plt.xlabel('x')
+    plt.ylabel('y')
+    plt.legend()
+    # Ajustement des limites pour mieux voir les asymptotes
+    plt.ylim(-4, 4)
+    plt.xlim(-1.1, 1.1)
+    plt.show()
+    ```
+    :::
 
 ## Question 2
 
 Exprimez $\cosh(x+y)$ en fonction de $\cosh x$, $\cosh y$, $\sinh x$ et $\sinh y$.
 
-:::{.solution}
-Exprimons $\cosh(x+y)$ en fonction de $\cosh x$, $\cosh y$, $\sinh x$ et $\sinh y$.
-Rappelons que $\cosh(x+y)$ peut s'écrire en utilisant la forme exponentielle $$\cosh(x+y) = \frac{e^{x+y} + e^{-(x+y)}}{2}.$$
-Développons $e^{x+y}$ et $e^{-(x+y)}$ :
-$$\cosh(x+y) = \frac{e^x e^y + e^{-x} e^{-y}}{2}.$$
+::: solution
+Exprimons $\cosh(x+y)$ en fonction de $\cosh x$, $\cosh y$, $\sinh x$ et $\sinh y$. Rappelons que $\cosh(x+y)$ peut s'écrire en utilisant la forme exponentielle $$\cosh(x+y) = \frac{e^{x+y} + e^{-(x+y)}}{2}.$$ Développons $e^{x+y}$ et $e^{-(x+y)}$ : $$\cosh(x+y) = \frac{e^x e^y + e^{-x} e^{-y}}{2}.$$
 
-Rappelons les formules :
-$$\cosh x = \frac{e^x + e^{-x}}{2} \quad \text{et} \quad \sinh x = \frac{e^x - e^{-x}}{2}.$$
-Donc :
-$$e^x = \cosh x + \sinh x \quad \text{et} \quad e^{-x} = \cosh x - \sinh x$$
-Substituons ces expressions dans notre équation :
-$$\cosh(x+y) = \frac{(\cosh x + \sinh x)(\cosh y + \sinh y) + (\cosh x - \sinh x)(\cosh y - \sinh y)}{2}.$$
-Développons les produits :
-\begin{align}
+Rappelons les formules : $$\cosh x = \frac{e^x + e^{-x}}{2} \quad \text{et} \quad \sinh x = \frac{e^x - e^{-x}}{2}.$$ Donc : $$e^x = \cosh x + \sinh x \quad \text{et} \quad e^{-x} = \cosh x - \sinh x$$ Substituons ces expressions dans notre équation : $$\cosh(x+y) = \frac{(\cosh x + \sinh x)(\cosh y + \sinh y) + (\cosh x - \sinh x)(\cosh y - \sinh y)}{2}.$$ Développons les produits : \begin{align}
 \cosh(x+y) &= \frac{1}{2}\left(\cosh x \cosh y + \sinh x \cosh y + \cosh x \sinh y + \sinh x \sinh y + \cosh x \cosh y\right.\\
 &~\left.- \sinh x \cosh y - \cosh x \sinh y + \sinh x \sinh y\right).
-\end{align}
-Regroupons les termes semblables :
-$$\cosh(x+y) = \frac{2\cosh x \cosh y + 2\sinh x \sinh y}{2}$$
-Simplifions :
-$$\cosh(x+y) = \cosh x \cosh y + \sinh x \sinh y$$
-Nous avons donc la formule cherchée : $\cosh(x+y) = \cosh x \cosh y + \sinh x \sinh y$.
+\end{align} Regroupons les termes semblables : $$\cosh(x+y) = \frac{2\cosh x \cosh y + 2\sinh x \sinh y}{2}$$ Simplifions : $$\cosh(x+y) = \cosh x \cosh y + \sinh x \sinh y$$ Nous avons donc la formule cherchée : $\cosh(x+y) = \cosh x \cosh y + \sinh x \sinh y$.
 :::
 
 ## Question 3
 
-#. Résolvez l'équation $\sinh(2x) = 3$.
+1.  Résolvez l'équation $\sinh(2x) = 3$.
 
-#. En déduire les solutions de l'équation $\cosh(2x) = \sqrt{10}$.
+2.  En déduire les solutions de l'équation $\cosh(2x) = \sqrt{10}$.
 
-#. Ces deux équations sont-elles liées ? Justifier votre réponse.
+3.  Ces deux équations sont-elles liées ? Justifier votre réponse.
 
-::: {.solution}
-#. Par définition, $$\sinh(2x) = \dfrac{e^{2x} - e^{-2x}}{2} = 3.$$ On en déduit que $e^{2x} - e^{-2x} = 6$. Posons $y = e^{2x}$. Ainsi, $y - \frac{1}{y} = 6$, d'où $y^2 - 6y - 1 = 0$. On en déduit que $$y = 3\pm 2\sqrt{2}.$$ Comme $e^{2x} > 0$, on déduit que $e^{2x} = 3 + 2\sqrt{2}$. En prenant le logarithme, on arrive à isoler $x$ pour obtenir $$x = \frac{1}{2}\ln\left(3 + 2\sqrt{2}\right).$$
+::: solution
+1.  Par définition, $$\sinh(2x) = \dfrac{e^{2x} - e^{-2x}}{2} = 3.$$ On en déduit que $e^{2x} - e^{-2x} = 6$. Posons $y = e^{2x}$. Ainsi, $y - \frac{1}{y} = 6$, d'où $y^2 - 6y - 1 = 0$. On en déduit que $$y = 3\pm \sqrt{10}.$$ Comme $e^{2x} > 0$, on déduit que $e^{2x} = 3 + \sqrt{10}$. En prenant le logarithme, on arrive à isoler $x$ pour obtenir $$x = \frac{1}{2}\ln\left(3 + \sqrt{10}\right).$$
 
-#. Utilisons l'identité $\cosh^2(x) - \sinh^2(x) = 1$, valable pour toute valeur de $x$. Si $\sinh(2x) = 3$, alors $\cosh^2(2x) = 10$. Ainsi, $\cosh(2x) = \pm\sqrt{10}$. Comme $\cosh(x) \geq 1$ pour tout $x$, $\cosh(2x) = \sqrt{10}$. On trouve la même solution, à savoir $$x = \frac{1}{2}\ln\left(3 + 2\sqrt{2}\right).$$
+2.  Utilisons l'identité $\cosh^2(x) - \sinh^2(x) = 1$, valable pour toute valeur de $x$. Si $\sinh(2x) = 3$, alors $\cosh^2(2x) = 10$. Ainsi, $\cosh(2x) = \pm\sqrt{10}$. Comme $\cosh(x) \geq 1$ pour tout $x$, $\cosh(2x) = \sqrt{10}$. On trouve la même solution, à savoir $$x = \frac{1}{2}\ln\left(3 + \sqrt{10}\right).$$
 
-#. Ces équations sont liées par l'identité $\cosh^2(x) - \sinh^2(x) = 1$. Quand on connaît $\sinh(2x)$, on peut déduire $\cosh(2x)$. Les solutions sont les mêmes car $\sinh(x)$ et $\cosh(x)$ sont liés.
+3.  Ces équations sont liées par l'identité $\cosh^2(x) - \sinh^2(x) = 1$. Quand on connaît $\sinh(2x)$, on peut déduire $\cosh(2x)$. Les solutions sont les mêmes car $\sinh(x)$ et $\cosh(x)$ sont liés.
 :::
 
 ## Question 4
 
 Tracer sur un même graphique les fonctions $f(x) = \sinh(x)$ et $g(x) = \cosh(x)$.
 
-::: {.solution}
+::: solution
 ```{python}
 import numpy as np
 import matplotlib.pyplot as plt
@@ -175,51 +141,46 @@ plt.axvline(x=0, color='k', linestyle='-', alpha=0.3)
 
 plt.show()
 ```
-**Analyse du graphique**
-1. La fonction $\sinh(x)$ :
-   * Est impaire
-   * Passe par l'origine
-   * N'atteint pas de maximum ni de minimum
 
-2. La fonction $\cosh(x)$ :
-   * Est paire
-   * A un minimum de $1$ en $x = 0$
-   * Ne possède pas de maximum
+**Analyse du graphique** 1. La fonction $\sinh(x)$ : \* Est impaire \* Passe par l'origine \* N'atteint pas de maximum ni de minimum
+
+2.  La fonction $\cosh(x)$ :
+    -   Est paire
+    -   A un minimum de $1$ en $x = 0$
+    -   Ne possède pas de maximum
 :::
 
 ## Question 5
 
 Démontrer les identités suivantes :
 
-#. $\sinh(x+y) = \sinh(x)\cosh(y) + \cosh(x)\sinh(y)$
+1.  $\sinh(x+y) = \sinh(x)\cosh(y) + \cosh(x)\sinh(y)$
 
-#. $\tanh(x) + \tanh(y) = \frac{\sinh(x+y)}{\cosh(x)\cosh(y)}$
+2.  $\tanh(x) + \tanh(y) = \frac{\sinh(x+y)}{\cosh(x)\cosh(y)}$
 
-::: {.solution}
-#. Démarche semblable à celle exigée à la question 2.
+::: solution
+1.  Démarche semblable à celle exigée à la question 2.
 
-#. Nous avons que
-   \begin{align}
-   \tanh(x) + \tanh(y) &= \frac{\sinh(x)}{\cosh(x)} + \frac{\sinh(y)}{\cosh(y)}\\
-   &= \frac{\sinh(x)\cosh(y) + \cosh(x)\sinh(y)}{\cosh(x)\cosh(y)}\\
-   &= \frac{\sinh(x+y)}{\cosh(x)\cosh(y)}\qquad\text{(d'après (a)).}
-   \end{align}
+2.  Nous avons que \begin{align}
+    \tanh(x) + \tanh(y) &= \frac{\sinh(x)}{\cosh(x)} + \frac{\sinh(y)}{\cosh(y)}\\
+    &= \frac{\sinh(x)\cosh(y) + \cosh(x)\sinh(y)}{\cosh(x)\cosh(y)}\\
+    &= \frac{\sinh(x+y)}{\cosh(x)\cosh(y)}\qquad\text{(d'après (a)).}
+    \end{align}
 :::
 
 ## Question 6
+
 Un câble pesant est suspendu entre deux points situés à une hauteur commune de 50 mètres et distants de 10 mètres. Le point le plus bas du câble est à 10 mètres sous les points de suspension. Trouvez l'équation de la chaînette passant par ces points. Remarques : vous pouvez supposer que la droite $x=0$ est un axe de symétrie de la chaînette. Aussi, vous aurez besoin d'utiliser un logiciel pour calculer un des paramètres.
 
-:::{.solution}
+::: solution
 La solution sera présentée en classe.
 :::
 
-::: {.hidden}
-L'équation d'une chaînette est de la forme $y = a \cosh(\frac{x}{a}) + k$. Les points de suspension sont en $(-5,0)$ et $(5,0)$ et le point le plus bas est en $(0,-2)$. Ainsi, nous obtenons les équations
-\begin{align}
+::: hidden
+L'équation d'une chaînette est de la forme $y = a \cosh(\frac{x}{a}) + k$. Les points de suspension sont en $(-5,0)$ et $(5,0)$ et le point le plus bas est en $(0,-2)$. Ainsi, nous obtenons les équations \begin{align}
 -2 &= a \cosh(0) + k,\\
 0 &= a \cosh(5/a) + k.
-\end{align}
-\begin{align}
+\end{align} \begin{align}
 -2 &= a + k,\\
 0 &= a \cosh(5/a) + -2-a.
 \end{align}
@@ -250,9 +211,7 @@ plt.legend()
 plt.show()
 ```
 
-::: {.hidden}
-b) La longueur du câble est donnée par :
-   $L = 2a \sinh(5/a) \approx 10.49$ mètres
+::: hidden
+b)  La longueur du câble est donnée par : $L = 2a \sinh(5/a) \approx 10.49$ mètres
 :::
-
 :::
