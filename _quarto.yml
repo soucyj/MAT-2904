@@ -35,8 +35,8 @@ book:
 format:
   html:
     theme:
-      dark: [darkly, custom.scss]
       light: lumen
+      dark: [darkly, custom.scss]
     css:
       - styles.css # Assurez-vous que le chemin est correct
     include-in-header:

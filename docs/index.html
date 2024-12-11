@@ -72,11 +72,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -298,6 +298,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <li><a href="#les-fonctions-puissances" id="toc-les-fonctions-puissances" class="nav-link" data-scroll-target="#les-fonctions-puissances">Les fonctions puissances</a></li>
   <li><a href="#lintégrale-de-riemann" id="toc-lintégrale-de-riemann" class="nav-link" data-scroll-target="#lintégrale-de-riemann">L’intégrale de Riemann</a></li>
   <li><a href="#les-fonctions-hyperboliques" id="toc-les-fonctions-hyperboliques" class="nav-link" data-scroll-target="#les-fonctions-hyperboliques">Les fonctions hyperboliques</a></li>
+  <li><a href="#les-équations-différentielles" id="toc-les-équations-différentielles" class="nav-link" data-scroll-target="#les-équations-différentielles">Les équations différentielles</a></li>
   <li><a href="#licence-et-attributions" id="toc-licence-et-attributions" class="nav-link" data-scroll-target="#licence-et-attributions">Licence et attributions</a></li>
   </ul></li>
   </ul>
@@ -325,7 +326,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <div>
     <div class="quarto-title-meta-heading">Dernière mise à jour</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">03 décembre 2024 à 08:54</p>
+      <p class="date">10 décembre 2024 à 20:03</p>
     </div>
   </div>
   
@@ -342,9 +343,9 @@ document.addEventListener('DOMContentLoaded', function() {
 <section id="les-fonctions-exponentielles-et-logarithmiques" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="les-fonctions-exponentielles-et-logarithmiques">Les fonctions exponentielles et logarithmiques</h2>
 <p>Ce document vous invite à explorer en profondeur les fonctions exponentielles et logarithmiques, des outils mathématiques essentiels tant en théorie qu’en applications pratiques. À travers onze exercices soigneusement structurés, vous allez découvrir les multiples facettes de ces fonctions.</p>
-<p>Nous commençons par des exercices techniques de résolution d’équations exponentielles, avant d’aborder des problèmes plus théoriques qui vous feront découvrir les propriétés fondamentales de la fonction exponentielle, notamment son unicité comme solution de l’équation différentielle f’=f.</p>
+<p>Nous commençons par des exercices techniques de résolution d’équations exponentielles, avant d’aborder des problèmes plus théoriques qui vous feront découvrir les propriétés fondamentales de la fonction exponentielle, notamment son unicité comme solution de l’équation différentielle <span class="math inline">\(f'=f\)</span>.</p>
 <p>Le document intègre également des applications concrètes avec des problèmes d’intérêts composés et de croissance de populations bactériennes, illustrant ainsi l’utilité pratique de ces fonctions.</p>
-<p>Nous terminons par une exploration rigoureuse de la définition du nombre e, démontrant comment ce nombre fondamental émerge naturellement des limites de suites. Les solutions détaillées vous guideront à travers les raisonnements mathématiques nécessaires pour maîtriser ces concepts clés de l’analyse mathématique.</p>
+<p>Nous terminons par une exploration rigoureuse de la définition du nombre <span class="math inline">\(e\)</span>, démontrant comment ce nombre fondamental émerge naturellement des limites de suites. Les solutions détaillées vous guideront à travers les raisonnements mathématiques nécessaires pour maîtriser ces concepts clés de l’analyse mathématique.</p>
 </section>
 <section id="les-fonctions-puissances" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="les-fonctions-puissances">Les fonctions puissances</h2>
@@ -379,9 +380,15 @@ document.addEventListener('DOMContentLoaded', function() {
 </section>
 <section id="les-fonctions-hyperboliques" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="les-fonctions-hyperboliques">Les fonctions hyperboliques</h2>
-<p>Dans cette série d’exercices sur les fonctions hyperboliques, nous explorons d’abord les fonctions de base sinh, cosh et tanh, en mettant l’accent sur leurs graphiques et leurs propriétés fondamentales. Une attention particulière est portée à la fonction tanh et sa réciproque arctanh, où nous démontrons notamment la formule importante reliant arctanh(x) au logarithme naturel. Les graphiques sont systématiquement tracés pour visualiser le comportement de ces fonctions.</p>
-<p>La série progresse ensuite vers des aspects plus théoriques avec la démonstration d’identités hyperboliques importantes, comme la formule d’addition pour cosh(x+y). Ces identités sont suivies d’exercices de résolution d’équations impliquant sinh et cosh, montrant comment ces fonctions sont interconnectées par des relations fondamentales comme cosh²(x) - sinh²(x) = 1. Une partie intéressante de la série est consacrée à la comparaison graphique de sinh et cosh, nous permettant de mieux comprendre leurs comportements respectifs.</p>
+<p>Dans cette série d’exercices sur les fonctions hyperboliques, nous explorons d’abord les fonctions de base <span class="math inline">\(\sinh, \cosh\)</span> et <span class="math inline">\(\tanh\)</span>, en mettant l’accent sur leurs graphiques et leurs propriétés fondamentales. Une attention particulière est portée à la fonction tanh et sa réciproque <span class="math inline">\(\textrm{arctanh}\)</span>, où nous démontrons notamment la formule importante reliant <span class="math inline">\(\textrm{arctanh}\)</span> au logarithme naturel. Les graphiques sont systématiquement tracés pour visualiser le comportement de ces fonctions.</p>
+<p>La série progresse ensuite vers des aspects plus théoriques avec la démonstration d’identités hyperboliques importantes, comme la formule d’addition pour <span class="math inline">\(\cosh(x+y)\)</span>. Ces identités sont suivies d’exercices de résolution d’équations impliquant sinh et cosh, montrant comment ces fonctions sont interconnectées par des relations fondamentales comme <span class="math inline">\(\cosh^2(x) - sinh^2(x) = 1\)</span>. Une partie intéressante de la série est consacrée à la comparaison graphique de <span class="math inline">\(\sinh\)</span> et <span class="math inline">\(\cosh\)</span>, nous permettant de mieux comprendre leurs comportements respectifs.</p>
 <p>La série se termine par une application concrète et fascinante : l’étude de la chaînette, qui représente la forme que prend un câble suspendu sous son propre poids. Ce problème pratique nous montre comment les fonctions hyperboliques apparaissent naturellement dans des situations physiques réelles, illustrant ainsi leur importance au-delà des mathématiques pures.</p>
+</section>
+<section id="les-équations-différentielles" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="les-équations-différentielles">Les équations différentielles</h2>
+<p>On vous propose une immersion dans le monde des équations différentielles, un domaine fondamental des mathématiques appliquées et théoriques. À travers une série d’exercices progressifs, vous explorerez les techniques essentielles pour résoudre ces équations tout en découvrant leurs nombreuses applications.</p>
+<p>Les premiers exercices vous initient aux bases de la résolution d’équations différentielles, telles que la séparation des variables et l’intégration directe.</p>
+<p>Par la suite, les exercices s’ancrent dans des contextes concrets : modélisation de la dégradation de substances toxiques, séchage de vêtements ou encore gestion de réservoirs dans des processus industriels. Chaque problème est accompagné de solutions détaillées qui mettent en lumière les liens entre théorie mathématique et phénomènes réels.</p>
 </section>
 <section id="licence-et-attributions" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="licence-et-attributions">Licence et attributions</h2>
@@ -549,7 +556,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'alternate';
+  let localAlternateSentinel = 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
@@ -848,92 +855,99 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Code source</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Présentation  {.unnumbered}</span></span>
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Présentation {.unnumbered}</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>Bienvenue sur un site web complémentaire au site monPortail du cours **MAT-2904 : Complément d'analyse**, à l'Université Laval.</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Ce site contient principalement des séries d'exercices conçues pour accompagner les étudiants et étudiantes dans le cours. Chaque série d'exercices est soigneusement élaborée pour approfondir votre compréhension des concepts clés et vous préparer aux évaluations.</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Les fonctions exponentielles et logarithmiques  {.unnumbered}</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## Les fonctions exponentielles et logarithmiques {.unnumbered}</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>Ce document vous invite à explorer en profondeur les fonctions exponentielles et logarithmiques, des outils mathématiques essentiels tant en théorie qu'en applications pratiques. À travers onze exercices soigneusement structurés, vous allez découvrir les multiples facettes de ces fonctions.</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Nous commençons par des exercices techniques de résolution d'équations exponentielles, avant d'aborder des problèmes plus théoriques qui vous feront découvrir les propriétés fondamentales de la fonction exponentielle, notamment son unicité comme solution de l'équation différentielle f'=f.</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>Nous commençons par des exercices techniques de résolution d'équations exponentielles, avant d'aborder des problèmes plus théoriques qui vous feront découvrir les propriétés fondamentales de la fonction exponentielle, notamment son unicité comme solution de l'équation différentielle $f'=f$.</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>Le document intègre également des applications concrètes avec des problèmes d'intérêts composés et de croissance de populations bactériennes, illustrant ainsi l'utilité pratique de ces fonctions.</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>Nous terminons par une exploration rigoureuse de la définition du nombre e, démontrant comment ce nombre fondamental émerge naturellement des limites de suites. Les solutions détaillées vous guideront à travers les raisonnements mathématiques nécessaires pour maîtriser ces concepts clés de l'analyse mathématique.</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>Nous terminons par une exploration rigoureuse de la définition du nombre $e$, démontrant comment ce nombre fondamental émerge naturellement des limites de suites. Les solutions détaillées vous guideront à travers les raisonnements mathématiques nécessaires pour maîtriser ces concepts clés de l'analyse mathématique.</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">## Les fonctions puissances  {.unnumbered}</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">## Les fonctions puissances {.unnumbered}</span></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>Ce document vous propose une exploration approfondie des fonctions puissances, un concept fondamental en analyse mathématique. À travers onze exercices progressifs, vous allez consolider votre compréhension des propriétés algébriques et analytiques de ces fonctions.</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>Nous commençons par établir les propriétés fondamentales des puissances en utilisant la définition $x^{\alpha} = e^{\alpha \log x}$, puis nous abordons des questions plus subtiles comme la rationalité des puissances de nombres irrationnels. </span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>Nous commençons par établir les propriétés fondamentales des puissances en utilisant la définition $x^{\alpha} = e^{\alpha \log x}$, puis nous abordons des questions plus subtiles comme la rationalité des puissances de nombres irrationnels.</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Le document vous guide ensuite vers l'étude des dérivées des fonctions puissances, avec une attention particulière portée à l'analyse complète de la fonction racine cubique. </span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Le document vous guide ensuite vers l'étude des dérivées des fonctions puissances, avec une attention particulière portée à l'analyse complète de la fonction racine cubique.</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>Les exercices culminent avec des applications pratiques : </span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>Les exercices culminent avec des applications pratiques :</span>
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Calcul de limites</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Résolution d'équations et d'inéquations</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Calcul d'intégrales faisant intervenir des puissances réelles</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Calcul de limites</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Résolution d'équations et d'inéquations</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Calcul d'intégrales faisant intervenir des puissances réelles</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>Chaque exercice est accompagné d'une solution détaillée et, lorsque pertinent, de représentations graphiques pour faciliter votre compréhension.</span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="fu">## L'intégrale de Riemann  {.unnumbered}</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="fu">## L'intégrale de Riemann {.unnumbered}</span></span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>Ce document vous propose une série d'exercices approfondis sur l'intégrale de Riemann, un concept fondamental en analyse mathématique. Vous y trouverez six questions (incluant plusieurs sous-questions) qui vous permettront de maîtriser différentes techniques d'intégration et de comprendre leurs applications.</span>
 <span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>La première partie vous invite à pratiquer l'intégration indéfinie à travers douze cas différents, chacun nécessitant des techniques spécifiques comme :</span>
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Les changements de variables</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>L'intégration par parties</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>La décomposition en fractions partielles</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Les changements de variables</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>L'intégration par parties</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>La décomposition en fractions partielles</span>
 <span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>Les exercices suivants vous amènent vers des concepts plus avancés :</span>
 <span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Le calcul d'intégrales définies, y compris avec des bornes infinies</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Le calcul d'aire entre des courbes</span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Une démonstration rigoureuse par la méthode de Riemann</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Des questions plus théoriques sur les propriétés des fonctions impaires dans l'intégration</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Le calcul d'intégrales définies, y compris avec des bornes infinies</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Le calcul d'aire entre des courbes</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Une démonstration rigoureuse par la méthode de Riemann</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Des questions plus théoriques sur les propriétés des fonctions impaires dans l'intégration</span>
 <span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>Chaque exercice est accompagné d'une solution détaillée qui vous permet de comprendre pas à pas la méthode de résolution.</span>
 <span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="fu">## Les fonctions hyperboliques  {.unnumbered}</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="fu">## Les fonctions hyperboliques {.unnumbered}</span></span>
 <span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>Dans cette série d'exercices sur les fonctions hyperboliques, nous explorons d'abord les fonctions de base sinh, cosh et tanh, en mettant l'accent sur leurs graphiques et leurs propriétés fondamentales. Une attention particulière est portée à la fonction tanh et sa réciproque arctanh, où nous démontrons notamment la formule importante reliant arctanh(x) au logarithme naturel. Les graphiques sont systématiquement tracés pour visualiser le comportement de ces fonctions.</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>Dans cette série d'exercices sur les fonctions hyperboliques, nous explorons d'abord les fonctions de base $\sinh, \cosh$ et $\tanh$, en mettant l'accent sur leurs graphiques et leurs propriétés fondamentales. Une attention particulière est portée à la fonction tanh et sa réciproque $\textrm{arctanh}$, où nous démontrons notamment la formule importante reliant $\textrm{arctanh}$ au logarithme naturel. Les graphiques sont systématiquement tracés pour visualiser le comportement de ces fonctions.</span>
 <span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>La série progresse ensuite vers des aspects plus théoriques avec la démonstration d'identités hyperboliques importantes, comme la formule d'addition pour cosh(x+y). Ces identités sont suivies d'exercices de résolution d'équations impliquant sinh et cosh, montrant comment ces fonctions sont interconnectées par des relations fondamentales comme cosh²(x) - sinh²(x) = 1. Une partie intéressante de la série est consacrée à la comparaison graphique de sinh et cosh, nous permettant de mieux comprendre leurs comportements respectifs.</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>La série progresse ensuite vers des aspects plus théoriques avec la démonstration d'identités hyperboliques importantes, comme la formule d'addition pour $\cosh(x+y)$. Ces identités sont suivies d'exercices de résolution d'équations impliquant sinh et cosh, montrant comment ces fonctions sont interconnectées par des relations fondamentales comme $\cosh^2(x) - sinh^2(x) = 1$. Une partie intéressante de la série est consacrée à la comparaison graphique de $\sinh$ et $\cosh$, nous permettant de mieux comprendre leurs comportements respectifs.</span>
 <span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>La série se termine par une application concrète et fascinante : l'étude de la chaînette, qui représente la forme que prend un câble suspendu sous son propre poids. Ce problème pratique nous montre comment les fonctions hyperboliques apparaissent naturellement dans des situations physiques réelles, illustrant ainsi leur importance au-delà des mathématiques pures.</span>
 <span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="fu">## Licence et attributions {.unnumbered}</span></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>Ce site et son contenu sont mis à disposition sous licence Creative Commons Attribution - Pas d'Utilisation Commerciale (CC BY-NC).</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="fu">## Droits d'utilisation</span></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="fu">## Les équations différentielles {.unnumbered}</span></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>On vous propose une immersion dans le monde des équations différentielles, un domaine fondamental des mathématiques appliquées et théoriques. À travers une série d'exercices progressifs, vous explorerez les techniques essentielles pour résoudre ces équations tout en découvrant leurs nombreuses applications.</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>Les premiers exercices vous initient aux bases de la résolution d’équations différentielles, telles que la séparation des variables et l’intégration directe.</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>Par la suite, les exercices s’ancrent dans des contextes concrets : modélisation de la dégradation de substances toxiques, séchage de vêtements ou encore gestion de réservoirs dans des processus industriels. Chaque problème est accompagné de solutions détaillées qui mettent en lumière les liens entre théorie mathématique et phénomènes réels.</span>
 <span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>Vous êtes libre de :</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="fu">## Licence et attributions {.unnumbered}</span></span>
 <span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Partager, copier et redistribuer le contenu</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Adapter et transformer le contenu</span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>À condition de :</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>Ce site et son contenu sont mis à disposition sous licence Creative Commons Attribution - Pas d'Utilisation Commerciale (CC BY-NC).</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="fu">## Droits d'utilisation</span></span>
 <span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Créditer la source en citant l'auteur du présent document avec un lien vers ce site</span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Ne pas faire d'usage commercial du contenu</span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>Une partie du code présenté sur ce site a été généré avec l'assistance de l'intelligence artificielle Claude (Anthropic), tout en étant vérifié et adapté pour garantir son exactitude et sa pertinence pédagogique.</span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>::: {#fig-ccIA layout-ncol=2}</span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="al">![Licence Creative Commons BY-NC](by-nc.png)</span>{width="250px" fig-align="center"}</span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="al">![Généré avec assistance IA](AIA.jpg)</span>{width="75px" fig-align="center"}</span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>Certains éléments de code de ce site ont été générés par l'IA. Vous êtes libre d'utiliser le contenu de ce site dans la mesure où vous citez la source et n'en tirez pas de bénéfice financier.</span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>Vous êtes libre de :</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Partager, copier et redistribuer le contenu</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Adapter et transformer le contenu</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>À condition de :</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Créditer la source en citant l'auteur du présent document avec un lien vers ce site</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Ne pas faire d'usage commercial du contenu</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>Une partie du code présenté sur ce site a été généré avec l'assistance de l'intelligence artificielle Claude (Anthropic), tout en étant vérifié et adapté pour garantir son exactitude et sa pertinence pédagogique.</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>::: {#fig-ccIA layout-ncol="2"}</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="al">![Licence Creative Commons BY-NC](by-nc.png)</span>{width="250px" fig-align="center"}</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="al">![Généré avec assistance IA](AIA.jpg)</span>{width="75px" fig-align="center"}</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>Certains éléments de code de ce site ont été générés par l'IA. Vous êtes libre d'utiliser le contenu de ce site dans la mesure où vous citez la source et n'en tirez pas de bénéfice financier.</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
