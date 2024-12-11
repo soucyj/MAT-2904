@@ -144,11 +144,10 @@ plt.show()
 
 **Analyse du graphique**
 
-1. La fonction $\sinh(x)$ :
-    - Est impaire
-    - Passe par l'origine
-    - N'atteint pas de maximum ni de minimum
-
+1.  La fonction $\sinh(x)$ :
+    -   Est impaire
+    -   Passe par l'origine
+    -   N'atteint pas de maximum ni de minimum
 2.  La fonction $\cosh(x)$ :
     -   Est paire
     -   A un minimum de $1$ en $x = 0$
@@ -178,12 +177,10 @@ Démontrer les identités suivantes :
 Un câble pesant est suspendu entre deux points situés à une hauteur commune de 50 mètres et distants de 10 mètres. Le point le plus bas du câble est à 10 mètres sous les points de suspension. Trouvez l'équation de la chaînette passant par ces points. Remarques : vous pouvez supposer que la droite $x=0$ est un axe de symétrie de la chaînette. Aussi, vous aurez besoin d'utiliser un logiciel pour calculer un des paramètres.
 
 ::: solution
-L'équation d'une chaînette est de la forme $y = a \cosh(\frac{x}{a}) + k$. Les points de suspension sont en $(-5,50)$ et $(5,50)$ et le point le plus bas est en $(0,40)$. Ainsi, nous obtenons les équations
-\begin{align}
+L'équation d'une chaînette est de la forme $y = a \cosh(\frac{x}{a}) + k$. Les points de suspension sont en $(-5,50)$ et $(5,50)$ et le point le plus bas est en $(0,40)$. Ainsi, nous obtenons les équations \begin{align}
 40 &= a \cosh(0) + k,\\
 50 &= a \cosh(5/a) + k.
-\end{align}
-\begin{align}
+\end{align} \begin{align}
 40 &= a + k,\\
 50 &= a \cosh(5/a) + 40-a.
 \end{align}
